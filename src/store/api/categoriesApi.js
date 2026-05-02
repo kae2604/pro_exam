@@ -8,9 +8,6 @@ export const categoriesAPI = createApi({
         getCategories: build.query({
             query: () => '/products/categories',
         }),
-        // getUserById: build.query({
-        //     query: ({userId}) => `users/${userId}`,
-        // }),
     })
 })
 
@@ -18,7 +15,7 @@ export const categoriesAPI = createApi({
 export const {
     useGetCategoriesQuery,
     useLazyGetUsersQuery,
-    useGetUserByIdQuery,
+    useGetProductsByCategoryQuery,
     useLazyGetUserByIdQuery
 } = categoriesAPI;
 

@@ -1,0 +1,15 @@
+.brandsList {
+  background-color: #000000;
+  margin-bottom: 72px;
+}
+.brandsList .brandsList_container {
+  height: 122px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brandsList .brandsList_container span {
+  color: #fff;
+}
+
+/*# sourceMappingURL=brandsList.css.map */

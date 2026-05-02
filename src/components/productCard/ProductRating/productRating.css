@@ -1,0 +1,26 @@
+.productRating_box {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.productCard_stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: nowrap;
+}
+.productCard_stars img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.productCard_stars .half-star {
+  width: 9px;
+  height: 18px;
+  margin-right: 9px;
+}
+
+/*# sourceMappingURL=productRating.css.map */

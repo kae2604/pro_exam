@@ -1,34 +1,35 @@
 import React from 'react';
-import "./newArrivals.scss";
+import "./topSelling.scss";
 import ProductCard from "@components/productCard";
-import {useGetHomeNewArrivalsQuery} from "@store/api/productsAPI.js";
+import {useGetHomeTopSellingQuery} from "@store/api/productsAPI.js";
 
-const NewArrivals = () => {
+const TopSelling = () => {
 
-    const { data } = useGetHomeNewArrivalsQuery();
+    const { data } = useGetHomeTopSellingQuery();
     console.log(data)
 
     return (
         <section>
-            <div className="container newArrivals_container">
-                <h2>NEW ARRIVALS</h2>
+            <div className="container ">
+                <div className="topSelling_container">
+                    <h2>TOP SELLING</h2>
 
-                <div className="newArrivals_Box">
-                    {data?.products?.map((product) => (
-                        <ProductCard
-                            key={product.id}
-                            productId={product.id}
-                        />
-                    ))}
+                    <div className="topSelling_Box">
+                        {data?.products?.map((product) => (
+                            <ProductCard
+                                key={product.id}
+                                product={product}
+                            />
+                        ))}
+                    </div>
+
+                    <button className='topSelling_Button'>
+                        View All
+                    </button>
                 </div>
-
-                <button className='newArrivals_Button'>
-                    View All
-                </button>
             </div>
-
         </section>
     );
 };
 
-export default NewArrivals;
+export default TopSelling;

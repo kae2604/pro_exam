@@ -1,18 +1,21 @@
-.newArrivals_container {
-  margin-bottom: 64px;
+.topSelling_container {
+  margin-bottom: 80px;
 }
-.newArrivals_container h2 {
+.topSelling_container h2 {
   text-align: center;
   margin-bottom: 55px;
+  font-weight: 700;
+  font-size: 48px;
+  color: #000;
 }
-.newArrivals_container .newArrivals_Box {
+.topSelling_container .topSelling_Box {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 36px;
 }
-.newArrivals_container .newArrivals_Button {
+.topSelling_container .topSelling_Button {
   width: 218px;
   height: 52px;
   border: 1px solid #F2F0F1;
@@ -21,13 +24,5 @@
   display: block;
   margin: 0 auto 64px;
 }
-.newArrivals_container::after {
-  content: "";
-  display: block;
-  width: 1240px;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-}
 
-/*# sourceMappingURL=newArrivals.css.map */
+/*# sourceMappingURL=topSelling.css.map */

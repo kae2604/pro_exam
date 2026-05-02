@@ -1,2 +1,2 @@
-import NewArrivals from './NewArrivals.jsx'
-export default NewArrivals;
+import TopSelling from './TopSelling.jsx'
+export default TopSelling;

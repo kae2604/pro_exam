@@ -1,6 +1,35 @@
 
-.categories_box{
+.categories_container{
   border-radius: 40px;
   background: #f0f0f0;
   padding: 70px 64px 76px;
+  margin-bottom: 80px;
+
+  h2{
+    font-weight: 700;
+    font-size: 48px;
+    text-align: center;
+    color: #000;
+    margin-bottom: 64px;
+  }
+  .categories_box{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .categoryBoxSmall{
+      border-radius: 20px;
+      width: 407px;
+      height: 289px;
+      background: #fff;
+      padding: 25px 0 0 36px;
+    }
+    .categoryBoxBig{
+      border-radius: 20px;
+      width: 684px;
+      height: 289px;
+      background: #fff;
+      padding: 25px 0 0 36px;
+    }
+  }
 }
