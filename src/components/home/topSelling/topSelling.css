@@ -1,0 +1,33 @@
+.newArrivals_container {
+  margin-bottom: 64px;
+}
+.newArrivals_container h2 {
+  text-align: center;
+  margin-bottom: 55px;
+}
+.newArrivals_container .newArrivals_Box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+.newArrivals_container .newArrivals_Button {
+  width: 218px;
+  height: 52px;
+  border: 1px solid #F2F0F1;
+  border-radius: 62px;
+  background-color: #fff;
+  display: block;
+  margin: 0 auto 64px;
+}
+.newArrivals_container::after {
+  content: "";
+  display: block;
+  width: 1240px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=newArrivals.css.map */

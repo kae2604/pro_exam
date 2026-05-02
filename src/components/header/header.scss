@@ -1,0 +1,16 @@
+.header{
+  padding: 24px 0  ;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  height: 96px;
+}
+
+.menu_list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 40px;
+  gap: 24px;
+}
