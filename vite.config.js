@@ -15,6 +15,7 @@ export default defineConfig({
             "@components": path.resolve("src", "components"),
             "@assets": path.resolve("src", "assets"),
             "@styles": path.resolve("src", "styles"),
+            "@utils": path.resolve("src", "utils"),
         },
     },
 })

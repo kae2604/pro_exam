@@ -1,24 +1,38 @@
 import React from 'react';
 import {Link, useParams} from "react-router-dom";
-import { useGetProductsByCategoryQuery } from "@store/api/productsApi.js";
+import { useGetProductsByCategoryQuery, useGetAllProductsQuery } from "@store/api/productsApi.js";
 import ProductCard from "@components/productCard";
 import './categoryPage.scss';
 import Pagination from "@components/pagination"
 import filters from "@assets/categoryPage/filters.svg";
 
+
 const CategoryPage = () => {
+
+
     const { slug } = useParams();
-
-    const { data: productsList, isLoading, error } = useGetProductsByCategoryQuery(slug);
-
-    console.log("Zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz")
-    console.log(productsList);
-
+    let CategoryName = null;
+    if(slug){
+        CategoryName = slug.toString().charAt(0).toUpperCase() + slug.toString().slice(1);
+    }
 
 
+    const {
+        data: categoryData,
+        isLoading: isCategoryLoading
+    } = useGetProductsByCategoryQuery(slug, { skip: !slug });
+
+
+    const {
+        data: allData,
+        isLoading: isAllLoading
+    } = useGetAllProductsQuery(undefined, { skip: !!slug });
+
+    const productsList = slug ? categoryData : allData;
+
+    const isLoading = slug ? isCategoryLoading : isAllLoading;
 
     if (isLoading) return <div className="container">Loading...</div>;
-    if (error) return <div className="container">Error</div>;
 
 
     return (
@@ -36,7 +50,8 @@ const CategoryPage = () => {
 
                     </aside>
                     <section className="categoryPage_right">
-                        <h3>Category: {slug}</h3>
+
+                        <h3>{CategoryName  || "All Products"}</h3>
 
                         <div className="categoryPage_box">
                             {productsList?.products?.map((product) => (
@@ -52,8 +67,6 @@ const CategoryPage = () => {
                 </div>
             </div>
         </main>
-
-
     );
 };
 

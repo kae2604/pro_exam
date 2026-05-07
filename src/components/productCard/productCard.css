@@ -9,37 +9,6 @@
   font-size: 20px;
   color: #000;
 }
-.productDetailPage_link .price_row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.productDetailPage_link .price_row .productCard_price {
-  display: inline-block;
-  font-weight: 700;
-  font-size: 24px;
-  text-decoration: line-through;
-  color: rgba(0, 0, 0, 0.4);
-}
-.productDetailPage_link .price_row .productCard_discount {
-  border-radius: 62px;
-  padding: 6px 14px;
-  width: 58px;
-  height: 28px;
-  background: rgba(255, 51, 51, 0.1);
-  font-weight: 500;
-  font-size: 12px;
-  color: #f33;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.productDetailPage_link .price_row .productCard_finalPrice {
-  display: inline-block;
-  font-weight: 700;
-  font-size: 24px;
-  color: #000;
-}
 .productDetailPage_link .productRating_box {
   display: flex;
   align-items: center;

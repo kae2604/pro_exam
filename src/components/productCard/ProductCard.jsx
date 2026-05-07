@@ -4,29 +4,25 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import ProductRating from "./ProductRating";
+import ProductRating from "./productRating";
 import "./productCard.scss"
+import ProductPriceRow from "@components/productCard/productPriceRow/index.js";
+import { calculateProductPrice } from "@/utils/price";
 
 
 const ProductCard = ({product}) => {
-
-    console.log(product)
-    console.log(product?.discountPercentage)
-
-    const price = Math.round(product?.price);
-    const discountPercentage = product?.discountPercentage ? Math.round(product.discountPercentage) : 0;
-    const finalPrice = Math.round(price - (price * discountPercentage) / 100);
-    const isDiscount = discountPercentage > 0;
     if (!product) return null;
+    const { price, discount, finalPrice } = calculateProductPrice(product);
 
     return (
-        <Link to={`/products/${product.id}`} className="productDetailPage_link">
+        <Link to={`/products/${product.id}`}
+              className="productDetailPage_link">
+
             <Card sx={{ maxWidth: 295, width: '100%', boxShadow: 'none' }}>
                 <CardMedia
                     sx={{ maxWidth: 295, height: 298, borderRadius: 5, backgroundColor: '#f0eeed', mb: 2 }}
                     image={product.thumbnail}
-                    title={product.title}
-                />
+                    title={product.title}/>
                 <CardContent sx={{
                     p: 0,
                     '&:last-child': {
@@ -52,31 +48,9 @@ const ProductCard = ({product}) => {
                         </div>
                     </div>
 
-                    <div className="price_row">
-                        {isDiscount ? (
-                            <>
-                                <Typography
-                                    className="productCard_finalPrice">
-                                    $ {finalPrice}
-                                </Typography>
-
-                                <Typography
-                                    className="productCard_price">
-                                    $ {price}
-                                </Typography>
-
-                                <Typography
-                                    className="productCard_discount">
-                                    -{discountPercentage}%
-                                </Typography>
-                            </>
-                        ) : (
-                            <Typography
-                                className="productCard_finalPrice">
-                                $ {price}
-                            </Typography>
-                        )}
-                    </div>
+                    <ProductPriceRow price={price}
+                                     discount={discount}
+                                     finalPrice={finalPrice}/>
                 </CardContent>
             </Card>
         </Link>

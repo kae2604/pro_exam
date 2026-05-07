@@ -12,6 +12,7 @@ import ProductDetailPage from "@pages/productDetailPage"
         children: [
             {index: true, element: <HomePage/> },
             {path: "products/category/:slug", element: <CategoryPage/>},
+            {path: "products/category", element: <CategoryPage/>},
             {path: "products/:id", element: <ProductDetailPage/>},
             // {path: "products/product/:id", element: <Product/>}
             // { path: "cart", element: <CartPage /> },

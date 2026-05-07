@@ -1,0 +1,22 @@
+
+.shop_category_list {
+  // Нам нужно применить стили к внутреннему элементу Paper
+  .MuiPaper-root {
+    max-height: 360px;
+    overflow-y: scroll !important;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      display: block;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  }
+}

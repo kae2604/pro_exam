@@ -5,6 +5,7 @@ import "./header.scss";
 import Shop from "./shop/index.js";
 import cart from '@assets/header/cart.svg';
 import login from '@assets/header/login.svg';
+import { useSelector } from 'react-redux';
 
 
 
@@ -65,6 +66,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const Header = ()=> {
 
+    const cartItems = useSelector((state) => state.cart.items);
+    const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+
     return (
         <AppBar
                 component="header"
@@ -113,7 +117,22 @@ const Header = ()=> {
                                 inputProps={{ 'aria-label': 'search'}}
                             />
                         </Search>
-                        <img className="header_icon_cart" src={cart} alt="Icon of cart" />
+
+                        <div className="header_cart_wrapper">
+                            <div className="cart_icon_container">
+                                <img className="header_icon_cart" src={cart} alt="Icon of cart" />
+                                {totalQuantity > 0 && (
+                                    <div className="cart_badge">
+                                        {totalQuantity}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+
+
+
+
+
                         <img className="header_icon_login" src={login} alt="Icon of login" />
                     </div>
                 </Toolbar>

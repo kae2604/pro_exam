@@ -1,16 +1,18 @@
 import React from 'react';
 import "./hero.scss"
-import {useGetProductByIdQuery} from "@store/api/productsAPI.js";
+import {useGetProductImagesByIdQuery} from "@store/api/productsAPI.js";
 
 const Hero = () => {
 
-    const { data: motorcycle, isLoading: l1 } = useGetProductByIdQuery(113);
-    const { data: watch, isLoading: l2 } = useGetProductByIdQuery(95);
-    const { data: sunglasses, isLoading: l3 } = useGetProductByIdQuery(155);
-    const { data: perfume, isLoading: l4 } = useGetProductByIdQuery(7);
+    const { data: motorcycle, isLoading: l1 } = useGetProductImagesByIdQuery(113);
+    const { data: watch, isLoading: l2 } = useGetProductImagesByIdQuery(95);
+    const { data: sunglasses, isLoading: l3 } = useGetProductImagesByIdQuery(155);
+    const { data: perfume, isLoading: l4 } = useGetProductImagesByIdQuery(7);
 
     if (l1 || l2 || l3 || l4) return <div className="container">Loading...</div>;
     if (!motorcycle || !watch || !sunglasses || !perfume) return null;
+
+    console.log('zzzzz', motorcycle);
 
     return (
         <section className="hero">
