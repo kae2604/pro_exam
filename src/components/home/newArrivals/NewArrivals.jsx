@@ -27,7 +27,7 @@ const NewArrivals = () => {
                         View All
                     </button>
 
-                    <div className="newArrivals_line"></div>
+                    <div className="section_line"></div>
                 </div>
             </div>
         </section>

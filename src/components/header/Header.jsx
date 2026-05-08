@@ -118,20 +118,18 @@ const Header = ()=> {
                             />
                         </Search>
 
-                        <div className="header_cart_wrapper">
-                            <div className="cart_icon_container">
-                                <img className="header_icon_cart" src={cart} alt="Icon of cart" />
-                                {totalQuantity > 0 && (
-                                    <div className="cart_badge">
-                                        {totalQuantity}
-                                    </div>
-                                )}
+                        <Link to={`/cart`}>
+                            <div className="header_cart_wrapper">
+                                <div className="cart_icon_container">
+                                    <img className="header_icon_cart" src={cart} alt="Icon of cart" />
+                                    {totalQuantity > 0 && (
+                                        <div className="cart_badge">
+                                            {totalQuantity}
+                                        </div>
+                                    )}
+                                </div>
                             </div>
-                        </div>
-
-
-
-
+                        </Link>
 
                         <img className="header_icon_login" src={login} alt="Icon of login" />
                     </div>

@@ -38,7 +38,7 @@ const CategoryPage = () => {
     return (
         <main>
             <div className="container">
-                <div className="categoryPage_line"></div>
+                <div className="section_line"></div>
                 <div className="categoryPage_path">Home</div>
                 <div className="categoryPage_container">
                     <aside className="categoryPage_aside">
@@ -46,7 +46,7 @@ const CategoryPage = () => {
                             <h4>Filters</h4>
                             <img src={filters} alt="filters"/>
                         </div>
-                        <div className="categoryPage_line"></div>
+                        <div className="section_line"></div>
 
                     </aside>
                     <section className="categoryPage_right">
@@ -61,8 +61,10 @@ const CategoryPage = () => {
                                 />
                             ))}
                         </div>
-                        <div className="categoryPage_line"></div>
-                        <Pagination/>
+                        <div className="section_line"></div>
+                        <div className="categoryPage_pagination">
+                            <Pagination/>
+                        </div>
                     </section>
                 </div>
             </div>

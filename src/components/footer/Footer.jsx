@@ -164,7 +164,7 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="footer_line"></div>
+                <div className="section_line"></div>
                 <div className="footer_bottom">
                     <span>
                         Shop.co © 2000-2023, All Rights Reserved

@@ -1,12 +1,4 @@
 
-
-.categoryPage_line{
-  width: 100%;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.1);
-  margin-bottom: 24px;
-}
-
 .categoryPage_path{
   margin-bottom: 24px;
 }
@@ -59,5 +51,10 @@
   margin-bottom: 32px;
   column-gap: 20px;
   row-gap: 36px;
+
+}
+
+.categoryPage_pagination{
+  margin-top: 20px !important;
 
 }

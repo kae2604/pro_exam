@@ -1,0 +1,25 @@
+import React from 'react';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
+import "./quantitySelector.scss"
+
+const QuantitySelector = ({ quantity, onIncrement, onDecrement, isMinusDisabled, isPlusDisabled, isInStock } ) => {
+
+    return (
+        <div>
+            <button className="productDetailPage_button_minus"
+                    onClick={onDecrement}
+                    disabled={isMinusDisabled}>
+                <RemoveIcon sx={{ fontSize: 18 }}/>
+            </button>
+            <span className="productDetailPage_amount">{isInStock ? quantity : 0}</span>
+            <button className="productDetailPage_button_plus"
+                    onClick={onIncrement}
+                    disabled={isPlusDisabled}>
+                <AddIcon sx={{ fontSize: 18 }}/>
+            </button>
+        </div>
+    );
+};
+
+export default QuantitySelector;

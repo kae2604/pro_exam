@@ -5,11 +5,10 @@ import { useState, useEffect } from 'react';
 import "./productDetailPage.scss"
 import ProductRating from "@components/productCard/productRating";
 import ProductPriceRow from "@components/productCard/productPriceRow/index.js";
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
 import { calculateProductPrice } from "@/utils/price";
 import { useDispatch } from 'react-redux';
-import { addToCart } from '@store/slices/cartSlice';
+import { addProductToCart } from '@store/slices/cartSlice';
+import QuantitySelector from "@components/quantitySelector/index.js";
 
 
 
@@ -38,36 +37,38 @@ const ProductDetailPage = () => {
     const isInStock = product?.availabilityStatus !== 'Out of Stock';
     const stockAmount = product?.stock || 0;
 
-    const increment = () => {
+    const handleIncrement = () => {
         if (quantity < stockAmount) {
             setQuantity(prev => prev + 1);
         }
     };
 
-    const decrement = () => {
+    const handleDecrement = () => {
         if (quantity > 1) {
             setQuantity(prev => prev - 1);
         }
     };
 
 
-    const handleAddToCart = () => {
+    const handleAddProductToCart = () => {
         const payload = {
             id: product.id,
             title: product.title,
             price: finalPrice,
             quantity: quantity,
-            image: mainImage
+            image: mainImage,
+            brand: product.brand,
+            availabilityStatus: product.availabilityStatus,
+            stockAmount: product.stock
         };
-        console.log("Отправляем в Redux:", payload);
-        dispatch(addToCart(payload));
+        dispatch(addProductToCart(payload));
     };
 
     return (
         <div className="container">
-            <div className="productDetailPage_line"></div>
+            <div className="section_line"></div>
             <div className="productDetailPage_path">Home</div>
-            <div className="productDetailPage_container">
+            <section className="productDetailPage_container">
                 <div className="productDetail_pictures">
                     <div className={`productDetail_pictures_left ${product?.images?.length > 3 ? 'has-scroll' : ''}`}>
                         {product?.images?.map((image, index) => (
@@ -101,37 +102,49 @@ const ProductDetailPage = () => {
                                          finalPrice={finalPrice}/>
                     </div>
                     <div>
-                        <div className="productDetailPage_line"></div>
+                        <div className="section_line"></div>
                         <p className="productDetail_description">{product.description}</p>
-                        <div className="productDetailPage_line"></div>
+                        <div className="section_line"></div>
                     </div>
                     <div className={product.availabilityStatus === 'In Stock' ? 'productDetailPage_status_block' : ''}>
                         <span>Status: </span>
                         <span className="productDetailPage_status">{product.availabilityStatus} </span>
                     </div>
                     <div className="productDetailPage_buttons_block">
-                        <div>
-                            <button className="productDetailPage_button_minus"
-                                    onClick={decrement}
-                                    disabled={!isInStock || quantity <= 1}>
-                                <RemoveIcon sx={{ fontSize: 18 }}/>
-                            </button>
-                            <span className="productDetailPage_amount">{isInStock ? quantity : 0}</span>
-                            <button className="productDetailPage_button_plus"
-                                    onClick={increment}
-                                    disabled={!isInStock || quantity >= stockAmount}>
-                                <AddIcon sx={{ fontSize: 18 }}/>
-                            </button>
-                        </div>
+
+                        <QuantitySelector quantity={quantity}
+                                          onIncrement={handleIncrement}
+                                          onDecrement={handleDecrement}
+                                          isMinusDisabled={!isInStock || quantity <= 1}
+                                          isPlusDisabled={!isInStock || quantity >= product.stock}
+                                          isInStock={isInStock}/>
+
+
+                        {/*<div>*/}
+                        {/*    <button className="productDetailPage_button_minus"*/}
+                        {/*            onClick={decrement}*/}
+                        {/*            disabled={!isInStock || quantity <= 1}>*/}
+                        {/*        <RemoveIcon sx={{ fontSize: 18 }}/>*/}
+                        {/*    </button>*/}
+                        {/*    <span className="productDetailPage_amount">{isInStock ? quantity : 0}</span>*/}
+                        {/*    <button className="productDetailPage_button_plus"*/}
+                        {/*            onClick={increment}*/}
+                        {/*            disabled={!isInStock || quantity >= stockAmount}>*/}
+                        {/*        <AddIcon sx={{ fontSize: 18 }}/>*/}
+                        {/*    </button>*/}
+                        {/*</div>*/}
 
                         <button className="productDetailPage_button_addToCart"
                                 disabled={!isInStock}
-                                onClick={handleAddToCart}>
+                                onClick={handleAddProductToCart}>
                                     Add to Cart
                         </button>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <div className="section_line"></div>
+            <section className="productDetailPage_otherProducts"></section>
         </div>
     );
 };

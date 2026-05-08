@@ -3,6 +3,7 @@ import HomePage from "@pages/homePage";
 import MainLayout from "@/layouts/MainLayout.jsx";
 import CategoryPage from "@pages/categoryPage";
 import ProductDetailPage from "@pages/productDetailPage"
+import CartPage from "@pages/cartPage"
 
 
 
@@ -14,6 +15,7 @@ import ProductDetailPage from "@pages/productDetailPage"
             {path: "products/category/:slug", element: <CategoryPage/>},
             {path: "products/category", element: <CategoryPage/>},
             {path: "products/:id", element: <ProductDetailPage/>},
+            {path: "cart", element: <CartPage/>},
             // {path: "products/product/:id", element: <Product/>}
             // { path: "cart", element: <CartPage /> },
         ]
