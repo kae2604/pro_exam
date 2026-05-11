@@ -16,7 +16,6 @@ const CategoryPage = () => {
         CategoryName = slug.toString().charAt(0).toUpperCase() + slug.toString().slice(1);
     }
 
-
     const {
         data: categoryData,
         isLoading: isCategoryLoading
@@ -36,39 +35,37 @@ const CategoryPage = () => {
 
 
     return (
-        <main>
-            <div className="container">
-                <div className="section_line"></div>
-                <div className="categoryPage_path">Home</div>
-                <div className="categoryPage_container">
-                    <aside className="categoryPage_aside">
-                        <div className="categoryPage_aside_top">
-                            <h4>Filters</h4>
-                            <img src={filters} alt="filters"/>
-                        </div>
-                        <div className="section_line"></div>
+        <div className="container">
+            <div className="section_line"></div>
+            <div className="categoryPage_path">Home</div>
+            <div className="categoryPage_container">
+                <aside className="categoryPage_aside">
+                    <div className="categoryPage_aside_top">
+                        <h4>Filters</h4>
+                        <img src={filters} alt="filters"/>
+                    </div>
+                    <div className="section_line"></div>
 
-                    </aside>
-                    <section className="categoryPage_right">
+                </aside>
+                <section className="categoryPage_right">
 
-                        <h3>{CategoryName  || "All Products"}</h3>
+                    <h3>{CategoryName  || "All Products"}</h3>
 
-                        <div className="categoryPage_box">
-                            {productsList?.products?.map((product) => (
-                                <ProductCard
-                                    key={product.id}
-                                    product={product}
-                                />
-                            ))}
-                        </div>
-                        <div className="section_line"></div>
-                        <div className="categoryPage_pagination">
-                            <Pagination/>
-                        </div>
-                    </section>
-                </div>
+                    <div className="categoryPage_box">
+                        {productsList?.products?.map((product) => (
+                            <ProductCard
+                                key={product.id}
+                                product={product}
+                            />
+                        ))}
+                    </div>
+                    <div className="section_line"></div>
+                    <div className="categoryPage_pagination">
+                        <Pagination/>
+                    </div>
+                </section>
             </div>
-        </main>
+        </div>
     );
 };
 

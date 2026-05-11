@@ -40,11 +40,21 @@
         height: 52px;
         border: none;
         margin-bottom: 48px;
+
+        &:hover:not(:disabled) {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        &:active:not(:disabled) {
+          background-color: #ccc;
+          transform: scale(0.98);
+        }
       }
 
       .hero_left_bottom{
         display: flex;
         justify-content: space-between;
+
 
         h3{
           font-weight: 700;

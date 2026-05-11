@@ -14,6 +14,9 @@ export const productsAPI = createApi({
         getProductsByCategory: build.query({
             query: (slug) => `/products/category/${slug}?select=title,price,discountPercentage,thumbnail,rating`,
         }),
+        getSameProductsByCategory: build.query({
+            query: ({category, limit}) => `/products/category/${category}?limit=${limit}&select=title,price,discountPercentage,thumbnail,rating`,
+        }),
         getProductById: build.query({
             query: (productId) => `/products/${productId}`,
         }),
@@ -24,7 +27,7 @@ export const productsAPI = createApi({
             query: () => '/products?limit=4&sortBy=id&order=desc&select=title,price,discountPercentage,thumbnail,rating',
         }),
         getHomeTopSelling: build.query({
-            query: () => '/products?limit=4&sortBy=productRating&order=desc&select=title,price,discountPercentage,thumbnail,rating',
+            query: () => '/products?limit=4&sortBy=rating&order=desc&select=title,price,discountPercentage,thumbnail,rating',
         }),
     })
 })
@@ -33,6 +36,7 @@ export const productsAPI = createApi({
 export const {
     useGetCategoriesQuery,
     useGetProductsByCategoryQuery,
+    useGetSameProductsByCategoryQuery,
     useGetProductByIdQuery,
     useGetProductImagesByIdQuery,
     useGetHomeNewArrivalsQuery,

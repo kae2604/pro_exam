@@ -31,3 +31,10 @@ ul{
   height: 1px;
   background: rgba(0, 0, 0, 0.1);
 }
+
+a, button {
+  &:focus, &:active, &:focus-visible {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+}

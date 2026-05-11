@@ -31,23 +31,23 @@
   border-top: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0;
   vertical-align: top;
+  padding: 0 10px;
 }
 
-.productDetailPage_button_addToCart{
-  border-radius: 62px;
-  border: none;
-  padding: 16px 54px;
-  width: 400px;
-  height: 52px;
-  background: #000;
-  font-weight: 500;
-  font-size: 16px;
-  color: #fff;
-}
+
 
 .productDetailPage_button_minus,
-.productDetailPage_button_plus,
-.productDetailPage_button_addToCart {
+.productDetailPage_button_plus{
+  transition: background-color 0.1s;
+
+  //&:hover:not(:disabled) {
+  //  background-color: rgba(0, 0, 0, 0.8);
+  //}
+
+  &:active:not(:disabled) {
+    background-color: #d1d1d1;
+    transform: scale(0.98);
+  }
 
   &:disabled {
     cursor: not-allowed;

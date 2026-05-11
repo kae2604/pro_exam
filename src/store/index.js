@@ -1,22 +1,21 @@
 import { configureStore } from '@reduxjs/toolkit'
-// import { postsAPI } from "./api/postsApi.js";
-// import { categoriesAPI } from "./api/categoriesApi.js";
 import { productsAPI } from "./api/productsAPI.js";
+import { cartAPI } from "./api/cartAPI.js";
+import { faqAPI } from "./api/faqAPI.js";
 import cartReducer from './slices/cartSlice';
 
 const store = configureStore({
     reducer: {
-        // [postsAPI.reducerPath]: postsAPI.reducer,
-        // [categoriesAPI.reducerPath]: categoriesAPI.reducer,
         [productsAPI.reducerPath]: productsAPI.reducer,
+        [cartAPI.reducerPath]: cartAPI.reducer,
+        [faqAPI.reducerPath]: faqAPI.reducer,
         cart: cartReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(
-            // postsAPI.middleware,
-            // categoriesAPI.middleware,
+            cartAPI.middleware,
             productsAPI.middleware,
+            faqAPI.middleware,
         )
 })
-
 export default store
