@@ -1,6 +1,33 @@
 
+
+.shop_button {
+  position: relative;
+  text-transform: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 12px;
+    height: 7px;
+    background-image: url("@assets/header/shopArrow.svg");
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+    pointer-events: none;
+  }
+
+  &.active::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+
+
+
 .shop_category_list {
-  // Нам нужно применить стили к внутреннему элементу Paper
+
   .MuiPaper-root {
     max-height: 360px;
     overflow-y: scroll !important;

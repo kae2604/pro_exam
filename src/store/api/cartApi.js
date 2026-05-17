@@ -1,25 +1,35 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import {BASE_URL} from "@constants/API.js";
+import { baseAPI } from "./baseAPI";
 
-export const cartAPI = createApi({
-    reducerPath: 'cartApi',
-    baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+export const cartAPI = baseAPI.injectEndpoints({
     endpoints: (build) => ({
         applyPromoCode: build.mutation({
             query: (promoCode) => ({
                 url: '/products/add',  // only as test
                 method: 'POST',
                 body: {
-                    title: `Promo Verification: ${promoCode}`, // Серверу нужен title — даем его
-                    couponCode: promoCode // Передаем сам код для наглядности в Network
+                    title: `Promo Verification: ${promoCode}`,
+                    couponCode: promoCode
                 }
             }),
         }),
-    })
+        createOrder: build.mutation({
+            query: (orderData) => ({
+                url: '/products/add', // only as test
+                method: 'POST',
+                body: {
+                    title: 'Order Checkout',
+                    ...orderData
+                }
+            }),
+            invalidatesTags: ['Product'],
+        }),
+    }),
+    overrideExisting: false,
 })
 
 
 export const {
     useApplyPromoCodeMutation,
+    useCreateOrderMutation,
 } = cartAPI;
 

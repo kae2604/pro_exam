@@ -1,15 +1,55 @@
 .brandsList {
   background-color: #000000;
+  padding: 45px 0;
+  overflow: hidden;
+  width: 100%;
   margin-bottom: 72px;
 }
-.brandsList .brandsList_container {
-  height: 122px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.brandsList .brandsList_container span {
+.brandsList .brandsList_loading {
   color: #fff;
+  text-align: center;
+  background-color: #000;
+}
+.brandsList .brandsList_marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+}
+.brandsList .brandsList_marquee:hover .brandsList_track {
+  animation-play-state: paused;
+}
+.brandsList .brandsList_track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  animation: marqueeScroll 250s linear infinite;
+  will-change: transform;
+}
+.brandsList .brandsList_track .brand_item {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0 40px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.brandsList .brandsList_track .brand_item:hover {
+  color: #ffc107;
+  transform: scale(1.05);
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /*# sourceMappingURL=brandsList.css.map */

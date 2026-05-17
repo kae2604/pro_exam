@@ -1,0 +1,47 @@
+
+.filterSortedBy_wrapper{
+  max-width: 300px;
+  width: 100%;
+  padding-left: 30px;
+
+  .filterSortedBy_button {
+    position: relative;
+    text-transform: none;
+    padding-right: 18px !important;
+    display: flex;
+    border: none;
+    background: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 12px;
+      height: 7px;
+      background-image: url("@assets/header/shopArrow.svg");
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+      transition: transform 0.2s ease;
+      pointer-events: none;
+    }
+
+    &.active::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    span{
+      &:first-of-type{
+        font-weight: 400;
+        font-size: 16px ;
+        color: rgba(0, 0, 0, 0.6);
+        padding-right: 18px;
+      }
+      &:nth-of-type(2){
+        font-weight: 500;
+        font-size: 16px;
+        color: #000;
+      }
+    }
+  }
+}

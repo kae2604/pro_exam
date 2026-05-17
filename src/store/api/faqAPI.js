@@ -1,26 +1,14 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import {BASE_URL} from "@constants/API.js";
+import { baseAPI } from "./baseAPI";
 
-export const faqAPI = createApi({
-    reducerPath: 'faqAPI',
-    baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+export const faqAPI = baseAPI.injectEndpoints({
     endpoints: (build) => ({
         getFaqs: build.query({
-            query: () => '/posts?limit=10&select=id,title,body',
+            query: (skipValue) => `/posts?limit=10&skip=${skipValue}&select=id,title,body`
         })
     })
 })
 
-
 export const {
     useGetFaqsQuery,
-    useGetProductsByCategoryQuery,
-    useGetProductByIdQuery,
-    useGetProductImagesByIdQuery,
-    useGetHomeNewArrivalsQuery,
-    useGetHomeTopSellingQuery,
-    useGetAllProductsQuery,
-    useLazyGetUsersQuery,
-    useLazyGetUserByIdQuery
 } = faqAPI;
 

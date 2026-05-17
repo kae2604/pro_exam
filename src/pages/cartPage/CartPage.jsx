@@ -1,14 +1,19 @@
 import React from 'react';
 import "./cartPage.scss"
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
-import QuantitySelector from "@components/quantitySelector/index.js";
+import QuantitySelector from "@components/productDetailPage/quantitySelector/index.js";
 import { IconButton } from '@mui/material';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import {decreaseProductQuantity, increaseProductQuantity,removeProductFromCart} from "@store/slices/cartSlice.js";
+import {decreaseProductQuantity, increaseProductQuantity,removeProductFromCart, clearCart} from "@store/slices/cartSlice.js";
 import promo from "@assets/cartPage/promo.svg";
 import cartArrow from "@assets/cartPage/cartArrow.svg";
 import {useApplyPromoCodeMutation} from "@store/api/cartApi.js";
+import {useCreateOrderMutation} from "@store/api/cartApi.js";
+import ModalSuccess from "@components/cartPage/modalSuccess";
+import Button from "@mui/material/Button";
+
 
 const CartPage = () => {
 
@@ -18,7 +23,9 @@ const CartPage = () => {
 
     const [promoValue, setPromoValue] = React.useState('');
     const [discountRate, setDiscountRate] = React.useState(0);
-    const [applyPromo, { isLoading, isSuccess, isError }] = useApplyPromoCodeMutation();
+    const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
+    const [applyPromo, { isLoading: isLoadingApplyPromo, isSuccess: isSuccessApplyPromo, isError: isErrorApplyPromo }] = useApplyPromoCodeMutation();
+    const [createOrder, { isLoading: isLoadingCheckingOut, isSuccess: isSuccessCheckingOut, isError: isErrorCheckingOut }] = useCreateOrderMutation();
     const isCartEmpty = cartItems.length === 0;
     const totalItemsQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
     const totalPositionsQuantity = cartItems.length;
@@ -46,10 +53,33 @@ const CartPage = () => {
         }
     };
 
+    const handleCheckout = async () => {
+        const orderData = {
+            items: cartItems.map(item => ({
+                id: item.id,
+                quantity: item.quantity,
+                price: item.price
+            })),
+            discount: discount,
+            priceWithDiscount: priceWithDiscount,
+            taxRate: taxRate,
+            taxes: taxes,
+            totalPrice: totalPrice,
+        };
+
+        try {
+            await createOrder(orderData).unwrap();
+            setOpenSuccessModal(true);
+            dispatch(clearCart());
+        } catch (err) {
+            console.error("Checkout failed:", err);
+        }
+    };
+
     return (
+
         <div className="container ">
-            <div className="section_line"></div>
-            <div className="cartPage_path">Home</div>
+            <ModalSuccess openSuccessModal={openSuccessModal}/>
             <h2 className="cartPage_title">Your cart</h2>
             <section className="cartPage_container">
                 <div className="cartPage_container_productList">
@@ -57,12 +87,11 @@ const CartPage = () => {
                         <div className="cartPage_productList_empty">
                             <p >Your cart is empty.</p>
                             <p>You have not added any products yet.</p>
-                            <Link to="/products/category"
-                                  className="cartPage_return_btn">
-                                <button >
+                                <Button component={Link}
+                                        to="/category"
+                                        className="cartPage_return_btn">
                                     Return to Shop
-                                </button>
-                            </Link>
+                                </Button>
                         </div>
                         ) : (
                         cartItems.map((item) => (
@@ -95,7 +124,7 @@ const CartPage = () => {
                                     <IconButton
                                         onClick={() => dispatch(removeProductFromCart(item.id))}
                                         aria-label="Remove product"
-                                        sx={{ color: '#ff3333' }} // Можно задать цвет прямо здесь
+                                        sx={{ color: '#ff3333' }}
                                     >
                                         <DeleteForeverIcon />
                                     </IconButton>
@@ -134,15 +163,15 @@ const CartPage = () => {
                                    placeholder="Add promo code"
                                    value={promoValue}
                                    onChange={(e) => setPromoValue(e.target.value)}
-                                   disabled={isCartEmpty || discountRate > 0 || isLoading}
+                                   disabled={isCartEmpty || discountRate > 0 || isLoadingApplyPromo}
                             />
                         </div>
-                        <button type="submit"
+                        <Button type="submit"
                                 onClick={handleApplyPromo}
-                                disabled={isCartEmpty || discountRate > 0 || isLoading || !promoValue.trim()}
+                                disabled={isCartEmpty || discountRate > 0 || isLoadingApplyPromo || !promoValue.trim()}
                         >
                             Apply
-                        </button>
+                        </Button>
                     </div>
 
                     {discountRate > 0  &&(
@@ -162,14 +191,14 @@ const CartPage = () => {
                     <p className="summary_result summary_result_line">Total:
                         <span>${totalPrice.toFixed(2)}</span>
                     </p>
-                    <button className="cartPage_checkout"
+                    <Button className="cartPage_checkout"
                             type="button"
-                            // onClick={handleCheckout}
-                            disabled={isCartEmpty ||  isLoading}
+                            onClick={handleCheckout}
+                            disabled={isCartEmpty || isLoadingApplyPromo || isLoadingCheckingOut}
                     >
                         Go to Checkout
                         <img src={cartArrow} alt="Arrow" />
-                    </button>
+                    </Button>
                 </div>
             </section>
         </div>

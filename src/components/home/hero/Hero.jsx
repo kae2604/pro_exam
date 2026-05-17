@@ -1,18 +1,29 @@
 import React from 'react';
 import "./hero.scss"
-import {useGetProductImagesByIdQuery} from "@store/api/productsAPI.js";
+import { useGetBannerImagesQuery} from "@store/api/productsAPI.js";
+import Button from "@mui/material/Button";
+import {resetSearch, setCategoryFilterActive} from '@store/slices/categoryFiltersSlice.js';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 const Hero = () => {
 
-    const { data: motorcycle, isLoading: l1 } = useGetProductImagesByIdQuery(113);
-    const { data: watch, isLoading: l2 } = useGetProductImagesByIdQuery(95);
-    const { data: sunglasses, isLoading: l3 } = useGetProductImagesByIdQuery(155);
-    const { data: perfume, isLoading: l4 } = useGetProductImagesByIdQuery(7);
+    const { data: motorcycle, isLoading: l1 } =  useGetBannerImagesQuery(113);
+    const { data: watch, isLoading: l2 } =  useGetBannerImagesQuery(95);
+    const { data: sunglasses, isLoading: l3 } =  useGetBannerImagesQuery(155);
+    const { data: perfume, isLoading: l4 } =  useGetBannerImagesQuery(7);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     if (l1 || l2 || l3 || l4) return <div className="container">Loading...</div>;
     if (!motorcycle || !watch || !sunglasses || !perfume) return null;
 
-    console.log('zzzzz', motorcycle);
+    const handleGoToAll = () => {
+        dispatch(setCategoryFilterActive('default'));
+        dispatch(resetSearch());
+        navigate("/category", { state: { crumbLabel: 'All Products' } });
+    };
 
     return (
         <section className="hero">
@@ -20,7 +31,10 @@ const Hero = () => {
                     <div className="hero_left">
                         <h1>Find the product , you need</h1>
                         <p className="hero_left_description">Explore our extensive range of thoughtfully selected products, created to suit your everyday needs and bring convenience, quality, and variety into your life.</p>
-                        <button>Shop Now</button>
+                        <Button variant="contained"
+                                onClick={() => handleGoToAll()}>
+                            Shop Now
+                        </Button>
                         <div className="hero_left_bottom">
                             <div>
                                 <h3>200 +</h3>
@@ -45,7 +59,6 @@ const Hero = () => {
                     </div>
                 </div>
         </section>
-
     );
 };
 

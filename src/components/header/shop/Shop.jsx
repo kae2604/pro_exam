@@ -5,40 +5,53 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import {useGetCategoriesQuery} from "@store/api/productsApi.js";
 import "./shop.scss"
+import {resetSearch, setCategoryFilterActive} from "@store/slices/categoryFiltersSlice.js";
+import {useDispatch} from "react-redux";
 
 
 const Shop = () => {
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
         setAnchorEl(null);
     };
-
-    const navigate = useNavigate();
-
-    const handleCategoryClick = (path) => {
-        navigate(path);
+    const handleCategoryClick = (path, subCategoryLabel) => {
+        navigate(path, {
+            state: {
+                crumbLabel: subCategoryLabel
+            }
+        });
         handleClose();
+        dispatch(setCategoryFilterActive('default'));
+        dispatch(resetSearch());
     };
 
     const { data: categoriesList } = useGetCategoriesQuery();
-    console.log(categoriesList)
-
 
     return (
         <div>
             <Button
                 className={`menu_list_item shop_button ${open ? 'active' : ''}`}
                 sx={{
-                    '&::after': {
-                        textTransform: 'none',
-                        color: '#000',
-                        transform: open ? 'translateY(-50%) rotate(180deg)' : 'translateY(-50%)'
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    color: '#000',
+                    textTransform: 'none',
+                    paddingRight: '16px',
+                    minWidth: 0,
+                    fontFamily: 'inherit',
+                    '&:hover': {
+                        backgroundColor: 'transparent',
                     }
                 }}
+                disableRipple
                 id="basic-button"
                 aria-controls={open ? 'basic-menu' : undefined}
                 aria-haspopup="true"
@@ -53,14 +66,14 @@ const Shop = () => {
                 onClose={handleClose}
                 className="shop_category_list">
 
-                <MenuItem onClick={() => handleCategoryClick('/products/category')}>
+                <MenuItem onClick={() => handleCategoryClick('/category', 'All Products')}>
                     All Products
                 </MenuItem>
                 {categoriesList?.map((category) => (
                     <MenuItem
                         className="category_item"
                         key={category.slug}
-                        onClick={() => handleCategoryClick(`/products/category/${category.slug}`)}>
+                        onClick={() => handleCategoryClick(`/category/${category.slug}`, category.name)}>
                         {category.name}
                     </MenuItem>
                 ))}

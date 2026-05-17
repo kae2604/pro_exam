@@ -6,76 +6,36 @@ import Shop from "./shop/index.js";
 import cart from '@assets/header/cart.svg';
 import login from '@assets/header/login.svg';
 import { useSelector } from 'react-redux';
-
-
-
-
-import { styled, alpha } from '@mui/material/styles';
+import { useDispatch } from 'react-redux';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import mailIcon from "@assets/footer/mailIcon.svg";
-
-
-const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    width: '100%',
-    maxWidth: '577px',
-    flexShrink: 0,
-
-    borderRadius: '24px',
-    border: '1px solid #d9d9d9',
-    backgroundColor: '#f0f0f0',
-    marginLeft: 0,
-    '&:hover': {
-        backgroundColor: '#ffffff',
-    },
-    [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(1),
-    },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: '#000000',
-    width: '100%',
-    '& .MuiInputBase-input': {
-        padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        paddingRight: theme.spacing(2),
-        transition: theme.transitions.create('width'),
-        [theme.breakpoints.up('sm')]: {
-        },
-    },
-}));
-
+import {resetSearch, setCategoryFilterActive} from "@store/slices/categoryFiltersSlice.js";
+import SearchHeader from "./searchHeader";
 
 const Header = ()=> {
+
+    const dispatch = useDispatch();
 
     const cartItems = useSelector((state) => state.cart.items);
     const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
+    const handleGoToCategory = (filter) => {
+        dispatch(setCategoryFilterActive(filter));
+        dispatch(resetSearch());
+    };
+
+    const handleLogoClick = () => {
+        sessionStorage.setItem('breadcrumbs_referer_path', '/')
+    };
+
     return (
-        <AppBar
-                component="header"
+        <AppBar component="header"
                 className="header"
                 position="fixed"
-                elevation={0}
-                sx={{ backgroundColor: '#ffffff', color: '#888' }}>
+                elevation={0}>
+
             <div className="container">
                 <Toolbar
                     disableGutters
@@ -84,6 +44,7 @@ const Header = ()=> {
                         padding: '24px 0'
                     }}
                     className="header_container">
+
                     <div className="header_container_left">
                         <IconButton
                             size="large"
@@ -93,30 +54,46 @@ const Header = ()=> {
                             <MenuIcon />
                         </IconButton>
 
-                        <Link to="/">
+                        <Link to="/"
+                              onClick={handleLogoClick}>
                             <img src={logo} alt="logo"/>
                         </Link>
 
                         <nav>
                             <ul className="menu_list">
-                                <li className="menu_list_item"><Shop/></li>
-                                <li className="menu_list_item"><Link to="/onSale">On Sale</Link></li>
-                                <li className="menu_list_item"><Link to="/newArrivals">New Arrivals</Link></li>
-                                <li className="menu_list_item"><Link to="/brands">Brands</Link></li>
+                                <li><Shop/></li>
+                                <li className="menu_list_item">
+                                    <Link
+                                        to="/category"
+                                        state={{ crumbLabel: 'On Sale' }}
+                                        onClick={() => handleGoToCategory('sale')}
+                                    >
+                                        On Sale
+                                    </Link>
+                                </li>
+                                <li className="menu_list_item">
+                                    <Link to="/category"
+                                          state={{ crumbLabel: 'New Arrivals' }}
+                                          onClick={() => handleGoToCategory('arrivals')}
+                                    >
+                                        New Arrivals
+                                    </Link>
+                                </li>
+                                <li className="menu_list_item">
+                                    <Link to="/category"
+                                          state={{ crumbLabel: 'Brands' }}
+                                          onClick={() => handleGoToCategory('brand')}
+                                    >
+                                        Brands
+                                    </Link>
+                                </li>
                             </ul>
                         </nav>
                     </div>
 
                     <div className="header_container_right">
-                        <Search className="header_search" sx={{ flexGrow: 1, maxWidth: 577 }}>
-                            <SearchIconWrapper>
-                                <SearchIcon />
-                            </SearchIconWrapper>
-                            <StyledInputBase
-                                placeholder="Search for products…"
-                                inputProps={{ 'aria-label': 'search'}}
-                            />
-                        </Search>
+
+                        <SearchHeader/>
 
                         <Link to={`/cart`}>
                             <div className="header_cart_wrapper">
@@ -130,7 +107,6 @@ const Header = ()=> {
                                 </div>
                             </div>
                         </Link>
-
                         <img className="header_icon_login" src={login} alt="Icon of login" />
                     </div>
                 </Toolbar>

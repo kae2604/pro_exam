@@ -1,9 +1,9 @@
 import Hero from "@components/home/hero";
 import BrandsList from "@components/home/brandsList";
-import NewArrivals from "@components/home/newArrivals";
-import TopSelling from "@components/home/topSelling";
+import NewArrivalsHome from "@components/home/newArrivalsHome";
+import TopRatingHome from "@components/home/topRatingHome";
 import Categories from "@components/home/categories";
-import Reviews from "@components/home/reviews";
+import ReviewsHome from "@components/home/reviewsHome";
 
 
 const HomePage = () => {
@@ -13,10 +13,10 @@ const HomePage = () => {
         <div>
             <Hero/>
             <BrandsList/>
-            <NewArrivals/>
-            <TopSelling/>
+            <NewArrivalsHome/>
+            <TopRatingHome/>
             <Categories/>
-            <Reviews/>
+            <ReviewsHome/>
         </div>
     )
 };

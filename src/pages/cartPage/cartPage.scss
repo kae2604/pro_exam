@@ -22,23 +22,26 @@
 
     .cartPage_productList_empty{
       text-align: center;
+      padding: 50px;
 
       p{
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         font-weight: 500;
         font-size: 18px;
         color: #000;
       }
-      button{
+      .cartPage_return_btn{
         border-radius: 62px;
         padding: 12px 16px;
+        margin: 0 auto;
         width: 50%;
-        height: 48px;
         background: #000;
         font-weight: 500;
         font-size: 16px;
         color: #fff;
         border: none;
+        display: block;
+        text-transform: none !important;
 
         &:hover:not(:disabled) {
           background-color: rgba(0, 0, 0, 0.8);
@@ -50,10 +53,6 @@
         }
       }
     }
-
-
-
-
 
     .cart_item_row{
       display: grid;
@@ -150,13 +149,11 @@
     }
   }
 
-
   .cartPage_container_summary{
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 20px 24px;
     align-self: start;
-    //grid-column: 1 / -1;
 
     h3{
       font-weight: 700;
@@ -243,6 +240,7 @@
         font-size: 16px;
         color: #fff;
         border: none;
+        text-transform: none !important;
 
         &:hover:not(:disabled) {
           background-color: rgba(0, 0, 0, 0.8);
@@ -270,6 +268,7 @@
      color: #fff;
      position: relative;
      border: none;
+     text-transform: none !important;
 
      &:hover:not(:disabled) {
        background-color: rgba(0, 0, 0, 0.8);

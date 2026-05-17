@@ -1,48 +1,98 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import {BASE_URL} from "@constants/API.js";
+import { baseAPI } from "./baseAPI";
 
-export const productsAPI = createApi({
-    reducerPath: 'productsAPI',
-    baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+export const productsAPI = baseAPI.injectEndpoints({
     endpoints: (build) => ({
+
         getCategories: build.query({
             query: () => '/products/categories',
         }),
-        getAllProducts: build.query({
-            query: () => '/products?limit=0&select=title,price,discountPercentage,thumbnail,rating',
+
+        getProductsForHomeCategory: build.query({
+            query: (category) => {
+                const url = "/products";
+                return{
+                    url: url,
+                    params: {
+                        limit:0,
+                        select: 'category,images'
+                    },
+                };
+            },
         }),
+
         getProductsByCategory: build.query({
-            query: (slug) => `/products/category/${slug}?select=title,price,discountPercentage,thumbnail,rating`,
+            query: ({category, limit, skip, sortBy, order, id}) => {
+                const url = category ? `/products/category/${category}` : '/products';
+                return{
+                    url: url,
+                    params: {
+                        limit,
+                        skip,
+                        sortBy,
+                        order,
+                        id,
+                        select: 'title,price,discountPercentage,thumbnail,rating'
+                    },
+                };
+            },
+            providesTags: ['Product'],
         }),
-        getSameProductsByCategory: build.query({
-            query: ({category, limit}) => `/products/category/${category}?limit=${limit}&select=title,price,discountPercentage,thumbnail,rating`,
+
+        getProductsBySearch: build.query({
+            query: ({search, limit, skip, sortBy, order, id}) => {
+                const url = `/products/search?q=${search}`;
+                return{
+                    url: url,
+                    params: {
+                        limit,
+                        skip,
+                        sortBy,
+                        order,
+                        id,
+                        select: 'title,price,discountPercentage,thumbnail,rating'
+                    },
+                };
+            },
+            providesTags: ['Product'],
         }),
+
+        getProductsWithParams: build.query({
+            query: ({limit, sortBy, order, select}) => {
+                const url = '/products';
+                return{
+                    url: url,
+                    params: {
+                        limit,
+                        sortBy,
+                        order,
+                        select
+                    },
+                };
+            },
+        }),
+
         getProductById: build.query({
             query: (productId) => `/products/${productId}`,
+            providesTags: (result, error, productId) => [{ type: 'Product', id: productId }],
         }),
-        getProductImagesById: build.query({
-            query: (productId) => `/products/${productId}?select=images`,
-        }),
-        getHomeNewArrivals: build.query({
-            query: () => '/products?limit=4&sortBy=id&order=desc&select=title,price,discountPercentage,thumbnail,rating',
-        }),
-        getHomeTopSelling: build.query({
-            query: () => '/products?limit=4&sortBy=rating&order=desc&select=title,price,discountPercentage,thumbnail,rating',
-        }),
-    })
-})
 
+        getBannerImages: build.query({
+            query: (id) => ({
+                url: `/products/${id}`,
+                params: { select: 'images' }
+            }),
+        }),
+    }),
+    overrideExisting: false,
+})
 
 export const {
     useGetCategoriesQuery,
     useGetProductsByCategoryQuery,
-    useGetSameProductsByCategoryQuery,
+    useGetProductsForHomeCategoryQuery,
+    useGetProductsBySearchQuery,
+    useGetProductsWithParamsQuery,
     useGetProductByIdQuery,
-    useGetProductImagesByIdQuery,
-    useGetHomeNewArrivalsQuery,
-    useGetHomeTopSellingQuery,
-    useGetAllProductsQuery,
-    useLazyGetUsersQuery,
-    useLazyGetUserByIdQuery
+    useGetBannerImagesQuery,
 } = productsAPI;
 

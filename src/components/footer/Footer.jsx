@@ -12,6 +12,7 @@ import fb from '@assets/footer/socialMedia/fb.svg';
 import instagram from '@assets/footer/socialMedia/instagram.svg';
 import git from '@assets/footer/socialMedia/git.svg';
 import mailIcon from '@assets/footer/mailIcon.svg';
+import FOOTER_DATA from './footerLinks.js';
 
 
 
