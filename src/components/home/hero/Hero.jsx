@@ -1,8 +1,9 @@
 import React from 'react';
 import "./hero.scss"
-import { useGetBannerImagesQuery} from "@store/api/productsAPI.js";
+import { useGetBannerImagesQuery} from "@store/api/commonAPI.js";
 import Button from "@mui/material/Button";
 import {resetSearch, setCategoryFilterActive} from '@store/slices/categoryFiltersSlice.js';
+import {useGetRandomQuoteQuery} from "@store/api/commonAPI.js";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
@@ -12,6 +13,7 @@ const Hero = () => {
     const { data: watch, isLoading: l2 } =  useGetBannerImagesQuery(95);
     const { data: sunglasses, isLoading: l3 } =  useGetBannerImagesQuery(155);
     const { data: perfume, isLoading: l4 } =  useGetBannerImagesQuery(7);
+    const { data: quote, isLoading: isLoadingQuote} = useGetRandomQuoteQuery();
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -30,7 +32,7 @@ const Hero = () => {
                 <div className="container heroContainer">
                     <div className="hero_left">
                         <h1>Find the product , you need</h1>
-                        <p className="hero_left_description">Explore our extensive range of thoughtfully selected products, created to suit your everyday needs and bring convenience, quality, and variety into your life.</p>
+                        <p className="hero_left_description">{quote?.quote}</p>
                         <Button variant="contained"
                                 onClick={() => handleGoToAll()}>
                             Shop Now

@@ -76,12 +76,7 @@ export const productsAPI = baseAPI.injectEndpoints({
             providesTags: (result, error, productId) => [{ type: 'Product', id: productId }],
         }),
 
-        getBannerImages: build.query({
-            query: (id) => ({
-                url: `/products/${id}`,
-                params: { select: 'images' }
-            }),
-        }),
+
     }),
     overrideExisting: false,
 })
@@ -93,6 +88,5 @@ export const {
     useGetProductsBySearchQuery,
     useGetProductsWithParamsQuery,
     useGetProductByIdQuery,
-    useGetBannerImagesQuery,
 } = productsAPI;
 

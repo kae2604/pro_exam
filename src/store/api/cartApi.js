@@ -4,7 +4,7 @@ export const cartAPI = baseAPI.injectEndpoints({
     endpoints: (build) => ({
         applyPromoCode: build.mutation({
             query: (promoCode) => ({
-                url: '/products/add',  // only as test
+                url: '/http/200',  // only as test
                 method: 'POST',
                 body: {
                     title: `Promo Verification: ${promoCode}`,
@@ -14,7 +14,7 @@ export const cartAPI = baseAPI.injectEndpoints({
         }),
         createOrder: build.mutation({
             query: (orderData) => ({
-                url: '/products/add', // only as test
+                url: '/products/add',
                 method: 'POST',
                 body: {
                     title: 'Order Checkout',

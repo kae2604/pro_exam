@@ -52,32 +52,6 @@
         flex: 1;
         min-width: 0;
       }
-
-      .header_cart_wrapper{
-        margin-left: 40px;
-
-        .cart_icon_container{
-          position: relative;
-
-          .cart_badge{
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            border-radius: 50%;
-            background-color: red;
-            color: #fff;
-            width: 20px;
-            height: 20px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-          }
-        }
-      }
-
-      .header_icon_login{
-        margin-left: 14px;
-      }
     }
   }
 }

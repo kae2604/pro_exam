@@ -3,37 +3,37 @@ export  const FOOTER_DATA = {
     company: {
         title: "Company",
         links: [
-            { text: "About", to: "/" },
-            { text: "Features", to: "/" },
-            { text: "Works", to: "/" },
-            { text: "Career", to: "/" }
+            { text: "About", to: "/underConstruction"  },
+            { text: "Features", to: "/underConstruction"  },
+            { text: "Works", to: "/underConstruction" },
+            { text: "Career", to: "/underConstruction"  }
         ]
     },
     help: {
         title: "Help",
         links: [
-            { text: "Customer Support", to: "/" },
-            { text: "Delivery details", to: "/" },
-            { text: "Terms and Conditions", to: "/" },
-            { text: "Privacy Policy", to: "/" }
+            { text: "Customer Support", to: "/underConstruction" },
+            { text: "Delivery details", to: "/underConstruction" },
+            { text: "Terms and Conditions", to: "/underConstruction"  },
+            { text: "Privacy Policy", to: "/underConstruction"  }
         ]
     },
     faq: {
         title: "FAQ",
         links: [
-            { text: "Account", to: "/" },
-            { text: "Manage Deliveries", to: "/" },
-            { text: "Orders", to: "/" },
-            { text: "Payments", to: "/" }
+            { text: "Account", to: "/underConstruction"  },
+            { text: "Manage Deliveries", to: "/underConstruction"  },
+            { text: "Orders", to: "/underConstruction"  },
+            { text: "Payments", to: "/underConstruction"  }
         ]
     },
     resources: {
         title: "Resources",
         links: [
-            { text: "Free Books", to: "/" },
-            { text: "Development Tutorial", to: "/" },
-            { text: "How to - Blog", to: "/" },
-            { text: "Youtube Playlist", to: "/" }
+            { text: "Free Books", to: "/underConstruction"  },
+            { text: "Development Tutorial", to: "/underConstruction" },
+            { text: "How to - Blog", to: "/underConstruction" },
+            { text: "Youtube Playlist", to: "/underConstruction"  }
         ]
     }
 };

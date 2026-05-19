@@ -143,6 +143,7 @@ const CartPage = () => {
                         ))
                     )}
                 </div>
+
                 <div className="cartPage_container_summary">
                     <h3>Order Summary</h3>
                     <p className="summary_result">Quantity of Positions :

@@ -24,9 +24,7 @@ const Shop = () => {
     };
     const handleCategoryClick = (path, subCategoryLabel) => {
         navigate(path, {
-            state: {
-                crumbLabel: subCategoryLabel
-            }
+            state: {crumbLabel: subCategoryLabel}
         });
         handleClose();
         dispatch(setCategoryFilterActive('default'));

@@ -4,6 +4,7 @@ import MainLayout from "@/layouts/MainLayout.jsx";
 import CategoryPage from "@pages/categoryPage";
 import ProductDetailPage from "@pages/productDetailPage"
 import CartPage from "@pages/cartPage"
+import UnderConstruction from "@components/underConstruction/index.js";
 
 
 
@@ -16,6 +17,7 @@ import CartPage from "@pages/cartPage"
             {path: "category", element: <CategoryPage/>},
             {path: "products/:id", element: <ProductDetailPage/>},
             {path: "cart", element: <CartPage/>},
+            {path: "underConstruction", element: <UnderConstruction/>},
         ]
     }
 ]);

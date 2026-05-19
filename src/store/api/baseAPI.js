@@ -4,6 +4,6 @@ import { BASE_URL } from "@constants/API.js";
 export const baseAPI = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
-    tagTypes: ['Product'],
+    tagTypes: ['Product', 'Quote'],
     endpoints: () => ({}),
 });

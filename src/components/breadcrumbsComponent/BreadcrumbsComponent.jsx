@@ -53,8 +53,7 @@ const BreadcrumbsComponent = () => {
             const finalLabel = labelFromState ? labelFromState : (category ? formatLabel(category) : 'All Products');
 
             crumbs.push(
-                <Typography key="cat-label"
-                            sx={{ color: 'text.primary' }}>
+                <Typography key="cat-label" sx={{ color: 'text.primary' }}>
                     {finalLabel}
                 </Typography>
             );
@@ -65,6 +64,7 @@ const BreadcrumbsComponent = () => {
             const historyData = [{ label: finalLabel, path: location.pathname }];
             sessionStorage.setItem('prev_breadcrumbs_list', JSON.stringify(historyData));
         }
+
         else if (id) {
             const savedCatalogLabel = sessionStorage.getItem('last_catalog_label') || 'All Products';
             const savedCatalogPath = sessionStorage.getItem('last_catalog_path') || '/category';
@@ -84,8 +84,7 @@ const BreadcrumbsComponent = () => {
 
             const productTitle = product?.title || 'Loading...';
             crumbs.push(
-                <Typography key="product-title"
-                            sx={{ color: 'text.primary', fontWeight: 500 }}>
+                <Typography key="product-title" sx={{ color: 'text.primary', fontWeight: 500 }}>
                     {productTitle}
                 </Typography>
             );
@@ -96,12 +95,25 @@ const BreadcrumbsComponent = () => {
             ];
             sessionStorage.setItem('prev_breadcrumbs_list', JSON.stringify(historyData));
         }
+
+        else {
+            const labelFromState = location.state?.crumbLabel;
+            const finalLabel = labelFromState ? labelFromState : formatLabel(location.pathname.replace('/', ''));
+
+            crumbs.push(
+                <Typography key="generic-label" sx={{ color: 'text.primary' }}>
+                    {finalLabel}
+                </Typography>
+            );
+
+            const historyData = [{ label: finalLabel, path: location.pathname }];
+            sessionStorage.setItem('prev_breadcrumbs_list', JSON.stringify(historyData));
+        }
     }
 
     else if (location.pathname.includes('/cart')) {
         const refererPath = sessionStorage.getItem('breadcrumbs_referer_path');
         const savedPaths = JSON.parse(sessionStorage.getItem('prev_breadcrumbs_list') || "[]");
-
         const isComingFromHome = !refererPath || refererPath === '/';
 
         if (!isComingFromHome && savedPaths.length > 0) {
@@ -132,8 +144,7 @@ const BreadcrumbsComponent = () => {
         <div className="container">
             <div className="section_line"></div>
             <div className="breadcrumbsComponent_container">
-                <MUIBreadcrumbs separator={<NavigateNextIcon fontSize="small" />}
-                                aria-label="breadcrumb">
+                <MUIBreadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
                     {crumbs}
                 </MUIBreadcrumbs>
             </div>
