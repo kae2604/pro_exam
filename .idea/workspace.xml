@@ -5,23 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f910a1bc-f643-4de7-a0f3-a68c631c8192" name="Changes" comment="made LoginUser">
-      <change afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageProductList/CartPagePproductList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageProductList/CartPageProductList.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageProductList/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/logoMain/LogoMain.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/logoMain/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/loginUser/LoginUser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/loginUser/LoginUser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/categories/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/categories/Categories.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/categories/categories.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/categories/categories.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/categories/categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/categories/categories.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/hero/Hero.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/hero/Hero.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/hero/hero.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/hero/hero.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/hero/hero.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/hero/hero.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/hero/hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/hero/hero.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageSummary/CartPageSummary.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageSummary/cartPageSummary.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageSummary/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartPage/cartPageProductList/CartPagePproductList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageProductList/CartPagePproductList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartPage/cartPageProductList/CartPageProductList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageProductList/CartPageProductList.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/cartPage/CartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cartPage/CartPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/slices/loginUserSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cartPage/cartPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cartPage/cartPage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homePage/HomePage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +111,7 @@
       <updated>1776876794294</updated>
       <workItem from="1776876795355" duration="1585000" />
       <workItem from="1776878416485" duration="306687000" />
-      <workItem from="1778500255146" duration="239027000" />
+      <workItem from="1778500255146" duration="243697000" />
     </task>
     <task id="LOCAL-00001" summary="Add ProductDetailPage">
       <option name="closed" value="true" />
@@ -162,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779190666605</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="made LoginUser">
+      <option name="closed" value="true" />
+      <created>1779206261199</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1779206261199</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,15 +196,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/pages/cartPage/CartPage.jsx</url>
-          <line>50</line>
+          <line>44</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/pages/cartPage/CartPage.jsx</url>
-          <line>24</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

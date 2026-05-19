@@ -1,18 +1,12 @@
 import React from 'react';
 import "./cartPage.scss"
-import { Link } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import QuantitySelector from "@components/productDetailPage/quantitySelector/index.js";
-import { IconButton } from '@mui/material';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import {decreaseProductQuantity, increaseProductQuantity,removeProductFromCart, clearCart} from "@store/slices/cartSlice.js";
-import promo from "@assets/cartPage/promo.svg";
-import cartArrow from "@assets/cartPage/cartArrow.svg";
 import {useApplyPromoCodeMutation} from "@store/api/cartApi.js";
 import {useCreateOrderMutation} from "@store/api/cartApi.js";
 import ModalSuccess from "@components/cartPage/modalSuccess";
-import Button from "@mui/material/Button";
 import CartPageProductList from "@components/cartPage/cartPageProductList/index.js";
+import CartPageSummary from "@components/cartPage/cartPageSummary/index.js";
 
 
 const CartPage = () => {
@@ -87,145 +81,38 @@ const CartPage = () => {
     };
 
     return (
-
         <div className="container ">
             <ModalSuccess openSuccessModal={openSuccessModal}/>
             <h2 className="cartPage_title">Your cart</h2>
             <section className="cartPage_container">
-
-                {/*<CartPageProductList/>*/}
-
-                <div className="cartPage_container_productList">
-                    {isCartEmpty ? (
-                        <div className="cartPage_productList_empty">
-                            <p >Your cart is empty.</p>
-                            <p>You have not added any products yet.</p>
-                                <Button component={Link}
-                                        to="/category"
-                                        className="cartPage_return_btn">
-                                    Return to Shop
-                                </Button>
-                        </div>
-                        ) : (
-                        cartItems.map((item) => (
-                            <div key={item.id}
-                                 className="cart_item_row">
-                                <Link to={`/products/${item.id}`}>
-                                    <img src={item.image} alt={item.title} />
-                                </Link>
-
-                                <div className="cart_item_description">
-                                    <Link to={`/products/${item.id}`}>
-                                        <h4>{item.title}</h4>
-                                    </Link>
-                                    <p>{item.brand}</p>
-                                    <div>
-                                        <span>Quantity: </span>
-                                        <span>{item.quantity}</span>
-                                    </div>
-                                    <div>
-                                        <span>Price: </span>
-                                        <span>{item.price} $</span>
-                                    </div>
-                                    <div>
-                                        <span>Subtotal: </span>
-                                        <span className="item_description_subtotal">{item.price * item.quantity} $</span>
-                                    </div>
-                                </div>
-
-                                <div className="cartPage_productList_right">
-                                    <IconButton
-                                        onClick={() => dispatch(removeProductFromCart(item.id))}
-                                        aria-label="Remove product"
-                                        sx={{ color: '#ff3333' }}
-                                    >
-                                        <DeleteForeverIcon />
-                                    </IconButton>
-
-                                    <QuantitySelector
-                                        className="cartPage_productList_quantitySelector"
-                                        quantity={item.quantity}
-                                        onIncrement={() => dispatch(increaseProductQuantity(item.id))}
-                                        onDecrement={() => dispatch(decreaseProductQuantity(item.id))}
-                                        isMinusDisabled={item.quantity <= 1}
-                                        isPlusDisabled={item.quantity >= item.stockAmount}
-                                        isInStock={true}
-                                    />
-                                </div>
-                            </div>
-                        ))
-                    )}
-                </div>
-
-                <div className="cartPage_container_summary">
-                    <h3>Order Summary</h3>
-                    <p className="summary_result">Quantity of Positions :
-                        <span>{totalPositionsQuantity}</span>
-                    </p>
-                    <p className="summary_result">Quantity of Items :
-                        <span>{totalItemsQuantity} </span>
-                    </p>
-                    <div className="section_line"></div>
-                    <p className="summary_result summary_result_line">Subtotal price:
-                        <span>${subTotalPrice}</span>
-                    </p>
-
-                    <div className="cartPage_promo">
-                        <div className="promo_input_wrapper">
-                            <img src={promo} alt="Promo Icon" />
-                            <input type="text"
-                                   placeholder="Add promo code"
-                                   value={promoValue}
-                                   onChange={(e) => setPromoValue(e.target.value)}
-                                   disabled={isCartEmpty || discountRate > 0 || isLoadingApplyPromo}
-                            />
-                        </div>
-                        <Button type="submit"
-                                onClick={handleApplyPromo}
-                                disabled={isCartEmpty || discountRate > 0 || isLoadingApplyPromo || !promoValue.trim()}
-                        >
-                            Apply
-                        </Button>
-                    </div>
-
-                    {discountRate > 0  &&(
-                        <p className="summary_result">Discount: (- {discountRate} %)
-                            <span className="summary_attention"> -${discount} </span>
-                        </p>
-                    )}
-                    {taxRate > 0 && (
-                        <>
-                            <p className="summary_result">Taxes:
-                                <span className="summary_attention">${taxes.toFixed(2)} </span>
-                            </p>
-                            <p className="taxConditions">* Tax included 20% for orders over $150.</p>
-                        </>
-                    )}
-                    <div className="section_line"></div>
-                    <p className="summary_result summary_result_line">Total:
-                        <span>${totalPrice.toFixed(2)}</span>
-                    </p>
-
-                    {checkoutError && (
-                        <p style={{ color: '#ff3333', textAlign: 'center', marginBottom: '10px' }}>
-                            {checkoutError}
-                        </p>
-                    )}
-
-                    <Button className="cartPage_checkout"
-                            type="button"
-                            onClick={handleCheckout}
-                            disabled={isCartEmpty || isLoadingApplyPromo || isLoadingCheckingOut}
-                    >
-                        Go to Checkout
-                        <img src={cartArrow} alt="Arrow" />
-                    </Button>
-                </div>
+                <CartPageProductList
+                    cartItems={cartItems}
+                    onRemove={(id) => dispatch(removeProductFromCart(id))}
+                    onIncrement={(id) => dispatch(increaseProductQuantity(id))}
+                    onDecrement={(id) => dispatch(decreaseProductQuantity(id))}
+                />
+                <CartPageSummary
+                    totalItemsQuantity={totalItemsQuantity}
+                    totalPositionsQuantity={totalPositionsQuantity}
+                    subTotalPrice={subTotalPrice}
+                    discount={discount}
+                    discountRate={discountRate}
+                    taxRate={taxRate}
+                    taxes={taxes}
+                    totalPrice={totalPrice}
+                    checkoutError={checkoutError}
+                    onApplyPromo={handleApplyPromo}
+                    onCheckout={handleCheckout}
+                    isLoadingApply={isLoadingApplyPromo}
+                    isLoadingCheckout={isLoadingCheckingOut}
+                    isCartEmpty={isCartEmpty}
+                    promoValue={promoValue}
+                    setPromoValue={setPromoValue}
+                />
             </section>
         </div>
     );
 };
-
 export default CartPage;
 
 
