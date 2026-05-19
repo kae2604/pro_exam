@@ -1,6 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import logo from "@assets/logo.svg";
 import "./header.scss";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,12 +8,9 @@ import SearchHeader from "./searchHeader";
 import NavigationHeader from "@components/header/navigationHeader";
 import LoginUser from "@components/header/loginUser";
 import CartHeader from "@components/header/cartHeader/index.js";
+import LogoMain from "@components/logoMain/index.js";
 
 const Header = ()=> {
-
-    const handleLogoClick = () => {
-        sessionStorage.setItem('breadcrumbs_referer_path', '/')
-    };
 
     return (
         <AppBar component="header"
@@ -33,6 +28,7 @@ const Header = ()=> {
                     className="header_container">
 
                     <div className="header_container_left">
+
                         <IconButton
                             size="large"
                             edge="start"
@@ -41,10 +37,7 @@ const Header = ()=> {
                             <MenuIcon />
                         </IconButton>
 
-                        <Link to="/"
-                              onClick={handleLogoClick}>
-                            <img src={logo} alt="logo"/>
-                        </Link>
+                        <LogoMain/>
 
                         <NavigationHeader/>
                     </div>

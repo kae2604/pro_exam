@@ -56,17 +56,35 @@
         display: flex;
         justify-content: space-between;
 
+        .hero_left_info{
+          position: relative;
+          height: 74px;
 
-        h3{
-          font-weight: 700;
-          font-size: 40px;
-          color: #000;
-        }
-        span{
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 138%;
-          color: rgba(0, 0, 0, 0.6);
+          &:nth-of-type(1),
+          &:nth-of-type(2){
+            &:after{
+              content: "";
+              display: block;
+              width: 0;
+              height: 74px;
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              position: absolute;
+              right: -32px;
+              bottom: 6px;
+            }
+          }
+
+          h3{
+            font-weight: 700;
+            font-size: 40px;
+            color: #000;
+          }
+          span{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 138%;
+            color: rgba(0, 0, 0, 0.6);
+          }
         }
       }
     }

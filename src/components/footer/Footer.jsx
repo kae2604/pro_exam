@@ -1,7 +1,5 @@
 import React from 'react';
 import "./footer.scss";
-import {Link} from "react-router-dom";
-import logo from "@assets/logo.svg";
 import visa from '@assets/footer/paymentMethod/visa.svg';
 import masterCard from '@assets/footer/paymentMethod/masterCard.svg';
 import payPal from '@assets/footer/paymentMethod/payPal.svg';
@@ -12,6 +10,7 @@ import FooterList from "@components/footer/footerList";
 import {useGetRandomQuoteQuery} from "@store/api/commonAPI.js";
 import FooterSocialMedia from "@components/footer/footerSocialMedia/index.js";
 import FooterTop from "@components/footer/footerTop/index.js";
+import LogoMain from "@components/logoMain/index.js";
 
 
 const Footer = () => {
@@ -26,10 +25,10 @@ const Footer = () => {
 
                 <div className='footer-container'>
                     <div className='footer-container_left'>
-                        <Link to="/"
-                              className="footer_logo">
-                            <img src={logo} alt="logo"/>
-                        </Link>
+                        <div className="footer_logo">
+                            <LogoMain/>
+                        </div>
+
                         <p>{data?.quote}</p>
 
                         <FooterSocialMedia/>

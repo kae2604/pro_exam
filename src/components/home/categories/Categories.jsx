@@ -28,18 +28,22 @@ const Categories = () => {
         return Object.values(categoriesMap);
     }, [allProductsData]);
 
+    useEffect(() => {
+        uniqueCategoriesWithImages.forEach(cat => {
+            const img = new Image();
+            img.src = cat.image;
+        });
+    }, [uniqueCategoriesWithImages]);
+
     const [randomCategories, setRandomCategories] = useState([]);
 
     useEffect(() => {
         if (uniqueCategoriesWithImages.length === 0) return;
-
         const generateRandomCategories = () => {
             const shuffled = [...uniqueCategoriesWithImages].sort(() => 0.5 - Math.random());
             return shuffled.slice(0, 4);
         };
-
         setRandomCategories(generateRandomCategories());
-
         const interval = setInterval(() => {
             setRandomCategories(generateRandomCategories());
         }, 4000);
@@ -49,9 +53,7 @@ const Categories = () => {
 
     const handleCategoryClick = (categoryName) => {
         navigate(`/category/${categoryName}`,{
-            state: {
-                crumbLabel: categoryName
-            }
+            state: {crumbLabel: categoryName}
         });
         dispatch(setCategoryFilterActive('default'));
         dispatch(resetSearch());
@@ -66,7 +68,7 @@ const Categories = () => {
                         {randomCategories.map((category, index) => {
                             const boxClass = (index === 0 || index === 3) ? 'categoryBoxSmall' : 'categoryBoxBig';
                             return (
-                                <div key={index}
+                                <div key={category?.name}
                                      className={boxClass}
                                      onClick={() => handleCategoryClick(category?.name)}
                                      style={{ backgroundImage: `url(${category?.image})`}}

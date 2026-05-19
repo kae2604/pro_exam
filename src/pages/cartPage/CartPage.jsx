@@ -1,7 +1,6 @@
 import React from 'react';
 import "./cartPage.scss"
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import QuantitySelector from "@components/productDetailPage/quantitySelector/index.js";
 import { IconButton } from '@mui/material';
@@ -13,17 +12,17 @@ import {useApplyPromoCodeMutation} from "@store/api/cartApi.js";
 import {useCreateOrderMutation} from "@store/api/cartApi.js";
 import ModalSuccess from "@components/cartPage/modalSuccess";
 import Button from "@mui/material/Button";
+import CartPageProductList from "@components/cartPage/cartPageProductList/index.js";
 
 
 const CartPage = () => {
 
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.items);
-    console.log("AAAAAAAAAAAAAAAA:", cartItems);
-
     const [promoValue, setPromoValue] = React.useState('');
     const [discountRate, setDiscountRate] = React.useState(0);
     const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
+    const [checkoutError, setCheckoutError] = React.useState("");
     const [applyPromo, { isLoading: isLoadingApplyPromo, isSuccess: isSuccessApplyPromo, isError: isErrorApplyPromo }] = useApplyPromoCodeMutation();
     const [createOrder, { isLoading: isLoadingCheckingOut, isSuccess: isSuccessCheckingOut, isError: isErrorCheckingOut }] = useCreateOrderMutation();
     const isCartEmpty = cartItems.length === 0;
@@ -54,6 +53,16 @@ const CartPage = () => {
     };
 
     const handleCheckout = async () => {
+        const isAuthenticated = !!localStorage.getItem('token');
+
+        if (!isAuthenticated) {
+            setCheckoutError("To place an order, you need to be logged in.");
+            setTimeout(() => setCheckoutError(""), 3000);
+            return;
+        }
+
+        setCheckoutError("");
+
         const orderData = {
             items: cartItems.map(item => ({
                 id: item.id,
@@ -73,6 +82,7 @@ const CartPage = () => {
             dispatch(clearCart());
         } catch (err) {
             console.error("Checkout failed:", err);
+            setCheckoutError("Something went wrong. Please try again.");
         }
     };
 
@@ -82,6 +92,9 @@ const CartPage = () => {
             <ModalSuccess openSuccessModal={openSuccessModal}/>
             <h2 className="cartPage_title">Your cart</h2>
             <section className="cartPage_container">
+
+                {/*<CartPageProductList/>*/}
+
                 <div className="cartPage_container_productList">
                     {isCartEmpty ? (
                         <div className="cartPage_productList_empty">
@@ -192,6 +205,13 @@ const CartPage = () => {
                     <p className="summary_result summary_result_line">Total:
                         <span>${totalPrice.toFixed(2)}</span>
                     </p>
+
+                    {checkoutError && (
+                        <p style={{ color: '#ff3333', textAlign: 'center', marginBottom: '10px' }}>
+                            {checkoutError}
+                        </p>
+                    )}
+
                     <Button className="cartPage_checkout"
                             type="button"
                             onClick={handleCheckout}

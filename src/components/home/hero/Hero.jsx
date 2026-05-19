@@ -38,15 +38,15 @@ const Hero = () => {
                             Shop Now
                         </Button>
                         <div className="hero_left_bottom">
-                            <div>
+                            <div className="hero_left_info">
                                 <h3>200 +</h3>
                                 <span>International Brands</span>
                             </div>
-                            <div>
+                            <div className="hero_left_info">
                                 <h3>2,000 +</h3>
                                 <span>High-Quality Products</span>
                             </div>
-                            <div>
+                            <div className="hero_left_info">
                                 <h3>30,000 +</h3>
                                 <span>Happy Customers</span>
                             </div>
