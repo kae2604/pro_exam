@@ -1,0 +1,21 @@
+.header_cart_wrapper {
+  margin-left: 40px;
+}
+.header_cart_wrapper .cart_icon_container {
+  position: relative;
+}
+.header_cart_wrapper .cart_icon_container .cart_badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=cartHeader.css.map */

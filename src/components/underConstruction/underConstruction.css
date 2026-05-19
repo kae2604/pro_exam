@@ -1,0 +1,16 @@
+.underConstruction_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.underConstruction_container p {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 113%;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: #000;
+  margin: 100px auto 150px;
+}
+
+/*# sourceMappingURL=underConstruction.css.map */

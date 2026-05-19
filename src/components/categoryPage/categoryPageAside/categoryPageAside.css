@@ -1,0 +1,48 @@
+.categoryPage_aside {
+  max-width: 295px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px 24px;
+  align-self: flex-start;
+}
+.categoryPage_aside .categoryPage_aside_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.categoryPage_aside .categoryPage_aside_top h4 {
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+}
+.categoryPage_aside .categoryPage_aside_button {
+  background: #f0f0f0;
+  border-radius: 62px;
+  padding: 10px 20px;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 24px auto;
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+}
+.categoryPage_aside .categoryPage_aside_button:last-of-type {
+  margin-bottom: 0;
+}
+.categoryPage_aside .categoryPage_aside_button._active {
+  background-color: #000;
+  color: #fff;
+}
+.categoryPage_aside .categoryPage_aside_button._active:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+.categoryPage_aside .categoryPage_aside_button:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+/*# sourceMappingURL=categoryPageAside.css.map */

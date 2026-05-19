@@ -1,0 +1,38 @@
+.shop_button {
+  position: relative;
+  text-transform: none;
+}
+.shop_button::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 12px;
+  height: 7px;
+  background-image: url("@assets/header/shopArrow.svg");
+  background-repeat: no-repeat;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease;
+  pointer-events: none;
+}
+.shop_button.active::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.shop_category_list .MuiPaper-root {
+  max-height: 360px;
+  overflow-y: scroll !important;
+}
+.shop_category_list .MuiPaper-root::-webkit-scrollbar {
+  width: 6px;
+  display: block;
+}
+.shop_category_list .MuiPaper-root::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.shop_category_list .MuiPaper-root::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/*# sourceMappingURL=shop.css.map */

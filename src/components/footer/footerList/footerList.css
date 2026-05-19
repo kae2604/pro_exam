@@ -1,0 +1,18 @@
+.footer_list .footer_list-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 113%;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 26px;
+}
+.footer_list .footer_list_item {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 119%;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 26px;
+}
+
+/*# sourceMappingURL=footerList.css.map */

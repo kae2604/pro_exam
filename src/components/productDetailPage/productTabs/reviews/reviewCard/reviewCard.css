@@ -1,0 +1,37 @@
+.reviewCard {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 28px 32px;
+  width: 100%;
+}
+.reviewCard .reviewCard_rating {
+  margin-bottom: 15px;
+}
+.reviewCard h5 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 110%;
+  color: #000;
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+}
+.reviewCard h5 img {
+  position: absolute;
+  right: -30px;
+}
+.reviewCard p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 138%;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 24px;
+}
+.reviewCard span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 138%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/*# sourceMappingURL=reviewCard.css.map */

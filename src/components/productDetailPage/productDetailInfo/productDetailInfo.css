@@ -1,0 +1,74 @@
+.productDetail_info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.productDetail_info h2 {
+  font-weight: 700;
+  font-size: 40px;
+  color: #000;
+}
+.productDetail_info .productDetail_brand {
+  font-weight: 700;
+  font-size: 25px;
+  color: #333;
+}
+.productDetail_info .productRating_box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.productDetail_info .productRating_box .productCard_rating {
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+}
+.productDetail_info .productDetail_description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 138%;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 24px 0;
+}
+.productDetail_info .productDetailPage_status_block {
+  padding-left: 20px;
+}
+.productDetail_info .productDetailPage_status {
+  font-weight: 700;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.productDetail_info .productDetailPage_buttons_block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.productDetail_info .productDetailPage_buttons_block .productDetailPage_button_addToCart {
+  border-radius: 62px;
+  border: none;
+  padding: 16px 54px;
+  width: 400px;
+  height: 52px;
+  background: #000;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  text-transform: none !important;
+  transition: background-color 0.1s;
+}
+.productDetail_info .productDetailPage_buttons_block .productDetailPage_button_addToCart:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.productDetail_info .productDetailPage_buttons_block .productDetailPage_button_addToCart:active:not(:disabled) {
+  background-color: #ccc;
+  transform: scale(0.98);
+}
+.productDetail_info .productDetailPage_buttons_block .productDetailPage_button_addToCart:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/*# sourceMappingURL=productDetailInfo.css.map */
