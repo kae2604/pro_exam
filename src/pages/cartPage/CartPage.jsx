@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./cartPage.scss"
 import {useDispatch, useSelector} from "react-redux";
 import {decreaseProductQuantity, increaseProductQuantity,removeProductFromCart, clearCart} from "@store/slices/cartSlice.js";
@@ -13,10 +13,10 @@ const CartPage = () => {
 
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.items);
-    const [promoValue, setPromoValue] = React.useState('');
-    const [discountRate, setDiscountRate] = React.useState(0);
-    const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
-    const [checkoutError, setCheckoutError] = React.useState("");
+    const [promoValue, setPromoValue] = useState('');
+    const [discountRate, setDiscountRate] = useState(0);
+    const [openSuccessModal, setOpenSuccessModal] = useState(false);
+    const [checkoutError, setCheckoutError] = useState("");
     const [applyPromo, { isLoading: isLoadingApplyPromo, isSuccess: isSuccessApplyPromo, isError: isErrorApplyPromo }] = useApplyPromoCodeMutation();
     const [createOrder, { isLoading: isLoadingCheckingOut, isSuccess: isSuccessCheckingOut, isError: isErrorCheckingOut }] = useCreateOrderMutation();
     const isCartEmpty = cartItems.length === 0;
@@ -48,7 +48,6 @@ const CartPage = () => {
 
     const handleCheckout = async () => {
         const isAuthenticated = !!localStorage.getItem('token');
-
         if (!isAuthenticated) {
             setCheckoutError("To place an order, you need to be logged in.");
             setTimeout(() => setCheckoutError(""), 3000);

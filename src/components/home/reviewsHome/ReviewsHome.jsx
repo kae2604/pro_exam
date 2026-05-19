@@ -5,7 +5,7 @@ import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ReviewCard from "@components/productDetailPage/reviews/reviewCard";
+import ReviewCard from "@components/productDetailPage/productTabs/reviews/reviewCard";
 import { useGetProductsWithParamsQuery } from "@store/api/productsAPI.js";
 
 const ReviewsHome = () => {

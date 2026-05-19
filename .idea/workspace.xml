@@ -4,15 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f910a1bc-f643-4de7-a0f3-a68c631c8192" name="Changes" comment="made LoginUser">
-      <change afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageSummary/CartPageSummary.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageSummary/cartPageSummary.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageSummary/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cartPage/cartPageProductList/CartPagePproductList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageProductList/CartPagePproductList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cartPage/cartPageProductList/CartPageProductList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageProductList/CartPageProductList.scss" afterDir="false" />
+    <list default="true" id="f910a1bc-f643-4de7-a0f3-a68c631c8192" name="Changes" comment="separate cartPage">
+      <change afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailInfo/ProductDetailInfo.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailInfo/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailInfo/productDetailInfo.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailPictures/ProductDetailPictures.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailPictures/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailSameProducts/ProductDetailSameProducts.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailSameProducts/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailSameProducts/productDetailSameProducts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/ProductTabs.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/faq/faq.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productTabs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/reviewsHome/ReviewsHome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/reviewsHome/ReviewsHome.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/faq/Faq.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/faq/Faq.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/faq/faq.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailPictures/productDetailPictures.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/faq/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/faq/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetails/ProductDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productDetails/ProductDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetails/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productDetails/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetails/producrDetails.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productDetails/producrDetails.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/reviews/Reviews.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/Reviews.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/reviews/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/reviews/reviewCard/ReviewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviewCard/ReviewCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/reviews/reviewCard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviewCard/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/reviews/reviewCard/reviewCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviewCard/reviewCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/reviews/reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviews.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/cartPage/CartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cartPage/CartPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cartPage/cartPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cartPage/cartPage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/homePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homePage/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homePage/validationSchema.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/productDetailPage/ProductDetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/productDetailPage/ProductDetailPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/productDetailPage/productDetailPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/productDetailPage/productDetailPage.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,11 +89,11 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight" />
+      <recent name="$PROJECT_DIR$/src/components/productDetailPage/productTabs" />
       <recent name="$PROJECT_DIR$/src/components/productDetailPage" />
+      <recent name="$PROJECT_DIR$/src/components/productDetailPage/faq" />
+      <recent name="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight" />
       <recent name="$PROJECT_DIR$/src/components/category" />
-      <recent name="$PROJECT_DIR$/src/components/cart" />
-      <recent name="$PROJECT_DIR$/src/components/productDetails" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -111,7 +133,7 @@
       <updated>1776876794294</updated>
       <workItem from="1776876795355" duration="1585000" />
       <workItem from="1776878416485" duration="306687000" />
-      <workItem from="1778500255146" duration="243697000" />
+      <workItem from="1778500255146" duration="252071000" />
     </task>
     <task id="LOCAL-00001" summary="Add ProductDetailPage">
       <option name="closed" value="true" />
@@ -161,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779206261199</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="separate cartPage">
+      <option name="closed" value="true" />
+      <created>1779210969142</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1779210969142</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +214,8 @@
     <MESSAGE value="made ProductDetailPage" />
     <MESSAGE value="made HomePage" />
     <MESSAGE value="made LoginUser" />
-    <option name="LAST_COMMIT_MESSAGE" value="made LoginUser" />
+    <MESSAGE value="separate cartPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="separate cartPage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -199,6 +230,42 @@
           <line>44</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/productDetailPage/ProductDetailPage.jsx</url>
+          <line>15</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/productDetailPage/ProductDetailPage.jsx</url>
+          <line>16</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/productDetailPage/ProductDetailPage.jsx</url>
+          <line>17</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/productDetailPage/ProductDetailPage.jsx</url>
+          <line>13</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/cartPage/CartPage.jsx</url>
+          <line>19</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/cartPage/CartPage.jsx</url>
+          <line>20</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="70" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

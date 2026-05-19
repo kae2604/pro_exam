@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ReviewCard from "@components/productDetailPage/reviews/reviewCard/index.js";
+import ReviewCard from "@components/productDetailPage/productTabs/reviews/reviewCard/index.js";
 import "./reviews.scss"
 
 const Reviews = ({reviews = [] }) => {
