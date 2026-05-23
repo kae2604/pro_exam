@@ -34,5 +34,15 @@
 .shop_category_list .MuiPaper-root::-webkit-scrollbar-track {
   background: transparent;
 }
+.shop_category_list .category_item {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 250%;
+}
+@media (max-width: 899px) {
+  .shop_category_list .category_item {
+    font-size: 24px;
+  }
+}
 
 /*# sourceMappingURL=shop.css.map */

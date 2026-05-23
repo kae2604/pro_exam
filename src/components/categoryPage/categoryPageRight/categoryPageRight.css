@@ -2,17 +2,30 @@
   width: 100%;
 }
 .categoryPage_right .categoryPage_right_top {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  flex-wrap: wrap;
-  gap: 16px 50px;
   margin-bottom: 16px;
 }
-.categoryPage_right .categoryPage_right_top h3 {
+.categoryPage_right .categoryPage_right_top .categoryPage_right_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.categoryPage_right .categoryPage_right_top .categoryPage_right_title h3 {
   font-weight: 700;
   font-size: 32px;
   color: #000;
+}
+.categoryPage_right .categoryPage_right_top .categoryPage_right_title .categoryPage_filterMobile_button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  border: none;
+}
+@media (min-width: 768px) {
+  .categoryPage_right .categoryPage_right_top .categoryPage_right_title .categoryPage_filterMobile_button {
+    display: none;
+  }
 }
 .categoryPage_right .categoryPage_right_top .categoryPage_right_top_sort {
   display: flex;

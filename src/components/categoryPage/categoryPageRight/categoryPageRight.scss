@@ -2,20 +2,32 @@
 .categoryPage_right{
   width: 100%;
 
-
   .categoryPage_right_top{
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    flex-wrap: wrap;
-    gap: 16px 50px;
     margin-bottom: 16px;
 
-    h3{
-      font-weight: 700;
-      font-size: 32px;
-      color: #000;
+    .categoryPage_right_title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
 
+      h3{
+        font-weight: 700;
+        font-size: 32px;
+        color: #000;
+      }
+
+      .categoryPage_filterMobile_button{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #f0f0f0;
+        border: none;
+
+        @media (min-width: 768px) {
+          display: none;
+        }
+      }
     }
 
     .categoryPage_right_top_sort{
@@ -26,21 +38,12 @@
       flex-wrap: wrap;
       width: 100%;
 
-
-      //@media (max-width: 1050px) {
-      //  //margin: 0 auto 16px;
-      //  width: 100%;
-      //
-      //}
-
       .categoryPage_pageNumber{
           font-weight: 400;
           font-size: 16px;
           color: rgba(0, 0, 0, 0.6);
       }
     }
-
-
   }
 
   .categoryPage_box{
@@ -58,7 +61,6 @@
       margin: 200px auto;
       font-weight: 800;
       font-size: 56px;
-
     }
   }
 

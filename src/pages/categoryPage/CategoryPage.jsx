@@ -33,7 +33,7 @@ const CategoryPage = () => {
                     slotProps={{
                         paper: {
                             sx: {
-                                width: '300px',
+                                width: '250px',
                                 // Если ширина всё ещё не слушается, попробуй задать minWidth
 
                             }

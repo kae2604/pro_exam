@@ -11,6 +11,7 @@ import {useGetProductsBySearchQuery} from "@store/api/productsAPI.js";
 import {setCurrentPage } from '@store/slices/categoryFiltersSlice';
 import Skeleton from '@mui/material/Skeleton';
 import {useResponsiveLimitCategoryPage} from "@hooks/useResponsiveLimit.js";
+import filtersMobile from "@assets/categoryPage/filtersMobile.svg";
 
 const CategoryPageRight = ({handleDrawerToggle}) => {
 
@@ -75,12 +76,19 @@ const CategoryPageRight = ({handleDrawerToggle}) => {
     return (
         <section className="categoryPage_right">
 
-            <button onClick={handleDrawerToggle}>
-                X
-            </button>
+
 
             <div className= "categoryPage_right_top">
-                <h3>{searchQuery || (CategoryName  || "All Products")}</h3>
+
+                <div className= "categoryPage_right_title">
+                    <h3>{searchQuery || (CategoryName  || "All Products")}</h3>
+
+                    <button className= "categoryPage_filterMobile_button"
+                            onClick={handleDrawerToggle}>
+                        <img src={filtersMobile} alt="filters"/>
+                    </button>
+                </div>
+
 
                 <div className= "categoryPage_right_top_sort">
                     <p className="categoryPage_pageNumber">

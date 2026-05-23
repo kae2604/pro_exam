@@ -64,7 +64,8 @@ const Shop = ({handleDrawerToggle}) => {
                 onClose={handleClose}
                 className="shop_category_list">
 
-                <MenuItem onClick={() => handleCategoryClick('/category', 'All Products')}>
+                <MenuItem className="category_item"
+                    onClick={() => handleCategoryClick('/category', 'All Products')}>
                     All Products
                 </MenuItem>
                 {categoriesList?.map((category) => (
