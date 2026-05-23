@@ -1,6 +1,11 @@
 .header_cart_wrapper {
   margin-left: 40px;
 }
+@media (max-width: 950px) {
+  .header_cart_wrapper {
+    margin-left: 12px;
+  }
+}
 .header_cart_wrapper .cart_icon_container {
   position: relative;
 }

@@ -4,6 +4,13 @@
   background: #f0f0f0;
   padding: 70px 64px 76px;
   margin-bottom: 80px;
+  @media (max-width: 1300px) {
+    padding-inline: 24px;
+  }
+  @media (max-width: 1250px) {
+    padding-bottom: 24px;
+    padding-top: 40px;
+  }
 
   h2{
     font-weight: 700;
@@ -11,15 +18,26 @@
     text-align: center;
     color: #000;
     margin-bottom: 64px;
+
+    @media (max-width: 1250px) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 32px;
+      line-height: 113%;
+    }
   }
   .categories_box{
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 
     .categoryBoxSmall{
       border-radius: 20px;
-      width: 407px;
+      max-width: 407px;
+      width: 100%;
       height: 289px;
       background: #fff;
       padding: 25px 25px 25px 36px;
@@ -32,10 +50,15 @@
       background-position: right -20px bottom -30px;
       transition: background-image 0.8s ease-in-out;
 
+      @media (max-width: 1200px) {
+        max-width: 684px;
+      }
+
     }
     .categoryBoxBig{
       border-radius: 20px;
-      width: 684px;
+      max-width: 684px;
+      width: 100%;
       height: 289px;
       background: #fff;
       padding: 25px 25px 25px 36px;

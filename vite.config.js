@@ -16,6 +16,10 @@ export default defineConfig({
             "@assets": path.resolve("src", "assets"),
             "@styles": path.resolve("src", "styles"),
             "@utils": path.resolve("src", "utils"),
+            "@hooks": path.resolve("src", "hooks"),
         },
     },
 })
+
+
+

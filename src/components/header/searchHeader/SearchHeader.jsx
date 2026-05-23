@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import "./searchHeader.scss"
 import searchHeaderIcon from "@assets/header/searchHeaderIcon.svg";
+import searchHeaderIconMobile from "@assets/header/searchHeaderIconMobile.svg";
+
 import {setSearchQuery} from '@store/slices/categoryFiltersSlice';
 
 
@@ -12,6 +14,15 @@ const SearchHeader = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [inputValue, setInputValue] = useState('');
+    const [searchOpen, setSearchOpen] = useState(false);
+
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        if (searchOpen && inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, [searchOpen]);
 
     const handleInput = (event) => {
         setInputValue(event.target.value);
@@ -22,25 +33,68 @@ const SearchHeader = () => {
         if (inputValue.trim()){
             dispatch(setSearchQuery(inputValue.trim().toLowerCase()));
             navigate("category");
-            setInputValue("")
+            setInputValue("");
+            if (searchOpen){
+                handleSearchToggle()
+            }
         }
     }
 
+    const handleSearchToggle = () => {
+        setSearchOpen(!searchOpen);
+    };
+
     return (
-        <form className="searchHeader_form"
-              onSubmit={handleSearch}>
-            <button className="searchHeader_button"
-                    type="submit">
-                <img src={searchHeaderIcon} alt="searchIcon"/>
+        <div className="searchHeader_wrapper">
+
+            <button className="searchHeaderMobile_trigger"
+                    onClick={handleSearchToggle}>
+                <img src={searchHeaderIconMobile} alt="searchIcon"/>
             </button>
-            <input
-                type="text"
-                className="searchHeader_input"
-                placeholder="Search for products..."
-                value={inputValue}
-                onChange={handleInput}
-            />
-        </form>
+
+            <form className="searchHeader_form searchHeader_form_desktop"
+                  onSubmit={handleSearch}>
+                <button className="searchHeader_button" type="submit">
+                    <img src={searchHeaderIcon} alt="searchIcon"/>
+                </button>
+                <input type="text"
+                       className="searchHeader_input"
+                       value={inputValue}
+                       onChange={handleInput}
+                       placeholder="Search..." />
+            </form>
+
+            {searchOpen && (
+            <div className="search_overlay"
+                 onClick={handleSearchToggle}>
+                <div className="search_modal"
+                     onClick={e => e.stopPropagation()}>
+
+
+                    <form className={`searchHeader_form searchHeader_form_mobile ${searchOpen ? 'active' : ''}`}
+                                onSubmit={handleSearch}>
+
+                        <button className="searchHeader_button"
+                                type="submit">
+                            <img src={searchHeaderIcon} alt="searchIcon"/>
+                        </button>
+                        <input
+                            ref={inputRef}
+                            type="text"
+                            className="searchHeader_input"
+                            placeholder="Search for products..."
+                            value={inputValue}
+                            onChange={handleInput}
+                        />
+                    </form>
+
+                </div>
+            </div>
+            )}
+        </div>
+
+
+
     );
 };
 

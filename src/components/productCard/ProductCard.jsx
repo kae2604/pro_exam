@@ -9,18 +9,19 @@ import "./productCard.scss"
 import ProductPriceRow from "@components/productCard/productPriceRow/index.js";
 import { calculateProductPrice } from "@/utils/price";
 
-
 const ProductCard = ({product}) => {
     if (!product) return null;
+
     const { price, discount, finalPrice } = calculateProductPrice(product);
 
     return (
         <Link to={`/products/${product.id}`}
               className="productDetailPage_link">
 
-            <Card sx={{ maxWidth: 295, width: '100%', boxShadow: 'none' }}>
+            <Card sx={{ boxShadow: 'none' }}>
                 <CardMedia
-                    sx={{ maxWidth: 295, height: 298, borderRadius: 5, backgroundColor: '#f0eeed', mb: 2 }}
+                    sx={{
+                        height: 298, borderRadius: 5, backgroundColor: '#f0eeed', mb: 2 }}
                     image={product.thumbnail}
                     title={product.title}/>
                 <CardContent sx={{

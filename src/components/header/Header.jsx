@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./header.scss";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,8 +9,16 @@ import NavigationHeader from "@components/header/navigationHeader";
 import LoginUser from "@components/header/loginUser";
 import CartHeader from "@components/header/cartHeader/index.js";
 import LogoMain from "@components/logoMain/index.js";
+import {Box, Drawer} from "@mui/material";
 
 const Header = ()=> {
+
+    const [mobileOpen, setMobileOpen] = useState(false);
+
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
+
 
     return (
         <AppBar component="header"
@@ -30,16 +38,21 @@ const Header = ()=> {
                     <div className="header_container_left">
 
                         <IconButton
+                            onClick={handleDrawerToggle}
                             size="large"
                             edge="start"
                             aria-label="open drawer"
-                            sx={{mr: 2, display: { xs: 'flex', md: 'none' }}}>
+                            sx={{mr: 2,
+                                color: '#000000',
+                                display: { xs: 'flex', md: 'none' }}}>
                             <MenuIcon />
                         </IconButton>
 
                         <LogoMain/>
 
-                        <NavigationHeader/>
+                        <Box sx={{ display: { xs: 'none', md: 'block' }}}>
+                            <NavigationHeader />
+                        </Box>
                     </div>
 
                     <div className="header_container_right">
@@ -52,6 +65,20 @@ const Header = ()=> {
                     </div>
                 </Toolbar>
             </div>
+
+            <Drawer
+                variant="temporary"
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+                sx={{
+                    display: { xs: 'block', md: 'none' },
+                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 250, p: 4},
+                }}
+            >
+                <Box >
+                    <NavigationHeader handleDrawerToggle={handleDrawerToggle}/>
+                </Box>
+            </Drawer>
         </AppBar>
     );
 }

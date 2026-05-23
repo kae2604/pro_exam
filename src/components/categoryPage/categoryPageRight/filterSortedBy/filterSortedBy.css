@@ -1,12 +1,11 @@
 .filterSortedBy_wrapper {
-  max-width: 300px;
-  width: 100%;
-  padding-left: 30px;
+  padding: 0 !important;
 }
 .filterSortedBy_wrapper .filterSortedBy_button {
   position: relative;
   text-transform: none;
   padding-right: 18px !important;
+  padding-left: 0 !important;
   display: flex;
   border: none;
   background: none;

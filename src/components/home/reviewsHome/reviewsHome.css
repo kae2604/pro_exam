@@ -1,23 +1,46 @@
 .reviewsHome {
   margin-bottom: 170px;
 }
+@media (max-width: 470px) {
+  .reviewsHome {
+    margin-bottom: 190px;
+  }
+}
+@media (max-width: 350px) {
+  .reviewsHome {
+    margin-bottom: 210px;
+  }
+}
 .reviewsHome .reviewsHome_top {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 40px;
 }
-.reviewsHome .reviewsHome_title {
+@media (max-width: 600px) {
+  .reviewsHome .reviewsHome_top {
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+}
+.reviewsHome .reviewsHome_top .reviewsHome_title {
   font-weight: 700;
   font-size: 48px;
   color: #000;
   margin-bottom: 0;
 }
-.reviewsHome .reviewsHome_nav {
+@media (max-width: 900px) {
+  .reviewsHome .reviewsHome_top .reviewsHome_title {
+    font-size: 32px;
+    line-height: 113%;
+  }
+}
+.reviewsHome .reviewsHome_top .reviewsHome_nav {
   display: flex;
   gap: 10px;
 }
-.reviewsHome .reviewsHome_nav .nav_btn {
+.reviewsHome .reviewsHome_top .reviewsHome_nav .nav_btn {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -29,15 +52,15 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.reviewsHome .reviewsHome_nav .nav_btn svg {
+.reviewsHome .reviewsHome_top .reviewsHome_nav .nav_btn svg {
   color: #000;
   font-size: 20px;
 }
-.reviewsHome .reviewsHome_nav .nav_btn:hover {
+.reviewsHome .reviewsHome_top .reviewsHome_nav .nav_btn:hover {
   background-color: #000;
   border-color: #000;
 }
-.reviewsHome .reviewsHome_nav .nav_btn:hover svg {
+.reviewsHome .reviewsHome_top .reviewsHome_nav .nav_btn:hover svg {
   color: #fff;
 }
 .reviewsHome .reviewsHome_slider {

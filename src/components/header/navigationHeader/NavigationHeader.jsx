@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import {resetSearch, setCategoryFilterActive} from "@store/slices/categoryFiltersSlice.js";
 import {useDispatch} from "react-redux";
 
-const NavigationHeader = () => {
+const NavigationHeader = ({handleDrawerToggle}) => {
 
     const dispatch = useDispatch();
 
@@ -17,12 +17,15 @@ const NavigationHeader = () => {
     return (
         <nav>
             <ul className="menu_list">
-                <li><Shop/></li>
+                <li><Shop handleDrawerToggle={handleDrawerToggle} /></li>
                 <li className="menu_list_item">
                     <Link
                         to="/category"
                         state={{ crumbLabel: 'On Sale' }}
-                        onClick={() => handleGoToCategory('sale')}
+                        onClick={() => {
+                            handleGoToCategory('sale');
+                            handleDrawerToggle?.();
+                        }}
                     >
                         On Sale
                     </Link>
@@ -30,7 +33,10 @@ const NavigationHeader = () => {
                 <li className="menu_list_item">
                     <Link to="/category"
                           state={{ crumbLabel: 'New Arrivals' }}
-                          onClick={() => handleGoToCategory('arrivals')}
+                          onClick={() => {
+                              handleGoToCategory('arrivals');
+                              handleDrawerToggle?.();
+                          }}
                     >
                         New Arrivals
                     </Link>
@@ -38,7 +44,10 @@ const NavigationHeader = () => {
                 <li className="menu_list_item">
                     <Link to="/category"
                           state={{ crumbLabel: 'Brands' }}
-                          onClick={() => handleGoToCategory('brand')}
+                          onClick={() => {
+                              handleGoToCategory('brand');
+                              handleDrawerToggle?.();
+                          }}
                     >
                         Brands
                     </Link>

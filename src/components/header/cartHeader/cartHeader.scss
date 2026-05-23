@@ -2,6 +2,10 @@
 .header_cart_wrapper{
   margin-left: 40px;
 
+  @media (max-width: 950px) {
+    margin-left: 12px;
+  }
+
   .cart_icon_container{
     position: relative;
 

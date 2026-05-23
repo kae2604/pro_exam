@@ -1,14 +1,17 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./topRatingHome.scss";
 import {useGetProductsByCategoryQuery} from "@store/api/productsAPI.js";
 import { useDispatch } from 'react-redux';
 import {resetSearch, setCategoryFilterActive} from '@store/slices/categoryFiltersSlice';
 import { useNavigate } from 'react-router-dom';
 import PreviewCategory from "@components/previewCategory/index.js";
+import {useResponsiveLimitPreviewCategory} from "@hooks/useResponsiveLimit.js";
 
 const TopRatingHome = () => {
 
-    const { data, isLoading }  = useGetProductsByCategoryQuery({limit: 4, order: 'desc', sortBy: 'rating'});
+    const limit = useResponsiveLimitPreviewCategory()
+
+    const { data, isLoading }  = useGetProductsByCategoryQuery({limit, order: 'desc', sortBy: 'rating'});
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -30,7 +33,6 @@ const TopRatingHome = () => {
                         buttonText={'View All'}
                     />
                 </div>
-
             </div>
         </section>
     );

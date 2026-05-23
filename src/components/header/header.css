@@ -14,37 +14,11 @@
 .header .header_container .header_container_left a:focus {
   outline: none;
 }
-.header .header_container .header_container_left .menu_list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 40px;
-  gap: 24px;
-}
-.header .header_container .header_container_left .menu_list .menu_list_item {
-  font-weight: 400;
-  font-size: 16px;
-  color: #000;
-}
-.header .header_container .header_container_left .scroll_hint {
-  position: sticky;
-  bottom: 0;
-  text-align: center;
-  font-size: 12px;
-  opacity: 0.6;
-  padding: 6px 0;
-  pointer-events: none;
-}
 .header .header_container .header_container_right {
   display: flex;
   align-items: center;
   flex: 1;
-}
-.header .header_container .header_container_right .header_search {
-  max-width: 577px;
-  width: 100%;
-  flex: 1;
-  min-width: 0;
+  justify-content: end;
 }
 
 /*# sourceMappingURL=header.css.map */

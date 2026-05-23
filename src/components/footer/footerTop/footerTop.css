@@ -1,5 +1,6 @@
 .footer_top {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 36px 64px;
@@ -8,8 +9,13 @@
   position: absolute;
   top: 0;
   transform: translate(0, -50%);
-  width: 100%;
-  max-width: 1240px;
+}
+@media (max-width: 900px) {
+  .footer_top {
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 24px;
+  }
 }
 .footer_top h3 {
   font-weight: 700;
@@ -17,6 +23,14 @@
   line-height: 113%;
   color: #fff;
   width: 50%;
+}
+@media (max-width: 900px) {
+  .footer_top h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    line-height: 109%;
+  }
 }
 .footer_top .footer_top_right {
   max-width: 350px;

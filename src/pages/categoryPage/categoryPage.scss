@@ -1,11 +1,20 @@
 
-.categoryPage_path{
-  margin-bottom: 24px;
-}
-
 .categoryPage_container{
   display: flex;
   justify-content: space-between;
   gap: 20px;
   margin-bottom: 170px;
+
+  .categoryPage_filters_desktop{
+    max-width: 295px;
+    width: 100%;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+.categoryPage_filters_mobile{
+ width: 500px !important;
 }

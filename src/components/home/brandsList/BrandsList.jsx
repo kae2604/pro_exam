@@ -10,7 +10,7 @@ const BrandsList = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const { data: productsBrands } = useGetProductsWithParamsQuery({
+    const { data: productsBrands, isLoading } = useGetProductsWithParamsQuery({
         limit: 0,
         sortBy: "title",
         order: "asc",
@@ -39,6 +39,11 @@ const BrandsList = () => {
         dispatch(setSearchQuery(brandName));
         dispatch(setCategoryFilterActive('brand'));
     };
+
+    if (isLoading) {
+        return (
+            <div className="brandsList_loading"></div>
+    )}
 
     return (
         <section className="brandsList">

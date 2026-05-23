@@ -9,7 +9,7 @@ import {resetSearch, setCategoryFilterActive} from "@store/slices/categoryFilter
 import {useDispatch} from "react-redux";
 
 
-const Shop = () => {
+const Shop = ({handleDrawerToggle}) => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -71,7 +71,12 @@ const Shop = () => {
                     <MenuItem
                         className="category_item"
                         key={category.slug}
-                        onClick={() => handleCategoryClick(`/category/${category.slug}`, category.name)}>
+                        onClick={() => {
+                            handleCategoryClick(`/category/${category.slug}`, category.name);
+                            if (typeof handleDrawerToggle === 'function') {
+                                handleDrawerToggle();
+                            }
+                        }}>
                         {category.name}
                     </MenuItem>
                 ))}

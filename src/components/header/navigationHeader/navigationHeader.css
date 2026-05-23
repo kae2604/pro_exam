@@ -1,3 +1,29 @@
+.menu_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 40px;
+  gap: 24px;
+}
+@media (max-width: 899px) {
+  .menu_list {
+    flex-direction: column;
+  }
+}
+.menu_list .menu_list_item {
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
 
+.scroll_hint {
+  position: sticky;
+  bottom: 0;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
+  padding: 6px 0;
+  pointer-events: none;
+}
 
 /*# sourceMappingURL=navigationHeader.css.map */

@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from 'react-redux';
 import { setCategoryFilterActive } from '@store/slices/categoryFiltersSlice';
 
-const CategoryPageAside = () => {
+const CategoryPageAside = ({handleDrawerToggle}) => {
 
     const dispatch = useDispatch();
     const activeFilter = useSelector((state) => state.categoryFilters.categoryFilterActive);
@@ -27,35 +27,50 @@ const CategoryPageAside = () => {
 
             <Button variant="contained"
                     className={`categoryPage_aside_button ${activeFilter === 'price' ? '_active' : ''}`}
-                    onClick={() => handleFilterClick('price')}
+                    onClick={() => {
+                        handleFilterClick('price');
+                        handleDrawerToggle?.();
+                    }}
             >
                 PRICE
             </Button>
 
             <Button variant="contained"
                     className={`categoryPage_aside_button ${activeFilter === 'sale' ? '_active' : ''}`}
-                    onClick={() => handleFilterClick('sale')}
+                    onClick={() => {
+                        handleFilterClick('sale');
+                        handleDrawerToggle?.();
+                    }}
             >
                 SALE
             </Button>
 
             <Button variant="contained"
                     className={`categoryPage_aside_button ${activeFilter === 'rating' ? '_active' : ''}`}
-                    onClick={() => handleFilterClick('rating')}
+                    onClick={() => {
+                        handleFilterClick('rating');
+                        handleDrawerToggle?.();
+                    }}
             >
                 RATING
             </Button>
 
             <Button variant="contained"
                     className={`categoryPage_aside_button ${activeFilter === 'arrivals' ? '_active' : ''}`}
-                    onClick={() => handleFilterClick('arrivals')}
+                    onClick={() => {
+                        handleFilterClick('arrivals');
+                        handleDrawerToggle?.();
+                    }}
             >
                 ARRIVALS
             </Button>
 
             <Button variant="contained"
                     className={`categoryPage_aside_button ${activeFilter === 'brand' ? '_active' : ''}`}
-                    onClick={() => handleFilterClick('brand')}
+                    onClick={() => {
+                        handleFilterClick('brand');
+                        handleDrawerToggle?.();
+                    }}
             >
                 BRANDS
             </Button>
@@ -64,7 +79,10 @@ const CategoryPageAside = () => {
 
             <Button variant="contained"
                     className={`categoryPage_aside_button ${activeFilter === 'default' ? '_active' : ''}`}
-                    onClick={() => handleFilterClick('default')}
+                    onClick={() => {
+                        handleFilterClick('default');
+                        handleDrawerToggle?.();
+                    }}
             >
                 NO FILTERS
             </Button>

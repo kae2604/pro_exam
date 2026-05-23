@@ -9,8 +9,12 @@ import { useDispatch } from 'react-redux';
 import {useGetProductsByCategoryQuery} from "@store/api/productsAPI.js";
 import {useGetProductsBySearchQuery} from "@store/api/productsAPI.js";
 import {setCurrentPage } from '@store/slices/categoryFiltersSlice';
+import Skeleton from '@mui/material/Skeleton';
+import {useResponsiveLimitCategoryPage} from "@hooks/useResponsiveLimit.js";
 
-const CategoryPageRight = () => {
+const CategoryPageRight = ({handleDrawerToggle}) => {
+
+    const limit = useResponsiveLimitCategoryPage();
 
     const { category } = useParams();
     const dispatch = useDispatch();
@@ -19,7 +23,10 @@ const CategoryPageRight = () => {
     const searchQuery = useSelector((state) => state.categoryFilters.searchQuery);
     const page = useSelector((state) => state.categoryFilters.currentPage);
 
-    const limit = 9;
+    useEffect(() => {
+        dispatch(setCurrentPage(1));
+    }, [limit, dispatch]);
+
     const skip = (page - 1) * limit;
 
     let CategoryName = null;
@@ -65,32 +72,43 @@ const CategoryPageRight = () => {
         dispatch(setCurrentPage(value));
     };
 
-    if (isLoading ) return <div className="container">Loading...</div>;
-
     return (
         <section className="categoryPage_right">
+
+            <button onClick={handleDrawerToggle}>
+                X
+            </button>
 
             <div className= "categoryPage_right_top">
                 <h3>{searchQuery || (CategoryName  || "All Products")}</h3>
 
-                <FilterSortedBy handleToggleOrder={toggleOrder}
-                                sortOrder = {sortOrder}/>
-
-                <div className="categoryPage_pageNumber">
-                    <span>Showing {startRange}-{endRange} of {totalProducts} Products</span>
+                <div className= "categoryPage_right_top_sort">
+                    <p className="categoryPage_pageNumber">
+                        Showing {startRange}-{endRange} of {totalProducts} Products
+                    </p>
+                    <FilterSortedBy handleToggleOrder={toggleOrder}
+                                    sortOrder = {sortOrder}/>
                 </div>
             </div>
 
             <div className="categoryPage_box">
-                {productsList?.products?.length > 0 ? (
+                {isLoading ? (
+                    Array.from(new Array(limit)).map((_, index) => (
+                        <Skeleton
+                            key={index}
+                            variant="rounded"
+                            width={295}
+                            height={408}
+                            animation="wave"
+                            sx={{ borderRadius: 5 }}
+                        />
+                    ))
+                ) : productsList?.products?.length > 0 ? (
                     productsList.products.map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))
                 ) : (
-                    !isLoading &&
-                    <p className="notFoundCategory">
-                        No products found.
-                    </p>
+                    <p className="notFoundCategory">No products found.</p>
                 )}
             </div>
 
@@ -106,5 +124,4 @@ const CategoryPageRight = () => {
         </section>
     );
 };
-
 export default CategoryPageRight;

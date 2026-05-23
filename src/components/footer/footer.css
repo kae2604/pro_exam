@@ -1,22 +1,51 @@
 .footer {
   background-color: #F0F0F0;
+}
+.footer .footer-wrapper {
+  position: relative;
   padding: 140px 0 82px;
   margin-top: 50px;
-  position: relative;
 }
-.footer .footer-container {
+@media (max-width: 1150px) {
+  .footer .footer-wrapper {
+    padding-top: 160px;
+  }
+}
+@media (max-width: 1150px) {
+  .footer .footer-wrapper {
+    padding-top: 180px;
+  }
+}
+@media (max-width: 350px) {
+  .footer .footer-wrapper {
+    padding-top: 200px;
+  }
+}
+.footer .footer-wrapper .footer-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-.footer .footer-container .footer-container_left {
-  max-width: 248px;
+@media (max-width: 900px) {
+  .footer .footer-wrapper .footer-container {
+    margin-bottom: 40px;
+  }
 }
-.footer .footer-container .footer-container_left .footer_logo {
+.footer .footer-wrapper .footer-container .footer-container_left {
+  margin-bottom: 24px;
+}
+@media (max-width: 900px) {
+  .footer .footer-wrapper .footer-container .footer-container_left {
+    flex: 0 0 100%;
+  }
+}
+.footer .footer-wrapper .footer-container .footer-container_left .footer_logo {
   margin-bottom: 25px;
   display: inline-block;
 }
-.footer .footer-container .footer-container_left p {
+.footer .footer-wrapper .footer-container .footer-container_left p {
   max-width: 248px;
   font-weight: 400;
   font-size: 14px;
@@ -24,24 +53,35 @@
   color: rgba(0, 0, 0, 0.6);
   margin-bottom: 35px;
 }
-.footer .footer_bottom {
+@media (max-width: 900px) {
+  .footer .footer-wrapper .footer-container .footer-container_left p {
+    max-width: 100%;
+  }
+}
+.footer .footer-wrapper .footer_bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
 }
-.footer .footer_bottom span {
+@media (max-width: 900px) {
+  .footer .footer-wrapper .footer_bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.footer .footer-wrapper .footer_bottom span {
   font-weight: 400;
   font-size: 14px;
   text-align: right;
   color: rgba(0, 0, 0, 0.6);
 }
-.footer .footer_bottom .footer_bottom_right {
+.footer .footer-wrapper .footer_bottom .footer_bottom_right {
   display: flex;
   gap: 12px;
   align-items: center;
 }
-.footer .footer_bottom .footer_bottom_right .footer_bottom_payMent {
+.footer .footer-wrapper .footer_bottom .footer_bottom_right .footer_bottom_payMent {
   width: 47px;
   height: 30px;
   border-radius: 5px;

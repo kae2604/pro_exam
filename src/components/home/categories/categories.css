@@ -4,6 +4,17 @@
   padding: 70px 64px 76px;
   margin-bottom: 80px;
 }
+@media (max-width: 1300px) {
+  .categories_container {
+    padding-inline: 24px;
+  }
+}
+@media (max-width: 1250px) {
+  .categories_container {
+    padding-bottom: 24px;
+    padding-top: 40px;
+  }
+}
 .categories_container h2 {
   font-weight: 700;
   font-size: 48px;
@@ -11,14 +22,27 @@
   color: #000;
   margin-bottom: 64px;
 }
+@media (max-width: 1250px) {
+  .categories_container h2 {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .categories_container h2 {
+    font-size: 32px;
+    line-height: 113%;
+  }
+}
 .categories_container .categories_box {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .categories_container .categories_box .categoryBoxSmall {
   border-radius: 20px;
-  width: 407px;
+  max-width: 407px;
+  width: 100%;
   height: 289px;
   background: #fff;
   padding: 25px 25px 25px 36px;
@@ -31,9 +55,15 @@
   background-position: right -20px bottom -30px;
   transition: background-image 0.8s ease-in-out;
 }
+@media (max-width: 1200px) {
+  .categories_container .categories_box .categoryBoxSmall {
+    max-width: 684px;
+  }
+}
 .categories_container .categories_box .categoryBoxBig {
   border-radius: 20px;
-  width: 684px;
+  max-width: 684px;
+  width: 100%;
   height: 289px;
   background: #fff;
   padding: 25px 25px 25px 36px;

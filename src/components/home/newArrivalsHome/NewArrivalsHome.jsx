@@ -5,10 +5,13 @@ import {resetSearch, setCategoryFilterActive} from '@store/slices/categoryFilter
 import { useNavigate } from 'react-router-dom';
 import {useGetProductsByCategoryQuery} from "@store/api/productsAPI.js";
 import PreviewCategory from "@components/previewCategory/index.js";
+import {useResponsiveLimitPreviewCategory} from "@hooks/useResponsiveLimit.js";
 
 const NewArrivalsHome = () => {
 
-    const { data, isLoading } = useGetProductsByCategoryQuery({limit: 4, order: 'desc', sortBy: 'id'});
+    const limit = useResponsiveLimitPreviewCategory()
+
+    const { data, isLoading } = useGetProductsByCategoryQuery({limit, order: 'desc', sortBy: 'id'});
 
     const dispatch = useDispatch();
     const navigate = useNavigate();

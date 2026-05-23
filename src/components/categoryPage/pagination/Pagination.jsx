@@ -8,7 +8,7 @@ export default function CustomPagination({ count, page, onChange }) {
         page,
         onChange,
         siblingCount: 0,
-        boundaryCount: 3
+        boundaryCount: 1
     });
 
     return (

@@ -20,36 +20,38 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="container">
+                <div className="footer-wrapper">
 
-                <FooterTop/>
+                    <FooterTop/>
 
-                <div className='footer-container'>
-                    <div className='footer-container_left'>
-                        <div className="footer_logo">
-                            <LogoMain/>
+                    <div className='footer-container'>
+                        <div className='footer-container_left'>
+                            <div className="footer_logo">
+                                <LogoMain/>
+                            </div>
+
+                            <p>{data?.quote}</p>
+
+                            <FooterSocialMedia/>
                         </div>
 
-                        <p>{data?.quote}</p>
-
-                        <FooterSocialMedia/>
+                        <FooterList data = {FOOTER_DATA.company}/>
+                        <FooterList data = {FOOTER_DATA.help}/>
+                        <FooterList data = {FOOTER_DATA.faq}/>
+                        <FooterList data = {FOOTER_DATA.resources}/>
                     </div>
-
-                    <FooterList data = {FOOTER_DATA.company}/>
-                    <FooterList data = {FOOTER_DATA.help}/>
-                    <FooterList data = {FOOTER_DATA.faq}/>
-                    <FooterList data = {FOOTER_DATA.resources}/>
-                </div>
-                <div className="section_line"></div>
-                <div className="footer_bottom">
-                    <span>
-                        Shop.co © 2000-2023, All Rights Reserved
-                    </span>
-                    <div className="footer_bottom_right">
-                        <img className="footer_bottom_payMent" src={visa} alt="Visa" />
-                        <img className="footer_bottom_payMent" src={masterCard} alt="Master Cars" />
-                        <img className="footer_bottom_payMent" src={payPal} alt="PayPal" />
-                        <img className="footer_bottom_payMent" src={applePay} alt="ApplePay" />
-                        <img className="footer_bottom_payMent" src={googlePay} alt="GooglePay" />
+                    <div className="section_line"></div>
+                    <div className="footer_bottom">
+                        <span>
+                            Shop.co © 2000-2023, All Rights Reserved
+                        </span>
+                        <div className="footer_bottom_right">
+                            <img className="footer_bottom_payMent" src={visa} alt="Visa" />
+                            <img className="footer_bottom_payMent" src={masterCard} alt="Master Cars" />
+                            <img className="footer_bottom_payMent" src={payPal} alt="PayPal" />
+                            <img className="footer_bottom_payMent" src={applePay} alt="ApplePay" />
+                            <img className="footer_bottom_payMent" src={googlePay} alt="GooglePay" />
+                        </div>
                     </div>
                 </div>
             </div>
