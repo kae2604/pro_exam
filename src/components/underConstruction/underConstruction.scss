@@ -12,5 +12,9 @@
     text-transform: uppercase;
     color: #000;
     margin: 100px auto 150px;
+
+    @media (max-width: 850px) {
+      margin-top: 10px;
+    }
   }
 }

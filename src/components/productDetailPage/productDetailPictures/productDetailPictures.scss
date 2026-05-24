@@ -5,51 +5,71 @@
   justify-content: space-between;
   gap: 14px;
 
-  .productDetail_pictures_left{
+  @media (max-width: 1300px) {
+    flex-direction: column-reverse;
+  }
+
+  .productDetail_pictures_left_wrapper{
     display: flex;
-    flex-direction: column;
-    gap: 14px;
-    max-height: 530px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    justify-content: center;
     padding-right: 6px;
 
-    &.has-scroll {
-      padding-right: 28px;
-    }
-
-    &::-webkit-scrollbar {
-      width: 6px;
-      display: block;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.2);
-      border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .productDetail_pictures_preview{
-      border-radius: 20px;
-      width: 152px;
-      min-width: 152px;
-      height: 167px;
-      flex-shrink: 0;
-      background-color: #f0eeed;
-      cursor: pointer;
-      object-fit: contain;
-      border: 2px solid transparent;
-      transition: 0.3s;
-
-      &.active {
-        border-color: #000;
+    .productDetail_pictures_left{
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-height: 530px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      @media (max-width: 1300px) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        overflow-x: auto;
       }
 
-      &:hover {
-        opacity: 0.8;
+      &.has-scroll {
+        padding-right: 28px;
+        @media (max-width: 1300px) {
+          padding-right: 0;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        display: block;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .productDetail_pictures_preview{
+        border-radius: 20px;
+        max-width: 152px;
+        width: 100%;
+        min-width: 152px;
+        height: 167px;
+        flex-shrink: 1;
+        background-color: #f0eeed;
+        cursor: pointer;
+        object-fit: contain;
+        border: 2px solid transparent;
+        transition: 0.3s;
+
+        &.active {
+          border-color: #000;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }
@@ -61,5 +81,7 @@
     height: 530px;
     background-color: #f0eeed;
     object-fit: contain;
+    display: block;
+    margin: 0 auto;
   }
 }

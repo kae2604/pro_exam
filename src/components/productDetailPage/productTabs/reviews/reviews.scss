@@ -20,10 +20,16 @@
 
 .review_container{
   display: flex;
-  justify-content: space-between;
+  //justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 36px;
+
+
+  //@media (max-width: 1200px) {
+  //
+  //  justify-content: center;
+  //}
 
   .review_container_card{
     width: 100%;

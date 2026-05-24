@@ -6,7 +6,7 @@ import "./quantitySelector.scss"
 const QuantitySelector = ({ quantity, onIncrement, onDecrement, isMinusDisabled, isPlusDisabled, isInStock } ) => {
 
     return (
-        <div>
+        <div className="productDetailPage_quantitySelector">
             <button className="productDetailPage_button_minus"
                     onClick={onDecrement}
                     disabled={isMinusDisabled}>

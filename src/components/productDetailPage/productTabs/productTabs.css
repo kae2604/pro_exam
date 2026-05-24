@@ -1,9 +1,9 @@
 .productDetailPage_productTabs .productTabs_titles {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 24px;
-  padding: 0 140px;
+  gap: 16px;
 }
 .productDetailPage_productTabs .productTabs_titles button {
   font-weight: 400;
@@ -17,6 +17,11 @@
   outline: none;
   width: 160px;
 }
+@media (max-width: 600px) {
+  .productDetailPage_productTabs .productTabs_titles button {
+    font-size: 16px;
+  }
+}
 .productDetailPage_productTabs .productTabs_titles button.product_tab_bold {
   font-weight: 500;
   color: #000;
@@ -27,7 +32,7 @@
 .productDetailPage_productTabs .section_line .productTabs_line {
   position: absolute;
   border: 2px solid #000;
-  width: 414px;
+  width: 33%;
   top: 50%;
   transition: all 0.3s ease;
 }

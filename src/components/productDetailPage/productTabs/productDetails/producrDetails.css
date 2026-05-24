@@ -4,6 +4,11 @@
   justify-content: space-between;
   gap: 25px;
 }
+@media (max-width: 1250px) {
+  .productDetails_container {
+    grid-template-columns: 1fr;
+  }
+}
 .productDetails_container .productDetails_dimensions_wrapper {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -27,6 +32,7 @@
 }
 .productDetails_container .productDetails_dimensions_wrapper p span {
   color: #000;
+  margin-left: 20px;
 }
 .productDetails_container .productDetails_dimensions_wrapper p:last-of-type {
   margin-bottom: 0;

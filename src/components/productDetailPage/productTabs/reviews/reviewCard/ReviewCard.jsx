@@ -22,6 +22,7 @@ const ReviewCard = ({review}) => {
             </h5>
 
             <p>{review.comment}</p>
+
             <span>Posted on {displayDate}</span>
         </div>
     );

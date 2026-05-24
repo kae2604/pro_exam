@@ -2,6 +2,10 @@
 .productDetailPage_sameProducts{
   margin-bottom: 168px;
 
+  @media (max-width: 500px) {
+    margin-bottom: 200px;
+  }
+
   .otherProducts_AllProducts {
     display: flex;
     align-items: center;

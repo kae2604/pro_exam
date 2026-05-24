@@ -14,17 +14,20 @@ const ProductDetailPictures = ({product}) => {
 
     return (
         <div className="productDetail_pictures">
-            <div className={`productDetail_pictures_left ${product?.images?.length > 3 ? 'has-scroll' : ''}`}>
-                {product?.images?.map((image, index) => (
-                    <img
-                        className={`productDetail_pictures_preview ${mainImage === image ? 'active' : ''}`}
-                        key={index}
-                        src={image}
-                        alt="preview"
-                        onClick={() => setMainImage(image)}
-                    />
-                ))}
+            <div className="productDetail_pictures_left_wrapper">
+                <div className={`productDetail_pictures_left ${product?.images?.length > 3 ? 'has-scroll' : ''}`}>
+                    {product?.images?.map((image, index) => (
+                        <img
+                            className={`productDetail_pictures_preview ${mainImage === image ? 'active' : ''}`}
+                            key={index}
+                            src={image}
+                            alt="preview"
+                            onClick={() => setMainImage(image)}
+                        />
+                    ))}
+                </div>
             </div>
+
             <div >
                 <img className="productDetail_pictures_right"
                      src={mainImage}

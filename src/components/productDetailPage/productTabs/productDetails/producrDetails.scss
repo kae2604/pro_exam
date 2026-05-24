@@ -4,12 +4,19 @@
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   gap: 25px;
+  @media (max-width: 1250px) {
+    grid-template-columns: 1fr;
+  }
+
+
 
   .productDetails_dimensions_wrapper{
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 28px 32px;
     width: 100%;
+
+
 
     h5{
       margin-bottom: 20px;
@@ -25,8 +32,10 @@
       font-size: 20px;
       line-height: 110%;
       color: rgba(0, 0, 0, 0.6);
+
       span{
         color: #000;
+        margin-left: 20px;
       }
       &:last-of-type{
         margin-bottom: 0;

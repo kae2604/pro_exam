@@ -47,7 +47,12 @@
   margin-bottom: 32px;
   column-gap: 20px;
   row-gap: 36px;
-  justify-content: center;
+  justify-content: start;
+}
+@media (max-width: 767px) {
+  .categoryPage_right .categoryPage_box {
+    justify-content: center;
+  }
 }
 .categoryPage_right .categoryPage_box .notFoundCategory {
   color: #ff3333;

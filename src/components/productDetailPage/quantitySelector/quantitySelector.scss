@@ -1,56 +1,79 @@
 
-.productDetailPage_button_minus{
-  border-radius: 62px 0 0 62px;
-  padding: 16px 20px;
-  width: 70px;
-  height: 52px;
-  background: #f0f0f0;
-  border: 1px solid #f0f0f0;
-  border-right: none;
-  vertical-align: top;
-}
-
-.productDetailPage_button_plus{
-  border-radius: 0 62px 62px 0;
-  padding: 16px 20px;
-  width: 70px;
-  height: 52px;
-  background: #f0f0f0;
-  border: 1px solid #f0f0f0;
-  border-left: none;
-  vertical-align: top;
-}
-
-.productDetailPage_amount{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 52px;
-  background: #f0f0f0;
-  border-top: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
-  vertical-align: top;
-  padding: 0 10px;
-}
+.productDetailPage_quantitySelector{
+  max-width: 170px;
+  min-width: 50px;
+  display: flex;
 
 
+  .productDetailPage_button_minus{
+    border-radius: 62px 0 0 62px;
+    padding: 14px 20px;
+    max-width: 70px;
+    width: 100%;
+    height: 52px;
+    background: #f0f0f0;
+    border: 1px solid #f0f0f0;
+    border-right: none;
+    vertical-align: top;
+    @media (max-width: 500px) {
+      height: 44px;
+      padding: 0 10px;
 
-.productDetailPage_button_minus,
-.productDetailPage_button_plus{
-  transition: background-color 0.1s;
-
-  //&:hover:not(:disabled) {
-  //  background-color: rgba(0, 0, 0, 0.8);
-  //}
-
-  &:active:not(:disabled) {
-    background-color: #d1d1d1;
-    transform: scale(0.98);
+    }
   }
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
+  .productDetailPage_button_plus{
+    border-radius: 0 62px 62px 0;
+    padding: 0 20px;
+    max-width: 70px;
+    width: 100%;
+    height: 52px;
+    background: #f0f0f0;
+    border: 1px solid #f0f0f0;
+    border-left: none;
+    vertical-align: center;
+    @media (max-width: 500px) {
+      height: 44px;
+      padding: 0 10px;
+    }
+  }
+
+  .productDetailPage_amount{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 52px;
+    background: #f0f0f0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+    padding: 0 10px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000;
+    @media (max-width: 500px) {
+      height: 44px;
+      padding: 14px 14px;
+      font-size: 14px;
+    }
+  }
+
+  .productDetailPage_button_minus,
+  .productDetailPage_button_plus{
+    transition: background-color 0.1s;
+
+    &:active:not(:disabled) {
+      background-color: #d1d1d1;
+      transform: scale(0.98);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
   }
 }
+
+
+

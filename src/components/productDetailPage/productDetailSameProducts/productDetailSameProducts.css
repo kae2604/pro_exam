@@ -1,6 +1,11 @@
 .productDetailPage_sameProducts {
   margin-bottom: 168px;
 }
+@media (max-width: 500px) {
+  .productDetailPage_sameProducts {
+    margin-bottom: 200px;
+  }
+}
 .productDetailPage_sameProducts .otherProducts_AllProducts {
   display: flex;
   align-items: center;

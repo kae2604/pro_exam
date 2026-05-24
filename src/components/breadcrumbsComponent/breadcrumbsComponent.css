@@ -1,5 +1,15 @@
 .breadcrumbsComponent_container {
   margin: 24px 0;
 }
+.breadcrumbsComponent_container .MuiBreadcrumbs-ol {
+  line-height: 2;
+}
+.breadcrumbsComponent_container .MuiBreadcrumbs-ol li {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.breadcrumbsComponent_container .MuiBreadcrumbs-li {
+  line-height: inherit;
+}
 
 /*# sourceMappingURL=breadcrumbsComponent.css.map */

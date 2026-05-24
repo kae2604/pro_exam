@@ -12,5 +12,10 @@
   color: #000;
   margin: 100px auto 150px;
 }
+@media (max-width: 850px) {
+  .underConstruction_container p {
+    margin-top: 10px;
+  }
+}
 
 /*# sourceMappingURL=underConstruction.css.map */

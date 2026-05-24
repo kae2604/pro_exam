@@ -4,22 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f910a1bc-f643-4de7-a0f3-a68c631c8192" name="Changes" comment="made adaptive HomePage">
-      <change beforePath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/CategoryPageRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/CategoryPageRight.jsx" afterDir="false" />
+    <list default="true" id="f910a1bc-f643-4de7-a0f3-a68c631c8192" name="Changes" comment="made adaptive categoryPage">
+      <change beforePath="$PROJECT_DIR$/src/components/breadcrumbsComponent/breadcrumbsComponent.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/breadcrumbsComponent/breadcrumbsComponent.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/breadcrumbsComponent/breadcrumbsComponent.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/breadcrumbsComponent/breadcrumbsComponent.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/breadcrumbsComponent/breadcrumbsComponent.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/breadcrumbsComponent/breadcrumbsComponent.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/categoryPageRight.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/categoryPageRight.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/categoryPageRight.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/categoryPageRight.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/categoryPageRight.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/categoryPageRight.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categoryPage/pagination/pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categoryPage/pagination/pagination.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categoryPage/pagination/pagination.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categoryPage/pagination/pagination.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categoryPage/pagination/pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categoryPage/pagination/pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/navigationHeader/navigationHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/navigationHeader/navigationHeader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/navigationHeader/navigationHeader.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/navigationHeader/navigationHeader.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/navigationHeader/navigationHeader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/navigationHeader/navigationHeader.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/shop/Shop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/shop/Shop.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/shop/shop.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/shop/shop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/shop/shop.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/shop/shop.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/shop/shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/shop/shop.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/categoryPage/CategoryPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categoryPage/CategoryPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetailInfo/productDetailInfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailInfo/productDetailInfo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetailInfo/productDetailInfo.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailInfo/productDetailInfo.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetailInfo/productDetailInfo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailInfo/productDetailInfo.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetailPictures/ProductDetailPictures.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailPictures/ProductDetailPictures.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetailPictures/productDetailPictures.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailPictures/productDetailPictures.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetailPictures/productDetailPictures.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailPictures/productDetailPictures.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetailPictures/productDetailPictures.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailPictures/productDetailPictures.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetailSameProducts/productDetailSameProducts.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailSameProducts/productDetailSameProducts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetailSameProducts/productDetailSameProducts.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailSameProducts/productDetailSameProducts.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productDetailSameProducts/productDetailSameProducts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productDetailSameProducts/productDetailSameProducts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productDetails/producrDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productDetails/producrDetails.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productDetails/producrDetails.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productDetails/producrDetails.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productDetails/producrDetails.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productDetails/producrDetails.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productTabs.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productTabs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productTabs.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productTabs.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productTabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/productTabs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviewCard/ReviewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviewCard/ReviewCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviews.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviews.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviews.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviews.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviews.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/quantitySelector/QuantitySelector.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/quantitySelector/QuantitySelector.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/quantitySelector/quantitySelector.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/quantitySelector/quantitySelector.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/quantitySelector/quantitySelector.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/quantitySelector/quantitySelector.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/quantitySelector/quantitySelector.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/quantitySelector/quantitySelector.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/underConstruction/underConstruction.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/underConstruction/underConstruction.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/underConstruction/underConstruction.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/underConstruction/underConstruction.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/underConstruction/underConstruction.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/underConstruction/underConstruction.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/productDetailPage/productDetailPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/productDetailPage/productDetailPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/productDetailPage/productDetailPage.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/productDetailPage/productDetailPage.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/productDetailPage/productDetailPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/productDetailPage/productDetailPage.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +154,7 @@
       <workItem from="1778500255146" duration="268288000" />
       <workItem from="1779546658907" duration="152000" />
       <workItem from="1779546957138" duration="15000" />
-      <workItem from="1779546988940" duration="6424000" />
+      <workItem from="1779546988940" duration="19829000" />
     </task>
     <task id="LOCAL-00001" summary="Add ProductDetailPage">
       <option name="closed" value="true" />
@@ -207,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779547405832</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="made adaptive categoryPage">
+      <option name="closed" value="true" />
+      <created>1779553461846</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1779553461846</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +262,8 @@
     <MESSAGE value="separate cartPage" />
     <MESSAGE value="finish deskTop" />
     <MESSAGE value="made adaptive HomePage" />
-    <option name="LAST_COMMIT_MESSAGE" value="made adaptive HomePage" />
+    <MESSAGE value="made adaptive categoryPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="made adaptive categoryPage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
