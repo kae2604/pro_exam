@@ -12,6 +12,7 @@ import {setCurrentPage } from '@store/slices/categoryFiltersSlice';
 import Skeleton from '@mui/material/Skeleton';
 import {useResponsiveLimitCategoryPage} from "@hooks/useResponsiveLimit.js";
 import filtersMobile from "@assets/categoryPage/filtersMobile.svg";
+import ErrorModal from "@components/errorModal";
 
 const CategoryPageRight = ({handleDrawerToggle}) => {
 
@@ -23,6 +24,12 @@ const CategoryPageRight = ({handleDrawerToggle}) => {
     const activeFilter = useSelector((state) => state.categoryFilters.categoryFilterActive);
     const searchQuery = useSelector((state) => state.categoryFilters.searchQuery);
     const page = useSelector((state) => state.categoryFilters.currentPage);
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        setIsModalOpen(true);
+    }, [category, searchQuery]);
 
     useEffect(() => {
         dispatch(setCurrentPage(1));
@@ -56,9 +63,10 @@ const CategoryPageRight = ({handleDrawerToggle}) => {
         }
     }, [activeFilter]);
 
-    const { data: productsList, isLoading } = searchQuery
+    const { data: productsList, isLoading, isError, refetch } = searchQuery
         ? useGetProductsBySearchQuery({ search: searchQuery, limit, skip, sortBy, order: sortOrder })
         : useGetProductsByCategoryQuery({ category, limit, skip, sortBy, order: sortOrder });
+
 
     const totalProducts = productsList?.total || 0;
     const pageCount = Math.ceil(totalProducts / limit);
@@ -73,10 +81,19 @@ const CategoryPageRight = ({handleDrawerToggle}) => {
         dispatch(setCurrentPage(value));
     };
 
+
+
     return (
         <section className="categoryPage_right">
 
-
+            {isError && isModalOpen && (
+                <ErrorModal
+                    refetch={() => {
+                        refetch();
+                    }}
+                    onClose={() => setIsModalOpen(false)}
+                />
+            )}
 
             <div className= "categoryPage_right_top">
 

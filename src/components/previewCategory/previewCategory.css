@@ -2,7 +2,7 @@
   text-align: center;
   margin-bottom: 55px;
   font-weight: 700;
-  font-size: 48px;
+  font-size: clamp(32px, 2.5vw + 1rem, 48px);
   color: #000;
 }
 .previewCategory_container .previewCategory_Box {

@@ -41,4 +41,10 @@ a:focus, a:active, a:focus-visible, button:focus, button:active, button:focus-vi
   -webkit-tap-highlight-color: transparent;
 }
 
+.loading_skeleton {
+  width: 100%;
+  height: 100%;
+  background-color: #F2F0F1;
+}
+
 /*# sourceMappingURL=main.css.map */

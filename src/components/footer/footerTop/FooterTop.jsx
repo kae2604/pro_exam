@@ -52,7 +52,7 @@ const FooterTop = () => {
 
     return (
         <div className="footer_top">
-            <h3>STAY UPTO DATE ABOUT OUR LATEST OFFERS</h3>
+            <h2>STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
             <div className="footer_top_right">
                 <form className="footer_form"
                       onSubmit={handleSubmit(onSubmit)}

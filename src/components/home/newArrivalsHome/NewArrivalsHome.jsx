@@ -33,6 +33,7 @@ const NewArrivalsHome = () => {
                             handle={handleGoToNew }
                             isLoading={isLoading}
                             buttonText={'View All'}
+                            limit={limit }
                         />
                     </div>
                     <div className="section_line"></div>

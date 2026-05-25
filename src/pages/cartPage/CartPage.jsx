@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./cartPage.scss"
 import {useDispatch, useSelector} from "react-redux";
 import {decreaseProductQuantity, increaseProductQuantity,removeProductFromCart, clearCart} from "@store/slices/cartSlice.js";
@@ -18,7 +18,7 @@ const CartPage = () => {
     const [openSuccessModal, setOpenSuccessModal] = useState(false);
     const [checkoutError, setCheckoutError] = useState("");
     const [applyPromo, { isLoading: isLoadingApplyPromo, isSuccess: isSuccessApplyPromo, isError: isErrorApplyPromo }] = useApplyPromoCodeMutation();
-    const [createOrder, { isLoading: isLoadingCheckingOut, isSuccess: isSuccessCheckingOut, isError: isErrorCheckingOut }] = useCreateOrderMutation();
+    const [createOrder, { isLoading: isLoadingCheckingOut, isSuccess: isSuccessCheckingOut, isError: isErrorCheckingOut  }] = useCreateOrderMutation();
     const isCartEmpty = cartItems.length === 0;
     const totalItemsQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
     const totalPositionsQuantity = cartItems.length;
@@ -29,7 +29,16 @@ const CartPage = () => {
     const taxes = priceWithDiscount * taxRate;
     const totalPrice = priceWithDiscount + taxes;
 
-    React.useEffect(() => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        if (isErrorCheckingOut) {
+            setIsModalOpen(true);
+        }
+    }, [isErrorCheckingOut]);
+
+
+    useEffect(() => {
         if (isCartEmpty) {
             setDiscountRate(0);
             setPromoValue('');
@@ -79,6 +88,11 @@ const CartPage = () => {
         }
     };
 
+    const handleRetryCheckout = () => {
+        setIsModalOpen(false);
+        handleCheckout();
+    };
+
     return (
         <div className="container ">
             <ModalSuccess openSuccessModal={openSuccessModal}/>
@@ -107,6 +121,10 @@ const CartPage = () => {
                     isCartEmpty={isCartEmpty}
                     promoValue={promoValue}
                     setPromoValue={setPromoValue}
+                    isError={isErrorCheckingOut}
+                    handleRetryCheckout = {handleRetryCheckout }
+                    isModalOpen={isModalOpen}
+                    setIsModalOpen={setIsModalOpen}
                 />
             </section>
         </div>

@@ -70,7 +70,6 @@ const SearchHeader = () => {
                 <div className="search_modal"
                      onClick={e => e.stopPropagation()}>
 
-
                     <form className={`searchHeader_form searchHeader_form_mobile ${searchOpen ? 'active' : ''}`}
                                 onSubmit={handleSearch}>
 
@@ -87,15 +86,10 @@ const SearchHeader = () => {
                             onChange={handleInput}
                         />
                     </form>
-
                 </div>
             </div>
             )}
         </div>
-
-
-
     );
 };
-
 export default SearchHeader;

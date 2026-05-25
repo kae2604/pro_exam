@@ -2,21 +2,47 @@ import React from 'react';
 import "./previewCategory.scss"
 import ProductCard from "@components/productCard/index.js";
 import Button from "@mui/material/Button";
+import Skeleton from "@mui/material/Skeleton";
 
-const PreviewCategory = ({title, data, handle, isLoading, buttonText}) => {
+const PreviewCategory = ({title, data, handle, isLoading, buttonText, limit }) => {
 
-    if (isLoading) return <div>Loading {title}...</div>;
 
     return (
         <div className="previewCategory_container">
             <h2>{title}</h2>
             <div className="previewCategory_Box">
-                {data?.products?.map((product) => (
-                    <ProductCard
-                        key={product.id}
-                        product={product}
-                    />
-                ))}
+
+                {isLoading ? (
+                    Array.from(new Array(limit)).map((_, index) => (
+                        <Skeleton
+                            key={index}
+                            variant="rounded"
+                            width={295}
+                            height={408}
+                            animation="wave"
+                            sx={{ borderRadius: 5 }}
+                        />
+                    ))
+                ) : data?.products?.length > 0 ? (
+                    data.products.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                    ))
+                ) : (
+                    <p className="notFoundCategory">No products found.</p>
+                )}
+
+
+
+
+
+
+
+                {/*{data?.products?.map((product) => (*/}
+                {/*    <ProductCard*/}
+                {/*        key={product.id}*/}
+                {/*        product={product}*/}
+                {/*    />*/}
+                {/*))}*/}
             </div>
             <Button className='previewCategory_Button'
                     onClick={handle}>

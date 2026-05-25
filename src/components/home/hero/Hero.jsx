@@ -15,11 +15,9 @@ const Hero = () => {
     const { data: watch, isLoading: l2 } =  useGetBannerImagesQuery(95);
     const { data: sunglasses, isLoading: l3 } =  useGetBannerImagesQuery(155);
     const { data: perfume, isLoading: l4 } =  useGetBannerImagesQuery(7);
-    const { data: quote, isLoading: l5} = useGetRandomQuoteQuery();
+    const { data: quote, isLoading: l5 } = useGetRandomQuoteQuery();
 
     const isLoading = l1 || l2 || l3 || l4 || l5;
-
-    const isError = !motorcycle || !watch || !sunglasses || !perfume || !quote;
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -44,46 +42,44 @@ const Hero = () => {
         </div>
     )}
 
-    if (isError) return null;
-
     return (
         <section className="hero">
-                <div className="container heroContainer">
-                    <div className="hero_left">
-                        <div className="hero_left_top">
-                            <h1>Find the product , you need</h1>
-                            <p className="hero_left_description">{quote?.quote}</p>
-                            <Button variant="contained"
-                                    onClick={() => handleGoToAll()}>
-                                Shop Now
-                            </Button>
-                        </div>
-
-                        <div className="hero_left_bottom">
-                            <div className="hero_left_info">
-                                <h3>200 +</h3>
-                                <span>International Brands</span>
-                            </div>
-                            <div className="hero_left_verticalLine"></div>
-                            <div className="hero_left_info">
-                                <h3>2,000 +</h3>
-                                <span>High-Quality Products</span>
-                            </div>
-                            <div className="hero_left_verticalLine"></div>
-                            <div className="hero_left_info">
-                                <h3>30,000 +</h3>
-                                <span>Happy Customers</span>
-                            </div>
-                        </div>
+            <div className="container heroContainer">
+                <div className="hero_left">
+                    <div className="hero_left_top">
+                        <h1>Find the product , you need</h1>
+                        <p className="hero_left_description">{quote?.quote}</p>
+                        <Button variant="contained"
+                                onClick={() => handleGoToAll()}>
+                            Shop Now
+                        </Button>
                     </div>
 
-                    <div className="hero_right">
-                        <img className="hero_img1" src={motorcycle.images[0]} alt="motorcycle"/>
-                        <img className="hero_img2" src={watch.images[0]} alt="watch"/>
-                        <img className="hero_img3" src={sunglasses.images[0]} alt="sunglasses"/>
-                        <img className="hero_img4" src={perfume.images[0]} alt="perfume"/>
+                    <div className="hero_left_bottom">
+                        <div className="hero_left_info">
+                            <h3>200 +</h3>
+                            <span>International Brands</span>
+                        </div>
+                        <div className="hero_left_verticalLine"></div>
+                        <div className="hero_left_info">
+                            <h3>2,000 +</h3>
+                            <span>High-Quality Products</span>
+                        </div>
+                        <div className="hero_left_verticalLine"></div>
+                        <div className="hero_left_info">
+                            <h3>30,000 +</h3>
+                            <span>Happy Customers</span>
+                        </div>
                     </div>
                 </div>
+
+                <div className="hero_right">
+                    <img className="hero_img1" src={motorcycle?.images?.[0]} alt="motorcycle"/>
+                    <img className="hero_img2" src={watch?.images?.[0]} alt="watch"/>
+                    <img className="hero_img3" src={sunglasses?.images?.[0]} alt="sunglasses"/>
+                    <img className="hero_img4" src={perfume?.images?.[0]} alt="perfume"/>
+                </div>
+            </div>
         </section>
     );
 };

@@ -1,9 +1,9 @@
 
 .cartPage_title{
   font-weight: 700;
-  font-size: 40px;
   color: #000;
   margin-bottom: 24px;
+  font-size: clamp(32px, 2.5vw + 1rem, 40px);
 }
 
 .cartPage_container{
@@ -12,6 +12,13 @@
   display: grid;
   grid-template-columns:  7fr 5fr;
   gap: 20px;
+
+  @media (max-width: 1023px) {
+    grid-template-columns:  1fr;
+  }
+  @media (max-width: 349px) {
+    margin-bottom: 190px;
+  }
 }
 
 

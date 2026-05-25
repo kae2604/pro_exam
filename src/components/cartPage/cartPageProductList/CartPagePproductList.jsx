@@ -13,6 +13,7 @@ const CartPageProductList = ({cartItems, onRemove, onIncrement, onDecrement}) =>
                 <div className="cartPage_productList_empty">
                     <p>Your cart is empty.</p>
                     <p>You have not added any products yet.</p>
+
                     <Button
                         component={Link}
                         to="/category"
@@ -34,37 +35,53 @@ const CartPageProductList = ({cartItems, onRemove, onIncrement, onDecrement}) =>
                     </Link>
 
                     <div className="cart_item_description">
-                        <Link to={`/products/${item.id}`}>
-                            <h4>{item.title}</h4>
-                        </Link>
-                        <p>{item.brand}</p>
-                        <div>
+                        <div className="cart_item_description_title">
+                            <Link to={`/products/${item.id}`}>
+                                <h4>{item.title}</h4>
+                            </Link>
+
+                            <div className="cart_item_description_basket">
+                                <IconButton
+                                    onClick={() => onRemove(item.id)}
+                                    aria-label="Remove product"
+                                    sx={{ color: '#ff3333' }}
+                                >
+                                    <DeleteForeverIcon />
+                                </IconButton>
+                            </div>
+                        </div>
+
+                        {/*<p>{item.brand}</p>*/}
+                        <div className="cart_item_description_row">
                             <span>Quantity: </span>
                             <span>{item.quantity}</span>
                         </div>
-                        <div>
+                        <div className="cart_item_description_row">
                             <span>Price: </span>
                             <span>{item.price} $</span>
                         </div>
-                        <div>
-                            <span>Subtotal: </span>
-                            <span className="item_description_subtotal">
-                                {item.price * item.quantity} $
-                            </span>
+                        <div className="cart_item_description_bottom">
+                            <div className="cart_item_description_row">
+                                <span>Subtotal: </span>
+                                <span className="item_description_subtotal">
+                                    {item.price * item.quantity} $
+                                </span>
+                            </div>
+                            <div className="cartPage_productList_quantitySelector">
+                                <QuantitySelector
+                                    quantity={item.quantity}
+                                    onIncrement={() => onIncrement(item.id)}
+                                    onDecrement={() => onDecrement(item.id)}
+                                    isMinusDisabled={item.quantity <= 1}
+                                    isPlusDisabled={item.quantity >= item.stockAmount}
+                                    isInStock={true}
+                                />
+                            </div>
                         </div>
                     </div>
 
-                    <div className="cartPage_productList_right">
-                        <IconButton
-                            onClick={() => onRemove(item.id)}
-                            aria-label="Remove product"
-                            sx={{ color: '#ff3333' }}
-                        >
-                            <DeleteForeverIcon />
-                        </IconButton>
-
+                    <div className="cartPage_quantitySelector_bottom">
                         <QuantitySelector
-                            className="cartPage_productList_quantitySelector"
                             quantity={item.quantity}
                             onIncrement={() => onIncrement(item.id)}
                             onDecrement={() => onDecrement(item.id)}
@@ -72,6 +89,14 @@ const CartPageProductList = ({cartItems, onRemove, onIncrement, onDecrement}) =>
                             isPlusDisabled={item.quantity >= item.stockAmount}
                             isInStock={true}
                         />
+
+                        <IconButton
+                            onClick={() => onRemove(item.id)}
+                            aria-label="Remove product"
+                            sx={{ color: '#ff3333' }}
+                        >
+                            <DeleteForeverIcon />
+                        </IconButton>
                     </div>
                 </div>
             ))}

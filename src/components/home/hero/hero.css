@@ -29,11 +29,11 @@
 }
 .hero .heroContainer .hero_left .hero_left_top h1 {
   font-weight: 700;
-  font-size: 64px;
   line-height: 100%;
   color: #000;
   padding-top: 103px;
   margin-bottom: 32px;
+  font-size: clamp(36px, 2.5vw + 1rem, 64px);
 }
 @media (max-width: 1200px) {
   .hero .heroContainer .hero_left .hero_left_top h1 {
@@ -43,13 +43,7 @@
 }
 @media (max-width: 1050px) {
   .hero .heroContainer .hero_left .hero_left_top h1 {
-    font-size: 48px;
     line-height: 94%;
-  }
-}
-@media (max-width: 1050px) {
-  .hero .heroContainer .hero_left .hero_left_top h1 {
-    font-size: 36px;
   }
 }
 .hero .heroContainer .hero_left .hero_left_top .hero_left_description {
@@ -180,7 +174,7 @@
 }
 .hero .heroContainer .hero_right .hero_img1 {
   position: absolute;
-  bottom: -175px;
+  bottom: -177px;
   right: 0;
   width: 600px;
   height: auto;

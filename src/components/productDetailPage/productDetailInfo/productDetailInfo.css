@@ -7,12 +7,12 @@
 }
 .productDetail_info h2 {
   font-weight: 700;
-  font-size: 40px;
   color: #000;
+  font-size: clamp(24px, 2.5vw + 1rem, 40px);
 }
 .productDetail_info .productDetail_brand {
   font-weight: 700;
-  font-size: 25px;
+  font-size: clamp(16px, 2.5vw + 1rem, 24px);
   color: #333;
 }
 .productDetail_info .productRating_box {

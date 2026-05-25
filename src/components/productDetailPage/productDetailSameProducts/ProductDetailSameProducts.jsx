@@ -35,6 +35,7 @@ const ProductDetailSameProducts = ({product}) => {
                 handle={handleGoToSameProducts}
                 isLoading={isSameLoading}
                 buttonText={`See All ${product.category}`}
+                limit={limit }
             />
         </section>
     );

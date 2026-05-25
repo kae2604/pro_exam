@@ -3,14 +3,26 @@ import "./cartPageSummary.scss"
 import Button from "@mui/material/Button";
 import promo from "@assets/cartPage/promo.svg";
 import cartArrow from "@assets/cartPage/cartArrow.svg";
+import {CircularProgress, LinearProgress} from "@mui/material";
+import Skeleton from "@mui/material/Skeleton";
+import ErrorModal from "@components/errorModal/index.js";
 
 const CartPageSummary = ({totalItemsQuantity, totalPositionsQuantity, subTotalPrice,
                              discount, discountRate, taxRate, taxes, totalPrice,
                              checkoutError, onApplyPromo, onCheckout, isLoadingApply,
-                             isLoadingCheckout, isCartEmpty, promoValue, setPromoValue,}) => {
+                             isLoadingCheckout, isCartEmpty, promoValue, setPromoValue,
+                             isError, handleRetryCheckout , isModalOpen, setIsModalOpen}) => {
 
     return (
         <div className="cartPage_container_summary">
+
+            {isError && isModalOpen && (
+                <ErrorModal
+                    refetch={handleRetryCheckout}
+                    onClose={() => setIsModalOpen(false)}
+                />
+            )}
+
             <h3>Order Summary</h3>
             <p className="summary_result">
                 Quantity of Positions :
@@ -42,11 +54,24 @@ const CartPageSummary = ({totalItemsQuantity, totalPositionsQuantity, subTotalPr
                 </Button>
             </div>
 
+            {isLoadingApply && (
+            <div>
+                <LinearProgress aria-label="Loading…" />
+                <Skeleton
+                    variant="rounded"
+                    width="100%"
+                    height="10px"
+                    animation="wave"
+                />
+                <LinearProgress aria-label="Loading…" variant="query" />
+            </div> )}
+
             {discountRate > 0 && (
                 <p className="summary_result">
                     Discount: (- {discountRate} %)
                     <span className="summary_attention"> -${discount.toFixed(2)} </span>
                 </p>
+
             )}
 
             {taxRate > 0 && (
@@ -73,8 +98,11 @@ const CartPageSummary = ({totalItemsQuantity, totalPositionsQuantity, subTotalPr
                     onClick={onCheckout}
                     disabled={isCartEmpty || isLoadingApply || isLoadingCheckout}
             >
-                Go to Checkout
-                <img src={cartArrow} alt="Arrow" />
+                    <span>Go to Checkout</span>
+                    <img src={cartArrow} alt="Arrow" />
+                {isLoadingCheckout && (
+                    <CircularProgress size={24} sx={{ ml: 1 }}/>
+                )}
             </Button>
         </div>
     );

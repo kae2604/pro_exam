@@ -24,36 +24,22 @@ const CategoryPage = () => {
                 </div>
             </div>
 
-
-                <Drawer
-                    className="categoryPage_filters_mobile"
-                    variant="temporary"
-                    open={openFilters}
-                    onClose={handleDrawerToggle}
-                    slotProps={{
-                        paper: {
-                            sx: {
-                                width: '250px',
-                                // Если ширина всё ещё не слушается, попробуй задать minWidth
-
-                            }
+            <Drawer
+                className="categoryPage_filters_mobile"
+                variant="temporary"
+                open={openFilters}
+                onClose={handleDrawerToggle}
+                slotProps={{
+                    paper: {
+                        sx: {
+                            width: '250px',
                         }
-                    }}
-                >
-                    <CategoryPageAside handleDrawerToggle={handleDrawerToggle}/>
-                </Drawer>
-
-
+                    }
+                }}
+            >
+                <CategoryPageAside handleDrawerToggle={handleDrawerToggle}/>
+            </Drawer>
         </>
-
-
-
-
-
-
-
-
-
     );
 };
 

@@ -17,18 +17,17 @@
     padding: 32px 24px;
   }
 }
-.footer_top h3 {
+.footer_top h2 {
   font-weight: 700;
-  font-size: 40px;
   line-height: 113%;
   color: #fff;
   width: 50%;
+  font-size: clamp(32px, 2.5vw + 1rem, 40px);
 }
 @media (max-width: 900px) {
-  .footer_top h3 {
+  .footer_top h2 {
     width: 100%;
     text-align: center;
-    font-size: 32px;
     line-height: 109%;
   }
 }

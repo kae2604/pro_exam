@@ -31,6 +31,7 @@ const TopRatingHome = () => {
                         handle={handleGoToRating}
                         isLoading={isLoading}
                         buttonText={'View All'}
+                        limit={limit }
                     />
                 </div>
             </div>
