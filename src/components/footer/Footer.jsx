@@ -8,7 +8,7 @@ import googlePay from '@assets/footer/paymentMethod/googlePay.svg';
 import {FOOTER_DATA} from './footerLinks.js';
 import FooterList from "@components/footer/footerList";
 import {useGetRandomQuoteQuery} from "@store/api/commonAPI.js";
-import FooterSocialMedia from "@components/footer/footerSocialMedia/index.js";
+import FooterSocialMedia from "@components/footer/footerSocialMedia";
 import FooterTop from "@components/footer/footerTop/index.js";
 import LogoMain from "@components/logoMain/index.js";
 

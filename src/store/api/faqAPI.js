@@ -7,7 +7,6 @@ export const faqAPI = baseAPI.injectEndpoints({
         })
     })
 })
-
 export const {
     useGetFaqsQuery,
 } = faqAPI;

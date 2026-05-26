@@ -6,7 +6,6 @@
   display: flex;
   justify-content: end;
 
-
   .searchHeaderMobile_trigger{
     display: none;
     border: none;
@@ -17,8 +16,6 @@
       display: block;
     }
   }
-
-
 
   .searchHeader_form{
     border-radius: 62px;
@@ -43,7 +40,6 @@
 
     .searchHeader_input{
       border: none;
-
       padding: 13px 13px;
       width: 100%;
       background: #f0f0f0;
@@ -52,29 +48,12 @@
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   .searchHeader_form_desktop {
-    // Твои стили формы (ширина, фон и т.д.)
-
 
     @media (max-width: 950px) {
       display: none; // Скрываем на мобилках
     }
   }
-
 
   .search_overlay {
     position: fixed;
@@ -89,7 +68,6 @@
     align-items: center;
     z-index: 9999;
 
-
     .search_modal {
       background: #fff;
       padding: 25px;
@@ -99,10 +77,7 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       margin-inline: 16px;
 
-
-
       .searchHeader_form_mobile{
-
 
         @media (max-width: 950px) {
           display: none;
@@ -111,10 +86,6 @@
             display: flex;
           }
         }
-
-
-
-
       }
     }
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import "./footerList.scss"
 import {Link} from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const FooterList = ({data}) => {
     return (
@@ -19,6 +20,18 @@ const FooterList = ({data}) => {
             ))}
         </ul>
     );
+};
+
+FooterList.propTypes = {
+    data: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        links: PropTypes.arrayOf(
+            PropTypes.shape({
+                to: PropTypes.string.isRequired,
+                text: PropTypes.string.isRequired,
+            })
+        ).isRequired,
+    }).isRequired,
 };
 
 export default FooterList;

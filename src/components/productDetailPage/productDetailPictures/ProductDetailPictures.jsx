@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import "./productDetailPictures.scss"
+import "./productDetailPictures.scss";
+import PropTypes from 'prop-types';
 
 const ProductDetailPictures = ({product}) => {
 
@@ -30,10 +31,18 @@ const ProductDetailPictures = ({product}) => {
 
             <div >
                 <img className="productDetail_pictures_right"
-                     src={mainImage}
+                     src={mainImage || product?.images?.[0] || ''}
                      alt={product.title}/>
             </div>
         </div>
     );
 };
+
+ProductDetailPictures.propTypes = {
+    product: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        images: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }).isRequired,
+};
+
 export default ProductDetailPictures;

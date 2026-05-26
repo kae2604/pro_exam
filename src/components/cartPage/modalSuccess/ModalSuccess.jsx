@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Dialog, DialogContent, Typography, Box } from '@mui/material';
+import PropTypes from 'prop-types';
 
 const ModalSuccess = ({ openSuccessModal }) => {
     const navigate = useNavigate();
@@ -75,4 +76,9 @@ const ModalSuccess = ({ openSuccessModal }) => {
         </Dialog>
     );
 };
+
+ModalSuccess.propTypes = {
+    openSuccessModal: PropTypes.bool.isRequired,
+};
+
 export default ModalSuccess;

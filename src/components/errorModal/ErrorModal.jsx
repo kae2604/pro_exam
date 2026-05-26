@@ -1,5 +1,6 @@
 import React from 'react';
 import "./errorModal.scss"
+import PropTypes from 'prop-types';
 
 const ErrorModal = ({ refetch , onClose }) => {
     return (
@@ -13,6 +14,11 @@ const ErrorModal = ({ refetch , onClose }) => {
             </div>
         </div>
     );
+};
+
+ErrorModal.propTypes = {
+    refetch: PropTypes.func.isRequired,
+    onClose: PropTypes.func.isRequired,
 };
 
 export default ErrorModal;

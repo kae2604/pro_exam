@@ -6,12 +6,14 @@ import cartArrow from "@assets/cartPage/cartArrow.svg";
 import {CircularProgress, LinearProgress} from "@mui/material";
 import Skeleton from "@mui/material/Skeleton";
 import ErrorModal from "@components/errorModal/index.js";
+import PropTypes from 'prop-types';
 
 const CartPageSummary = ({totalItemsQuantity, totalPositionsQuantity, subTotalPrice,
                              discount, discountRate, taxRate, taxes, totalPrice,
                              checkoutError, onApplyPromo, onCheckout, isLoadingApply,
                              isLoadingCheckout, isCartEmpty, promoValue, setPromoValue,
-                             isError, handleRetryCheckout , isModalOpen, setIsModalOpen}) => {
+                             isError, handleRetryCheckout , isModalOpen, setIsModalOpen,
+                             applyPromoError}) => {
 
     return (
         <div className="cartPage_container_summary">
@@ -54,6 +56,12 @@ const CartPageSummary = ({totalItemsQuantity, totalPositionsQuantity, subTotalPr
                 </Button>
             </div>
 
+            {applyPromoError && (
+                <p className="checkoutError">
+                    Connection error. Please check your internet and try again.
+                </p>
+            )}
+
             {isLoadingApply && (
             <div>
                 <LinearProgress aria-label="Loading…" />
@@ -89,7 +97,7 @@ const CartPageSummary = ({totalItemsQuantity, totalPositionsQuantity, subTotalPr
             </p>
 
             {checkoutError && (
-                <p style={{ color: '#ff3333', textAlign: 'center', marginBottom: '10px' }}>{
+                <p className="checkoutError">{
                     checkoutError}
                 </p>
             )}
@@ -107,4 +115,28 @@ const CartPageSummary = ({totalItemsQuantity, totalPositionsQuantity, subTotalPr
         </div>
     );
 };
+CartPageSummary.propTypes = {
+    totalItemsQuantity: PropTypes.number.isRequired,
+    totalPositionsQuantity: PropTypes.number.isRequired,
+    subTotalPrice: PropTypes.number.isRequired,
+    discount: PropTypes.number.isRequired,
+    discountRate: PropTypes.number.isRequired,
+    taxRate: PropTypes.number.isRequired,
+    taxes: PropTypes.number.isRequired,
+    totalPrice: PropTypes.number.isRequired,
+    checkoutError: PropTypes.string,
+    onApplyPromo: PropTypes.func.isRequired,
+    onCheckout: PropTypes.func.isRequired,
+    isLoadingApply: PropTypes.bool,
+    isLoadingCheckout: PropTypes.bool,
+    isCartEmpty: PropTypes.bool.isRequired,
+    promoValue: PropTypes.string.isRequired,
+    setPromoValue: PropTypes.func.isRequired,
+    isError: PropTypes.bool,
+    handleRetryCheckout: PropTypes.func.isRequired,
+    isModalOpen: PropTypes.bool,
+    setIsModalOpen: PropTypes.func.isRequired,
+    applyPromoError: PropTypes.bool,
+};
+
 export default CartPageSummary;

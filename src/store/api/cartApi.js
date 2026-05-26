@@ -26,8 +26,6 @@ export const cartAPI = baseAPI.injectEndpoints({
     }),
     overrideExisting: false,
 })
-
-
 export const {
     useApplyPromoCodeMutation,
     useCreateOrderMutation,

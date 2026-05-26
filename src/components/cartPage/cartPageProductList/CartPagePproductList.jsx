@@ -3,7 +3,8 @@ import "./CartPageProductList.scss"
 import { Link } from "react-router-dom";
 import { IconButton, Button } from '@mui/material';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import QuantitySelector from "@components/productDetailPage/quantitySelector/index.js";
+import QuantitySelector from "@components/productDetailPage/quantitySelector";
+import PropTypes from 'prop-types';
 
 const CartPageProductList = ({cartItems, onRemove, onIncrement, onDecrement}) => {
 
@@ -51,7 +52,6 @@ const CartPageProductList = ({cartItems, onRemove, onIncrement, onDecrement}) =>
                             </div>
                         </div>
 
-                        {/*<p>{item.brand}</p>*/}
                         <div className="cart_item_description_row">
                             <span>Quantity: </span>
                             <span>{item.quantity}</span>
@@ -103,4 +103,21 @@ const CartPageProductList = ({cartItems, onRemove, onIncrement, onDecrement}) =>
         </div>
     );
 };
+
+CartPageProductList.propTypes = {
+    cartItems: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+            title: PropTypes.string.isRequired,
+            image: PropTypes.string.isRequired,
+            price: PropTypes.number.isRequired,
+            quantity: PropTypes.number.isRequired,
+            stockAmount: PropTypes.number.isRequired,
+        })
+    ).isRequired,
+    onRemove: PropTypes.func.isRequired,
+    onIncrement: PropTypes.func.isRequired,
+    onDecrement: PropTypes.func.isRequired,
+};
+
 export default CartPageProductList;

@@ -4,13 +4,14 @@ import {useDispatch} from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useGetProductsForHomeCategoryQuery } from "@store/api/productsAPI.js";
 import {resetSearch, setCategoryFilterActive} from "@store/slices/categoryFiltersSlice.js";
+import Skeleton from "@mui/material/Skeleton";
 
 const Categories = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const { data: allProductsData } = useGetProductsForHomeCategoryQuery();
+    const { data: allProductsData, isLoading } = useGetProductsForHomeCategoryQuery();
 
     const uniqueCategoriesWithImages = useMemo(() => {
         if (!allProductsData?.products) return [];
@@ -65,24 +66,45 @@ const Categories = () => {
                 <div className="categories_container">
                     <h2>BROWSE BY CATEGORY</h2>
                     <div className="categories_box">
-                        {randomCategories.map((category, index) => {
-                            const boxClass = (index === 0 || index === 3) ? 'categoryBoxSmall' : 'categoryBoxBig';
-                            return (
-                                <div key={category?.name}
-                                     className={boxClass}
-                                     onClick={() => handleCategoryClick(category?.name)}
-                                     style={{ backgroundImage: `url(${category?.image})`}}
-                                >
-                                    <span key={category?.name}
-                                          className="categoryHomeName">
-                                        {category?.name
-                                            ?.split('-')
-                                            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                                            .join(' ')}
-                                    </span>
-                                </div>
-                            );
-                        })}
+                        {isLoading ? (
+                            [0, 1, 2, 3].map((index) => {
+                                const isSmall = (index === 0 || index === 3);
+                                return (
+                                    <Skeleton
+                                        key={index}
+                                        variant="rounded"
+                                        width={isSmall ? 407 : 684}
+                                        height={289}
+                                        animation="wave"
+                                        sx={{
+                                            borderRadius: 5,
+                                            '@media (max-width: 1200px)': {
+                                                width: '100%',
+                                                maxWidth: '684px'
+                                            }
+                                        }}
+                                    />
+                                );
+                            })
+                        ) : (
+                            randomCategories.map((category, index) => {
+                                const boxClass = (index === 0 || index === 3) ? 'categoryBoxSmall' : 'categoryBoxBig';
+                                return (
+                                    <div key={category?.name}
+                                         className={boxClass}
+                                         onClick={() => handleCategoryClick(category?.name)}
+                                         style={{ backgroundImage: `url(${category?.image})`}}
+                                    >
+                    <span className="categoryHomeName">
+                        {category?.name
+                            ?.split('-')
+                            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                            .join(' ')}
+                    </span>
+                                    </div>
+                                );
+                            })
+                        )}
                     </div>
                 </div>
             </div>

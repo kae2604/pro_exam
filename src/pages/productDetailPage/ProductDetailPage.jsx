@@ -13,8 +13,8 @@ import ErrorModal from "@components/errorModal";
 const ProductDetailPage = () => {
 
     const { id } = useParams();
+
     const { data: product, isLoading, isError, refetch } = useGetProductByIdQuery(id);
-    console.log("QQQQQQQQQQQQQQQQQQQQ",product);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 

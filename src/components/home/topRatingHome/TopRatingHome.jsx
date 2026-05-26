@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import "./topRatingHome.scss";
 import {useGetProductsByCategoryQuery} from "@store/api/productsAPI.js";
 import { useDispatch } from 'react-redux';

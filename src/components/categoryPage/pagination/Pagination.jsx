@@ -1,8 +1,9 @@
 import React from 'react';
 import usePagination from '@mui/material/usePagination';
 import './pagination.scss';
+import PropTypes from 'prop-types';
 
-export default function CustomPagination({ count, page, onChange }) {
+const  CustomPagination = ({ count, page, onChange }) => {
     const { items } = usePagination({
         count,
         page,
@@ -49,4 +50,12 @@ export default function CustomPagination({ count, page, onChange }) {
             </ul>
         </nav>
     );
-}
+};
+
+CustomPagination.propTypes = {
+    count: PropTypes.number.isRequired,
+    page: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired,
+};
+
+export default CustomPagination

@@ -3,7 +3,6 @@ import './categoryPage.scss';
 import CategoryPageAside from "@components/categoryPage/categoryPageAside";
 import CategoryPageRight from "@components/categoryPage/categoryPageRight/index.js";
 import {Box, Drawer} from "@mui/material";
-import NavigationHeader from "@components/header/navigationHeader/index.js";
 
 const CategoryPage = () => {
 

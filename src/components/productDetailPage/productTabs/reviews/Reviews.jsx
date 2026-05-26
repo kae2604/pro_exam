@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import ReviewCard from "@components/productDetailPage/productTabs/reviews/reviewCard/index.js";
+import ReviewCard from "@components/productDetailPage/productTabs/reviews/reviewCard";
 import "./reviews.scss"
+import PropTypes from 'prop-types';
 
 const Reviews = ({reviews = [] }) => {
 
@@ -19,9 +20,10 @@ const Reviews = ({reviews = [] }) => {
             </div>
 
             <div className="review_container">
-                {visibleReviews.map(review => (
+                {visibleReviews.map((review, index)  => (
                     <div className="review_container_card"
-                         key={`${review.reviewerEmail}-${review.date}`}>
+                         key={`${review.reviewerEmail}-${index}`}>
+
                         <button className="review_options">
                             <span className="dots"></span>
                         </button>
@@ -39,6 +41,16 @@ const Reviews = ({reviews = [] }) => {
             )}
         </div>
     );
+};
+
+Reviews.propTypes = {
+    reviews: PropTypes.arrayOf(PropTypes.shape({
+        reviewerName: PropTypes.string,
+        reviewerEmail: PropTypes.string,
+        rating: PropTypes.number,
+        comment: PropTypes.string,
+        date: PropTypes.string,
+    })).isRequired,
 };
 
 export default Reviews;

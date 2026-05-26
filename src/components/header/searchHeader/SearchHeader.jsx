@@ -1,11 +1,10 @@
 import React, {useEffect, useRef} from 'react';
+import "./searchHeader.scss"
 import {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import "./searchHeader.scss"
 import searchHeaderIcon from "@assets/header/searchHeaderIcon.svg";
 import searchHeaderIconMobile from "@assets/header/searchHeaderIconMobile.svg";
-
 import {setSearchQuery} from '@store/slices/categoryFiltersSlice';
 
 

@@ -2,8 +2,9 @@ import React from 'react';
 import "./brandsList.scss";
 import { useGetProductsWithParamsQuery } from "@store/api/productsAPI.js";
 import { useNavigate } from "react-router-dom";
-import {resetSearch, setCategoryFilterActive, setSearchQuery} from "@store/slices/categoryFiltersSlice.js";
+import {setCategoryFilterActive, setSearchQuery} from "@store/slices/categoryFiltersSlice.js";
 import {useDispatch} from "react-redux";
+import {brokenBrands} from "@utils/brokenBrands.js"
 
 const BrandsList = () => {
 
@@ -18,14 +19,6 @@ const BrandsList = () => {
     });
 
     const allBrands = productsBrands?.products?.flatMap(product => product.brand) || [];
-    const brokenBrands = [
-        "Chrysler", "Furniture Co.", "Comfort Trends", "Fashion Shades", "Fashion Trends",
-        "Fashionista", "Fashion Timepieces", "Glamour Beauty", "Generic Motors", "Fashion Diva",
-        "Classic Wear", "Casual Comfort", "Urban Chic", "TechGear", "Fashion Fun",
-        "Velvet Touch", "Chic Cosmetics", "Nail Couture", "Fashion Express", "ScootMaster",
-        "GadgetMaster", "SnapTech", "SpeedMaster", "ProVision", "Fashion Gold",
-        "Elegance Collection", "Fashion Co.", "Bath Trends"
-    ];
 
     const uniqueBrandsList = [...new Set(allBrands.filter(Boolean))]
         .filter(brand => !brokenBrands.includes(brand));
@@ -61,6 +54,7 @@ const BrandsList = () => {
                     {uniqueBrandsList.map((brand, index) => (
                         <span key={`track2-${index}`}
                               className="brand_item"
+                              role="button"
                               onClick={() => handleBrandClick(brand)}>
                             {brand}
                         </span>

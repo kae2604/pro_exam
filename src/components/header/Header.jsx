@@ -7,7 +7,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchHeader from "./searchHeader";
 import NavigationHeader from "@components/header/navigationHeader";
 import LoginUser from "@components/header/loginUser";
-import CartHeader from "@components/header/cartHeader/index.js";
+import CartHeader from "@components/header/cartHeader";
 import LogoMain from "@components/logoMain/index.js";
 import {Box, Drawer} from "@mui/material";
 

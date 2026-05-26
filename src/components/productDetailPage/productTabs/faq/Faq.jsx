@@ -6,6 +6,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {useGetFaqsQuery} from "@store/api/faqAPI.js"
+import PropTypes from 'prop-types';
 
 const Faq = ({id}) => {
 
@@ -19,7 +20,7 @@ const Faq = ({id}) => {
         <div className="container">
             <div className="faq_container">
 
-                {faqList.posts.map((item) => (
+                {faqList?.posts?.map((item) => (
                     <Accordion key={item.id}>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
@@ -37,4 +38,9 @@ const Faq = ({id}) => {
         </div>
     );
 };
+
+Faq.propTypes = {
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+};
+
 export default Faq;

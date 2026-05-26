@@ -35,7 +35,6 @@ export const commonAPI = baseAPI.injectEndpoints({
         }),
     }),
 });
-
 export const {
     useGetRandomQuoteQuery,
     useGetBannerImagesQuery,

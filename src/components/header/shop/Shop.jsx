@@ -1,12 +1,13 @@
 import * as React from 'react';
+import "./shop.scss"
 import { useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import {useGetCategoriesQuery} from "@store/api/productsApi.js";
-import "./shop.scss"
 import {resetSearch, setCategoryFilterActive} from "@store/slices/categoryFiltersSlice.js";
 import {useDispatch} from "react-redux";
+import PropTypes from 'prop-types';
 
 
 const Shop = ({handleDrawerToggle}) => {
@@ -29,6 +30,10 @@ const Shop = ({handleDrawerToggle}) => {
         handleClose();
         dispatch(setCategoryFilterActive('default'));
         dispatch(resetSearch());
+
+        if (typeof handleDrawerToggle === 'function') {
+            handleDrawerToggle();
+        }
     };
 
     const { data: categoriesList } = useGetCategoriesQuery();
@@ -74,9 +79,6 @@ const Shop = ({handleDrawerToggle}) => {
                         key={category.slug}
                         onClick={() => {
                             handleCategoryClick(`/category/${category.slug}`, category.name);
-                            if (typeof handleDrawerToggle === 'function') {
-                                handleDrawerToggle();
-                            }
                         }}>
                         {category.name}
                     </MenuItem>
@@ -85,4 +87,9 @@ const Shop = ({handleDrawerToggle}) => {
         </div>
     );
 };
+
+Shop.propTypes = {
+    handleDrawerToggle: PropTypes.func,
+};
+
 export default Shop;

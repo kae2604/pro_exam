@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import Skeleton from "@mui/material/Skeleton";
 import {LinearProgress} from "@mui/material";
 
+
 const Hero = () => {
 
     const { data: motorcycle, isLoading: l1 } =  useGetBannerImagesQuery(113);

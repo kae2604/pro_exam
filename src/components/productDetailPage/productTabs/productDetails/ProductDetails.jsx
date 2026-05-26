@@ -1,5 +1,6 @@
 import React from 'react';
 import "./producrDetails.scss"
+import PropTypes from 'prop-types';
 
 const ProductDetails = ({product}) => {
     return (
@@ -24,6 +25,23 @@ const ProductDetails = ({product}) => {
             </div>
         </div>
     );
+};
+
+
+ProductDetails.propTypes = {
+    product: PropTypes.shape({
+        dimensions: PropTypes.shape({
+            width: PropTypes.number,
+            height: PropTypes.number,
+            depth: PropTypes.number,
+        }),
+        weight: PropTypes.number,
+        stock: PropTypes.number,
+        minimumOrderQuantity: PropTypes.number,
+        returnPolicy: PropTypes.string,
+        shippingInformation: PropTypes.string,
+        warrantyInformation: PropTypes.string,
+    }).isRequired,
 };
 
 export default ProductDetails;

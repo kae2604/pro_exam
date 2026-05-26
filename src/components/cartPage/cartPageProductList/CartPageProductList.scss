@@ -5,7 +5,6 @@
   border-radius: 20px;
   align-self: start;
 
-
   .cartPage_productList_empty{
     text-align: center;
     padding: 50px 20px;
@@ -22,7 +21,6 @@
       margin: 0 auto;
       max-width: 50%;
       min-width: 250px;
-
       background: #000;
       font-weight: 500;
       font-size: 16px;
@@ -146,8 +144,21 @@
 
         .cartPage_productList_quantitySelector{
           display: block;
+
           @media (max-width: 599px) {
             display: none;
+          }
+
+          .productDetailPage_button_minus,
+          .productDetailPage_button_plus {
+            height: 44px;
+            width: 48px;
+          }
+          .productDetailPage_amount {
+            height: 44px;
+            font-size: 14px;
+            padding: 0 8px;
+            width: 30px;
           }
         }
       }

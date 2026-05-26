@@ -2,6 +2,7 @@ import React from 'react';
 import fullStar from '@assets/productCard/fullStar.svg';
 import halfStar from '@assets/productCard/halfStar.svg';
 import "./productRating.scss"
+import PropTypes from 'prop-types';
 
 const ProductRating = ({rating}) => {
     const fullStarsCount = Math.floor(rating);
@@ -24,4 +25,9 @@ const ProductRating = ({rating}) => {
         </div>
     );
 };
+
+ProductRating.propTypes = {
+    rating: PropTypes.number.isRequired,
+};
+
 export default ProductRating;

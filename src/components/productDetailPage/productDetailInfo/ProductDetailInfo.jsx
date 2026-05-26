@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import "./productDetailInfo.scss"
-import ProductRating from "@components/productCard/productRating/index.js";
-import ProductPriceRow from "@components/productCard/productPriceRow/index.js";
-import QuantitySelector from "@components/productDetailPage/quantitySelector/index.js";
+import ProductRating from "@components/productCard/productRating";
+import ProductPriceRow from "@components/productCard/productPriceRow";
+import QuantitySelector from "@components/productDetailPage/quantitySelector";
 import Button from "@mui/material/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {calculateProductPrice} from "@utils/price.js";
 import {addProductToCart} from "@store/slices/cartSlice.js";
+import PropTypes from 'prop-types';
 
 
 const ProductDetailInfo = ({product}) => {
@@ -40,7 +41,7 @@ const ProductDetailInfo = ({product}) => {
             title: product.title,
             price: finalPrice,
             quantity: quantity,
-            image: product.images[0],
+            image: product.images?.[0],
             brand: product.brand,
             availabilityStatus: product.availabilityStatus,
             stockAmount: product.stock
@@ -89,4 +90,18 @@ const ProductDetailInfo = ({product}) => {
         </div>
     );
 };
+
+ProductDetailInfo.propTypes = {
+    product: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        title: PropTypes.string.isRequired,
+        brand: PropTypes.string,
+        rating: PropTypes.number.isRequired,
+        description: PropTypes.string,
+        availabilityStatus: PropTypes.string,
+        stock: PropTypes.number.isRequired,
+        images: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }).isRequired,
+};
+
 export default ProductDetailInfo;

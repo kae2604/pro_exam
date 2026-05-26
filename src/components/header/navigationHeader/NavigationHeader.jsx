@@ -1,9 +1,10 @@
 import React from 'react';
 import "./navigationHeader.scss"
-import Shop from "@components/header/shop/index.js";
+import Shop from "@components/header/shop";
 import {Link} from "react-router-dom";
 import {resetSearch, setCategoryFilterActive} from "@store/slices/categoryFiltersSlice.js";
 import {useDispatch} from "react-redux";
+import PropTypes from 'prop-types';
 
 const NavigationHeader = ({handleDrawerToggle}) => {
 
@@ -55,6 +56,10 @@ const NavigationHeader = ({handleDrawerToggle}) => {
             </ul>
         </nav>
     );
+};
+
+NavigationHeader.propTypes = {
+    handleDrawerToggle: PropTypes.func,
 };
 
 export default NavigationHeader;

@@ -13,6 +13,7 @@ import Skeleton from '@mui/material/Skeleton';
 import {useResponsiveLimitCategoryPage} from "@hooks/useResponsiveLimit.js";
 import filtersMobile from "@assets/categoryPage/filtersMobile.svg";
 import ErrorModal from "@components/errorModal";
+import PropTypes from 'prop-types';
 
 const CategoryPageRight = ({handleDrawerToggle}) => {
 
@@ -82,7 +83,6 @@ const CategoryPageRight = ({handleDrawerToggle}) => {
     };
 
 
-
     return (
         <section className="categoryPage_right">
 
@@ -149,4 +149,9 @@ const CategoryPageRight = ({handleDrawerToggle}) => {
         </section>
     );
 };
+
+CategoryPageRight.propTypes = {
+    handleDrawerToggle: PropTypes.func.isRequired,
+};
+
 export default CategoryPageRight;

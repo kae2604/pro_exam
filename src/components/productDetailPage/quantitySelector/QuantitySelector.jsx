@@ -1,7 +1,8 @@
 import React from 'react';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import "./quantitySelector.scss"
+import "./quantitySelector.scss";
+import PropTypes from 'prop-types';
 
 const QuantitySelector = ({ quantity, onIncrement, onDecrement, isMinusDisabled, isPlusDisabled, isInStock } ) => {
 
@@ -20,6 +21,15 @@ const QuantitySelector = ({ quantity, onIncrement, onDecrement, isMinusDisabled,
             </button>
         </div>
     );
+};
+
+QuantitySelector.propTypes = {
+    quantity: PropTypes.number.isRequired,
+    onIncrement: PropTypes.func.isRequired,
+    onDecrement: PropTypes.func.isRequired,
+    isMinusDisabled: PropTypes.bool.isRequired,
+    isPlusDisabled: PropTypes.bool.isRequired,
+    isInStock: PropTypes.bool.isRequired,
 };
 
 export default QuantitySelector;

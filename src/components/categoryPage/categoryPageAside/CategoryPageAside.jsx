@@ -4,6 +4,7 @@ import filters from "@assets/categoryPage/filters.svg";
 import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from 'react-redux';
 import { setCategoryFilterActive } from '@store/slices/categoryFiltersSlice';
+import PropTypes from 'prop-types';
 
 const CategoryPageAside = ({handleDrawerToggle}) => {
 
@@ -13,8 +14,6 @@ const CategoryPageAside = ({handleDrawerToggle}) => {
     const handleFilterClick = (activeFilterName) => {
         dispatch(setCategoryFilterActive(activeFilterName));
     };
-
-
 
 
     return (
@@ -88,6 +87,10 @@ const CategoryPageAside = ({handleDrawerToggle}) => {
             </Button>
         </aside>
     );
+};
+
+CategoryPageAside.propTypes = {
+    handleDrawerToggle: PropTypes.func,
 };
 
 export default CategoryPageAside;

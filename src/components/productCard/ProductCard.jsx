@@ -6,8 +6,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ProductRating from "./productRating";
 import "./productCard.scss"
-import ProductPriceRow from "@components/productCard/productPriceRow/index.js";
+import ProductPriceRow from "@components/productCard/productPriceRow";
 import { calculateProductPrice } from "@/utils/price";
+import PropTypes from 'prop-types';
 
 const ProductCard = ({product}) => {
     if (!product) return null;
@@ -41,7 +42,6 @@ const ProductCard = ({product}) => {
                         {product.title}
                     </Typography>
 
-
                     <div className="productRating_box">
                         <ProductRating rating={product.rating}/>
                         <div className="productCard_rating">
@@ -56,6 +56,15 @@ const ProductCard = ({product}) => {
             </Card>
         </Link>
     );
+};
+
+ProductCard.propTypes = {
+    product: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        title: PropTypes.string.isRequired,
+        thumbnail: PropTypes.string.isRequired,
+        rating: PropTypes.number.isRequired,
+    }).isRequired,
 };
 
 export default ProductCard;

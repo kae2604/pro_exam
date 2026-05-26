@@ -5,8 +5,8 @@ import {decreaseProductQuantity, increaseProductQuantity,removeProductFromCart, 
 import {useApplyPromoCodeMutation} from "@store/api/cartApi.js";
 import {useCreateOrderMutation} from "@store/api/cartApi.js";
 import ModalSuccess from "@components/cartPage/modalSuccess";
-import CartPageProductList from "@components/cartPage/cartPageProductList/index.js";
-import CartPageSummary from "@components/cartPage/cartPageSummary/index.js";
+import CartPageProductList from "@components/cartPage/cartPageProductList";
+import CartPageSummary from "@components/cartPage/cartPageSummary";
 
 
 const CartPage = () => {
@@ -59,7 +59,10 @@ const CartPage = () => {
         const isAuthenticated = !!localStorage.getItem('token');
         if (!isAuthenticated) {
             setCheckoutError("To place an order, you need to be logged in.");
-            setTimeout(() => setCheckoutError(""), 3000);
+            setTimeout(() => {
+                setCheckoutError("");
+                window.dispatchEvent(new CustomEvent('open-login'));
+            }, 1500);
             return;
         }
 
@@ -125,6 +128,7 @@ const CartPage = () => {
                     handleRetryCheckout = {handleRetryCheckout }
                     isModalOpen={isModalOpen}
                     setIsModalOpen={setIsModalOpen}
+                    applyPromoError={isErrorApplyPromo}
                 />
             </section>
         </div>

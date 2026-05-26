@@ -1,11 +1,11 @@
 import React from 'react';
 import "./previewCategory.scss"
-import ProductCard from "@components/productCard/index.js";
+import ProductCard from "@components/productCard";
 import Button from "@mui/material/Button";
 import Skeleton from "@mui/material/Skeleton";
+import PropTypes from 'prop-types';
 
 const PreviewCategory = ({title, data, handle, isLoading, buttonText, limit }) => {
-
 
     return (
         <div className="previewCategory_container">
@@ -13,7 +13,7 @@ const PreviewCategory = ({title, data, handle, isLoading, buttonText, limit }) =
             <div className="previewCategory_Box">
 
                 {isLoading ? (
-                    Array.from(new Array(limit)).map((_, index) => (
+                    Array.from(new Array(limit || 4)).map((_, index) => (
                         <Skeleton
                             key={index}
                             variant="rounded"
@@ -30,19 +30,6 @@ const PreviewCategory = ({title, data, handle, isLoading, buttonText, limit }) =
                 ) : (
                     <p className="notFoundCategory">No products found.</p>
                 )}
-
-
-
-
-
-
-
-                {/*{data?.products?.map((product) => (*/}
-                {/*    <ProductCard*/}
-                {/*        key={product.id}*/}
-                {/*        product={product}*/}
-                {/*    />*/}
-                {/*))}*/}
             </div>
             <Button className='previewCategory_Button'
                     onClick={handle}>
@@ -50,6 +37,20 @@ const PreviewCategory = ({title, data, handle, isLoading, buttonText, limit }) =
             </Button>
         </div>
     );
+};
+
+PreviewCategory.propTypes = {
+    title: PropTypes.string.isRequired,
+    data: PropTypes.shape({
+        products: PropTypes.arrayOf(
+            PropTypes.shape({
+            })
+        ),
+    }),
+    handle: PropTypes.func.isRequired,
+    isLoading: PropTypes.bool,
+    buttonText: PropTypes.string.isRequired,
+    limit: PropTypes.number.isRequired,
 };
 
 export default PreviewCategory;

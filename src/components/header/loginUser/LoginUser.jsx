@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import "./loginUser.scss";
 import login from "@assets/header/login.svg";
 import {
@@ -74,6 +74,12 @@ const LoginUser = () => {
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const handleMouseDownPassword = (event) => event.preventDefault();
+
+    useEffect(() => {
+        const handleOpenLogin = () => setOpen(true);
+        window.addEventListener('open-login', handleOpenLogin);
+        return () => window.removeEventListener('open-login', handleOpenLogin);
+    }, []);
 
     return (
         <React.Fragment>

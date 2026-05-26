@@ -1,6 +1,7 @@
 import React from 'react';
 import "./productPriceRow.scss"
 import Typography from "@mui/material/Typography";
+import PropTypes from 'prop-types';
 
 const ProductPriceRow = ({price, discount, finalPrice}) => {
 
@@ -33,6 +34,12 @@ const ProductPriceRow = ({price, discount, finalPrice}) => {
             )}
         </div>
     );
+};
+
+ProductPriceRow.propTypes = {
+    price: PropTypes.number.isRequired,
+    discount: PropTypes.number.isRequired,
+    finalPrice: PropTypes.number.isRequired,
 };
 
 export default ProductPriceRow;

@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import "./productDetailSameProducts.scss"
 import PreviewCategory from "@components/previewCategory";
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {useGetProductsByCategoryQuery} from "@store/api/productsAPI.js";
-import {setCategoryFilterActive} from "@store/slices/categoryFiltersSlice.js";
+import {resetSearch, setCategoryFilterActive} from "@store/slices/categoryFiltersSlice.js";
 import {useResponsiveLimitPreviewCategory} from "@hooks/useResponsiveLimit.js";
+import PropTypes from 'prop-types';
 
 const ProductDetailSameProducts = ({product}) => {
 
@@ -21,6 +22,7 @@ const ProductDetailSameProducts = ({product}) => {
     const sameProductsRender = sameProducts?.products?.filter(item => item.id !== product?.id).slice(0, limit) || [];
 
     const handleGoToSameProducts = () => {
+        dispatch(resetSearch());
         navigate(`/category/${product.category}`);
         dispatch( setCategoryFilterActive('default'));
     };
@@ -40,4 +42,12 @@ const ProductDetailSameProducts = ({product}) => {
         </section>
     );
 };
+
+ProductDetailSameProducts.propTypes = {
+    product: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        category: PropTypes.string.isRequired,
+    }).isRequired,
+};
+
 export default ProductDetailSameProducts;

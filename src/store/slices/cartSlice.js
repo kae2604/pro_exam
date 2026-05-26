@@ -15,7 +15,8 @@ const cartSlice = createSlice({
                 const quantityToAdd = Math.min(newItem.quantity, availableToAdd);
                 if (quantityToAdd > 0) {
                     existingProduct.quantity += quantityToAdd;
-                }  } else {
+                }
+            } else {
                 state.items.push(newItem);
             }
             localStorage.setItem('shopping_cart', JSON.stringify(state.items));

@@ -1,13 +1,17 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./productTabs.scss"
-import PreviewCategory from "@components/previewCategory/index.js";
-import ProductDetails from "@components/productDetailPage/productTabs/productDetails/index.js";
-import Reviews from "@components/productDetailPage/productTabs/reviews/index.js";
-import Faq from "@components/productDetailPage/productTabs/faq/index.js";
+import ProductDetails from "@components/productDetailPage/productTabs/productDetails";
+import Reviews from "@components/productDetailPage/productTabs/reviews";
+import Faq from "@components/productDetailPage/productTabs/faq";
+import PropTypes from 'prop-types';
 
 const ProductTabs = ({ product, id }) => {
 
     const [activeTab, setActiveTab] = useState("reviews");
+
+    useEffect(() => {
+        setActiveTab("reviews");
+    }, [id]);
 
 
     return (
@@ -55,6 +59,14 @@ const ProductTabs = ({ product, id }) => {
             </div>
         </section>
     );
+};
+
+ProductTabs.propTypes = {
+    product: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        reviews: PropTypes.array,
+    }).isRequired,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 export default ProductTabs;

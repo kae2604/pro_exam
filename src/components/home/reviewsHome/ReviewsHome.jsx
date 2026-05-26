@@ -7,10 +7,11 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ReviewCard from "@components/productDetailPage/productTabs/reviews/reviewCard";
 import { useGetProductsWithParamsQuery } from "@store/api/productsAPI.js";
+import Skeleton from "@mui/material/Skeleton";
 
 const ReviewsHome = () => {
 
-    const { data: productsReviews } = useGetProductsWithParamsQuery({
+    const { data: productsReviews, isLoading } = useGetProductsWithParamsQuery({
         limit: 21,
         sortBy: "rating",
         order: "desc",
@@ -18,7 +19,7 @@ const ReviewsHome = () => {
     });
 
     const allReviews = productsReviews?.products?.flatMap(product => product.reviews) || [];
-    const goodReviews = allReviews.filter(review => review.rating === 5);
+    const goodReviews = allReviews.filter(review => review?.rating === 5);
 
     const swiperRef = useRef(null);
 
@@ -55,7 +56,7 @@ const ReviewsHome = () => {
                 modules={[Autoplay]}
                 spaceBetween={20}
                 loop={goodReviews.length >= 3}
-                centeredSlides={true}
+                centeredSlides={!isLoading}
                 speed={1200}
                 autoplay={{
                     delay: 2000,
@@ -73,12 +74,27 @@ const ReviewsHome = () => {
                     1024: { slidesPerView: 'auto' },
                 }}
             >
-                {goodReviews.map((review, index) => (
+                {isLoading ? (
+                    [0, 1, 2, 3].map((index) => (
+                        <SwiperSlide className="reviewsHome_slider_card"
+                                     key={index}>
+                            <Skeleton
+                                variant="rounded"
+                                width="400px"
+                                height="240px"
+                                animation="wave"
+                                sx={{ borderRadius: 5 }}
+                            />
+                        </SwiperSlide>
+                    ))
+                ) : (
+                goodReviews.map((review, index) => (
                     <SwiperSlide className="reviewsHome_slider_card"
-                                 key={index}>
+                                 key={`${review.reviewerEmail}-${index}`}>
                         <ReviewCard review={review} />
                     </SwiperSlide>
-                ))}
+                ))
+                )}
             </Swiper>
         </section>
     );

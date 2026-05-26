@@ -75,12 +75,9 @@ export const productsAPI = baseAPI.injectEndpoints({
             query: (productId) => `/products/${productId}`,
             providesTags: (result, error, productId) => [{ type: 'Product', id: productId }],
         }),
-
-
     }),
     overrideExisting: false,
 })
-
 export const {
     useGetCategoriesQuery,
     useGetProductsByCategoryQuery,
