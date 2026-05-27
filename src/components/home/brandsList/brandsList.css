@@ -30,6 +30,7 @@
 }
 .brandsList .brandsList_track .brand_item {
   color: #ffffff;
+  font-family: var(--font-brands);
   font-size: clamp(24px, 2.5vw + 1rem, 34px);
   font-weight: 700;
   letter-spacing: 0.05em;
