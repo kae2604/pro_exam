@@ -1,10 +1,10 @@
 import React from 'react';
 import "./footer.scss";
-import visa from '@assets/footer/paymentMethod/visa.svg';
-import masterCard from '@assets/footer/paymentMethod/masterCard.svg';
-import payPal from '@assets/footer/paymentMethod/payPal.svg';
-import applePay from '@assets/footer/paymentMethod/applePay.svg';
-import googlePay from '@assets/footer/paymentMethod/googlePay.svg';
+import visa from '@assets/pictures/footer/paymentMethod/visa.svg';
+import masterCard from '@assets/pictures/footer/paymentMethod/masterCard.svg';
+import payPal from '@assets/pictures/footer/paymentMethod/payPal.svg';
+import applePay from '@assets/pictures/footer/paymentMethod/applePay.svg';
+import googlePay from '@assets/pictures/footer/paymentMethod/googlePay.svg';
 import {FOOTER_DATA} from './footerLinks.js';
 import FooterList from "@components/footer/footerList";
 import {useGetRandomQuoteQuery} from "@store/api/commonAPI.js";

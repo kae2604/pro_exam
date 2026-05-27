@@ -16,7 +16,7 @@
     padding-top: 180px;
   }
 }
-@media (max-width: 350px) {
+@media (max-width: 376px) {
   .footer .footer-wrapper {
     padding-top: 200px;
   }

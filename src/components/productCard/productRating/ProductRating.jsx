@@ -1,6 +1,6 @@
 import React from 'react';
-import fullStar from '@assets/productCard/fullStar.svg';
-import halfStar from '@assets/productCard/halfStar.svg';
+import fullStar from '@assets/pictures/productCard/fullStar.svg';
+import halfStar from '@assets/pictures/productCard/halfStar.svg';
 import "./productRating.scss"
 import PropTypes from 'prop-types';
 

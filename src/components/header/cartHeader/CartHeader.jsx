@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react';
 import "./cartHeader.scss"
-import cart from "@assets/header/cart.svg";
+import cart from "@assets/pictures/header/cart.svg";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
 

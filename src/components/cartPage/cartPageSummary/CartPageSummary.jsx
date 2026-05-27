@@ -1,8 +1,8 @@
 import React from 'react';
 import "./cartPageSummary.scss"
 import Button from "@mui/material/Button";
-import promo from "@assets/cartPage/promo.svg";
-import cartArrow from "@assets/cartPage/cartArrow.svg";
+import promo from "@assets/pictures/cartPage/promo.svg";
+import cartArrow from "@assets/pictures/cartPage/cartArrow.svg";
 import {CircularProgress, LinearProgress} from "@mui/material";
 import Skeleton from "@mui/material/Skeleton";
 import ErrorModal from "@components/errorModal/index.js";

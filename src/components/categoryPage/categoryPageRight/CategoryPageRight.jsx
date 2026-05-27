@@ -11,7 +11,7 @@ import {useGetProductsBySearchQuery} from "@store/api/productsAPI.js";
 import {setCurrentPage } from '@store/slices/categoryFiltersSlice';
 import Skeleton from '@mui/material/Skeleton';
 import {useResponsiveLimitCategoryPage} from "@hooks/useResponsiveLimit.js";
-import filtersMobile from "@assets/categoryPage/filtersMobile.svg";
+import filtersMobile from "@assets/pictures/categoryPage/filtersMobile.svg";
 import ErrorModal from "@components/errorModal";
 import PropTypes from 'prop-types';
 

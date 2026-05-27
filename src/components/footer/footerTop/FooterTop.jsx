@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import "./footerTop.scss";
-import mailIcon from "@assets/footer/mailIcon.svg";
+import mailIcon from "@assets/pictures/footer/mailIcon.svg";
 import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";

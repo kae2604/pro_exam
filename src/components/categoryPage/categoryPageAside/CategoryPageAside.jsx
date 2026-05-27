@@ -1,6 +1,6 @@
 import React from 'react';
 import "./categoryPageAside.scss"
-import filters from "@assets/categoryPage/filters.svg";
+import filters from "@assets/pictures/categoryPage/filters.svg";
 import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from 'react-redux';
 import { setCategoryFilterActive } from '@store/slices/categoryFiltersSlice';

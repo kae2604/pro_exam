@@ -1,6 +1,6 @@
 import React from 'react';
 import "./reviewCard.scss";
-import tick from "@assets/review/reviewTick.svg";
+import tick from "@assets/pictures/review/reviewTick.svg";
 import ProductRating from "@components/productCard/productRating/index.js";
 import PropTypes from "prop-types";
 

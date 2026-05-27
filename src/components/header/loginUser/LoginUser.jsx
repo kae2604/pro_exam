@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import "./loginUser.scss";
-import login from "@assets/header/login.svg";
+import login from "@assets/pictures/header/login.svg";
 import {
     Button, Dialog, DialogActions, DialogContent, DialogTitle, Slide,
     Box, TextField, FormControl, Input, InputLabel, InputAdornment, IconButton, FormHelperText, Typography, Avatar

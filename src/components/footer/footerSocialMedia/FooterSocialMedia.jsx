@@ -1,9 +1,9 @@
 import React from 'react';
 import "./footerSocialMedia.scss"
-import x from "@assets/footer/socialMedia/x.svg";
-import fb from "@assets/footer/socialMedia/fb.svg";
-import instagram from "@assets/footer/socialMedia/instagram.svg";
-import git from "@assets/footer/socialMedia/git.svg";
+import x from "@assets/pictures/footer/socialMedia/x.svg";
+import fb from "@assets/pictures/footer/socialMedia/fb.svg";
+import instagram from "@assets/pictures/footer/socialMedia/instagram.svg";
+import git from "@assets/pictures/footer/socialMedia/git.svg";
 
 const FooterSocialMedia = () => {
     return (

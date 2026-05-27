@@ -3,8 +3,8 @@ import "./searchHeader.scss"
 import {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import searchHeaderIcon from "@assets/header/searchHeaderIcon.svg";
-import searchHeaderIconMobile from "@assets/header/searchHeaderIconMobile.svg";
+import searchHeaderIcon from "@assets/pictures/header/searchHeaderIcon.svg";
+import searchHeaderIconMobile from "@assets/pictures/header/searchHeaderIconMobile.svg";
 import {setSearchQuery} from '@store/slices/categoryFiltersSlice';
 
 
