@@ -44,6 +44,11 @@
 .footer .footer-wrapper .footer-container .footer-container_left .footer_logo {
   margin-bottom: 25px;
   display: inline-block;
+  transition: 0.4s;
+}
+.footer .footer-wrapper .footer-container .footer-container_left .footer_logo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 .footer .footer-wrapper .footer-container .footer-container_left p {
   max-width: 248px;

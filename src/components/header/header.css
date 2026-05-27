@@ -14,6 +14,12 @@
 .header .header_container .header_container_left a:focus {
   outline: none;
 }
+.header .header_container .header_container_left .header_logo {
+  transition: 0.4s;
+}
+.header .header_container .header_container_left .header_logo:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
 .header .header_container .header_container_right {
   display: flex;
   align-items: center;

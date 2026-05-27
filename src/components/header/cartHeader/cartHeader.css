@@ -1,5 +1,9 @@
 .header_cart_wrapper {
   margin-left: 40px;
+  transition: transform 0.3s ease;
+}
+.header_cart_wrapper:hover {
+  transform: scale(1.2);
 }
 @media (max-width: 950px) {
   .header_cart_wrapper {

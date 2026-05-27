@@ -2,6 +2,12 @@
 .header_cart_wrapper{
   margin-left: 40px;
 
+  transition: transform 0.3s ease;
+
+  &:hover{
+    transform: scale(1.2);
+  }
+
   @media (max-width: 950px) {
     margin-left: 12px;
   }

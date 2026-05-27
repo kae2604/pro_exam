@@ -4,46 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f910a1bc-f643-4de7-a0f3-a68c631c8192" name="Changes" comment="refactor">
-      <change beforePath="$PROJECT_DIR$/src/assets/cartPage/cartArrow.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/cartPage/cartArrow.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/cartPage/promo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/cartPage/promo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/categoryPage/filters.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/categoryPage/filters.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/footer/mailIcon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/footer/mailIcon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/footer/paymentMethod/Mastercard.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/footer/paymentMethod/Mastercard.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/footer/paymentMethod/Paypal.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/footer/paymentMethod/Paypal.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/footer/paymentMethod/Visa.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/footer/paymentMethod/Visa.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/footer/paymentMethod/applePay.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/footer/paymentMethod/applePay.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/footer/paymentMethod/googlePay.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/footer/paymentMethod/googlePay.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/footer/socialMedia/fb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/footer/socialMedia/fb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/footer/socialMedia/git.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/footer/socialMedia/git.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/footer/socialMedia/instagram.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/footer/socialMedia/instagram.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/footer/socialMedia/x.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/footer/socialMedia/x.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/header/cart.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/header/cart.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/header/login.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/header/login.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/header/searchHeaderIcon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/header/searchHeaderIcon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/header/shopArrow.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/header/shopArrow.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/productCard/fullStar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/productCard/fullStar.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/productCard/halfStar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/productCard/halfStar.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/review/reviewTick.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/pictures/review/reviewTick.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cartPage/cartPageSummary/CartPageSummary.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartPage/cartPageSummary/CartPageSummary.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categoryPage/categoryPageAside/CategoryPageAside.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categoryPage/categoryPageAside/CategoryPageAside.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/CategoryPageRight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/CategoryPageRight.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/filterSortedBy/filterSortedBy.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/filterSortedBy/filterSortedBy.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/filterSortedBy/filterSortedBy.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categoryPage/categoryPageRight/filterSortedBy/filterSortedBy.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.jsx" afterDir="false" />
+    <list default="true" id="f910a1bc-f643-4de7-a0f3-a68c631c8192" name="Changes" comment="add Fonts">
       <change beforePath="$PROJECT_DIR$/src/components/footer/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/footer/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/footerSocialMedia/FooterSocialMedia.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footerSocialMedia/FooterSocialMedia.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/footerTop/FooterTop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footerTop/FooterTop.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/cartHeader/CartHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/cartHeader/CartHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/loginUser/LoginUser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/loginUser/LoginUser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/searchHeader/SearchHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/searchHeader/SearchHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/shop/shop.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/shop/shop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/shop/shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/shop/shop.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/logoMain/LogoMain.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logoMain/LogoMain.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productCard/productRating/ProductRating.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productCard/productRating/ProductRating.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviewCard/ReviewCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/productDetailPage/productTabs/reviews/reviewCard/ReviewCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footerList/footerList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footerList/footerList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footerList/footerList.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footerList/footerList.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footerList/footerList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footerList/footerList.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footerSocialMedia/footerSocialMedia.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footerSocialMedia/footerSocialMedia.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footerSocialMedia/footerSocialMedia.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footerSocialMedia/footerSocialMedia.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footerSocialMedia/footerSocialMedia.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footerSocialMedia/footerSocialMedia.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/cartHeader/cartHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/cartHeader/cartHeader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/cartHeader/cartHeader.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/cartHeader/cartHeader.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/cartHeader/cartHeader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/cartHeader/cartHeader.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/loginUser/loginUser.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/loginUser/loginUser.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/loginUser/loginUser.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/loginUser/loginUser.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/loginUser/loginUser.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/loginUser/loginUser.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/navigationHeader/navigationHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/navigationHeader/navigationHeader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/navigationHeader/navigationHeader.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/navigationHeader/navigationHeader.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/navigationHeader/navigationHeader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/navigationHeader/navigationHeader.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/searchHeader/searchHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/searchHeader/searchHeader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/searchHeader/searchHeader.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/searchHeader/searchHeader.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/searchHeader/searchHeader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/searchHeader/searchHeader.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/main.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/main.scss" afterDir="false" />
@@ -160,7 +146,7 @@
       <workItem from="1778500255146" duration="268288000" />
       <workItem from="1779546658907" duration="152000" />
       <workItem from="1779546957138" duration="15000" />
-      <workItem from="1779546988940" duration="95751000" />
+      <workItem from="1779546988940" duration="100149000" />
     </task>
     <task id="LOCAL-00001" summary="Add ProductDetailPage">
       <option name="closed" value="true" />
@@ -266,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779823570521</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add Fonts">
+      <option name="closed" value="true" />
+      <created>1779889030088</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1779889030088</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +290,8 @@
     <MESSAGE value="made adaptive productDetailPage" />
     <MESSAGE value="made errorModal" />
     <MESSAGE value="refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
+    <MESSAGE value="add Fonts" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Fonts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

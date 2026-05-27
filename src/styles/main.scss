@@ -1,21 +1,4 @@
 
-//@media (max-width: 1150px) {
-//  padding-top: 180px;
-//}
-
-//font-size: clamp(36px, 2.5vw + 1rem, 64px);
-
-
-:root {
-  --font-satoshi: 'Satoshi', sans-serif;
-  --font-integral: 'Integral CF', sans-serif;
-
-  ///* Цвета */
-  //--color-primary: #000;
-  //--color-hover: #40a3f8;
-  //--color-bg: #F2F0F1;
-}
-
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
 
 @font-face {
@@ -26,15 +9,18 @@
   font-display: swap;
 }
 
+:root {
+  --font-satoshi: 'Satoshi', sans-serif;
+  --font-integral: 'Integral CF', sans-serif;
+}
+
 
 *{
   box-sizing: border-box;
-  //outline: 1px solid red !important;
 }
 
 body {
   margin: 0;
-
   font-family: var(--font-satoshi);
 }
 
@@ -55,7 +41,6 @@ ul{
   max-width: 1240px;
   width: 100%;
   margin: 0 auto;
-
   @media (max-width: 1300px) {
     padding-inline: 16px;
   }

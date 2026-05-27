@@ -16,6 +16,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.2s;
+}
+.footer_socialMedia .footer_socialMedia_icons:hover {
+  transform: rotate(30deg);
 }
 .footer_socialMedia .footer_socialMedia_icons_fb {
   background-color: black;

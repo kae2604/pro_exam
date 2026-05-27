@@ -33,7 +33,6 @@
 }
 .searchHeader_wrapper .searchHeader_form .searchHeader_button:hover {
   transform: scale(1.2);
-  background-color: #f0f0f0;
 }
 .searchHeader_wrapper .searchHeader_form .searchHeader_input {
   border: none;

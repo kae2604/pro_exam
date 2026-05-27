@@ -13,6 +13,10 @@
   line-height: 119%;
   color: rgba(0, 0, 0, 0.6);
   margin-bottom: 26px;
+  transition: 0.2s;
+}
+.footer_list .footer_list_item:hover {
+  color: rgb(0, 0, 0);
 }
 
 /*# sourceMappingURL=footerList.css.map */

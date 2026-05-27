@@ -48,7 +48,10 @@ const Header = ()=> {
                             <MenuIcon />
                         </IconButton>
 
-                        <LogoMain/>
+
+                        <div className="header_logo">
+                            <LogoMain/>
+                        </div>
 
                         <Box sx={{ display: { xs: 'none', md: 'block' }}}>
                             <NavigationHeader />

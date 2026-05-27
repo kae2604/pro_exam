@@ -36,6 +36,12 @@
         .footer_logo{
           margin-bottom: 25px;
           display: inline-block;
+          transition: 0.4s;
+
+          &:hover{
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+          }
         }
         p{
           max-width: 248px;
